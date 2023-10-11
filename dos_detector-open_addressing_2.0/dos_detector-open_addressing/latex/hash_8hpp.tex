@@ -1,0 +1,101 @@
+\hypertarget{hash_8hpp}{}\doxysection{hash.\+hpp File Reference}
+\label{hash_8hpp}\index{hash.hpp@{hash.hpp}}
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+Include dependency graph for hash.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classUHash}{UHash}}
+\begin{DoxyCompactList}\small\item\em The Universal Hash function base class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classOACollisionResolution}{OACollision\+Resolution}}
+\begin{DoxyCompactList}\small\item\em Base class for Open Addressing Collision Resolution algorithms. $\ast$. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classLPHash}{LPHash}}
+\begin{DoxyCompactList}\small\item\em Models an Universal Family hash function using linear probing to resolve collisions. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classQPHash}{QPHash}}
+\begin{DoxyCompactList}\small\item\em Models an Universal Family hash function using quadratic probing to resolve collisions. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRPHash}{RPHash}}
+\begin{DoxyCompactList}\small\item\em Models an Universal Family hash function using random probing to resolve collisions. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classDHash}{DHash}}
+\begin{DoxyCompactList}\small\item\em Models an Universal Family hash function using double hashing to resolve collisions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{hash_8hpp_a30d1e43990eafb316df89c96cd213e6b}{uniform}} ()
+\begin{DoxyCompactList}\small\item\em Generate an uniform random number in \mbox{[}0.\+0, 1.\+0) interval. \end{DoxyCompactList}\item 
+std\+::uint64\+\_\+t \mbox{\hyperlink{hash_8hpp_a2f147a8cda351267a758d57ed39e316e}{pick\+\_\+at\+\_\+random}} (std\+::uint64\+\_\+t const \&a, std\+::uint64\+\_\+t const \&b)
+\begin{DoxyCompactList}\small\item\em pick at random a value from the integer range \mbox{[}a, b\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::minstd\+\_\+rand \mbox{\hyperlink{hash_8hpp_a5b952de4b694b54fa0b422f66b6e1f37}{Generator}}
+\begin{DoxyCompactList}\small\item\em Use this random bit generator to generate random numbers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Copy\+Right F. J. Madrid-\/\+Cuevas \href{mailto:fjmadrid@uco.es}{\texttt{ fjmadrid@uco.\+es}}
+
+Sólo se permite el uso de este código en la docencia de las asignaturas sobre Estructuras de Datos de la Universidad de Córdoba.
+
+Está prohibido su uso para cualquier otro objetivo. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{hash_8hpp_a2f147a8cda351267a758d57ed39e316e}\label{hash_8hpp_a2f147a8cda351267a758d57ed39e316e}} 
+\index{hash.hpp@{hash.hpp}!pick\_at\_random@{pick\_at\_random}}
+\index{pick\_at\_random@{pick\_at\_random}!hash.hpp@{hash.hpp}}
+\doxysubsubsection{\texorpdfstring{pick\_at\_random()}{pick\_at\_random()}}
+{\footnotesize\ttfamily std\+::uint64\+\_\+t pick\+\_\+at\+\_\+random (\begin{DoxyParamCaption}\item[{std\+::uint64\+\_\+t const \&}]{a,  }\item[{std\+::uint64\+\_\+t const \&}]{b }\end{DoxyParamCaption})}
+
+
+
+pick at random a value from the integer range \mbox{[}a, b\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is lower bound of the range (inclusive). \\
+\hline
+{\em b} & is upper bound of the range (exclusive). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the picked up value. @prec a$<$b 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+ret\+\_\+v in \mbox{[}a,b\mbox{]} 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{hash_8hpp_a30d1e43990eafb316df89c96cd213e6b}\label{hash_8hpp_a30d1e43990eafb316df89c96cd213e6b}} 
+\index{hash.hpp@{hash.hpp}!uniform@{uniform}}
+\index{uniform@{uniform}!hash.hpp@{hash.hpp}}
+\doxysubsubsection{\texorpdfstring{uniform()}{uniform()}}
+{\footnotesize\ttfamily double uniform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Generate an uniform random number in \mbox{[}0.\+0, 1.\+0) interval. 
+
+\begin{DoxyReturn}{Returns}
+the random number. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+ret\+\_\+v in \mbox{[}0.\+0, 1.\+0) 
+\end{DoxyPostcond}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{hash_8hpp_a5b952de4b694b54fa0b422f66b6e1f37}\label{hash_8hpp_a5b952de4b694b54fa0b422f66b6e1f37}} 
+\index{hash.hpp@{hash.hpp}!Generator@{Generator}}
+\index{Generator@{Generator}!hash.hpp@{hash.hpp}}
+\doxysubsubsection{\texorpdfstring{Generator}{Generator}}
+{\footnotesize\ttfamily std\+::minstd\+\_\+rand Generator\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Use this random bit generator to generate random numbers. 
+
+Global object to generate random bits. 

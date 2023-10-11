@@ -1,0 +1,351 @@
+\hypertarget{classRBTNode}{}\doxysection{RBTNode$<$ T $>$ Class Template Reference}
+\label{classRBTNode}\index{RBTNode$<$ T $>$@{RBTNode$<$ T $>$}}
+
+
+a \mbox{\hyperlink{classRBTree}{RBTree}}\textquotesingle{}s Node. Models a node of \mbox{\hyperlink{classRBTree}{RBTree}}.  
+
+
+
+
+{\ttfamily \#include $<$rbtree.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRBTNode_a7ef256e19a6451c65eb995338392936d}\label{classRBTNode_a7ef256e19a6451c65eb995338392936d}} 
+enum \mbox{\hyperlink{classRBTNode_a7ef256e19a6451c65eb995338392936d}{Color}} \{ {\bfseries BLACK} = 0
+, {\bfseries RED} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em Colors for a node of the \mbox{\hyperlink{classRBTree}{RBTree}}. \end{DoxyCompactList}\item 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$ $>$ \mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}}
+\begin{DoxyCompactList}\small\item\em Define a shared reference to a \mbox{\hyperlink{classRBTNode}{RBTNode}}. Manages the storage of a pointer, providing a limited garbage-\/collection facility, possibly sharing that management with other objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Observers.}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRBTNode_ab0681e3d7227be21b345ac1dd515b129}\label{classRBTNode_ab0681e3d7227be21b345ac1dd515b129}} 
+T \mbox{\hyperlink{classRBTNode_ab0681e3d7227be21b345ac1dd515b129}{item}} () const
+\begin{DoxyCompactList}\small\item\em Get the data item. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRBTNode_acbd3949e77d61ddd505a83edcc210499}\label{classRBTNode_acbd3949e77d61ddd505a83edcc210499}} 
+\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}} \mbox{\hyperlink{classRBTNode_acbd3949e77d61ddd505a83edcc210499}{parent}} () const
+\begin{DoxyCompactList}\small\item\em get the parent. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRBTNode_a925a209dac82a4cbfe70c6dfb0cb5cef}\label{classRBTNode_a925a209dac82a4cbfe70c6dfb0cb5cef}} 
+\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}} \mbox{\hyperlink{classRBTNode_a925a209dac82a4cbfe70c6dfb0cb5cef}{left}} () const
+\begin{DoxyCompactList}\small\item\em get the left child. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRBTNode_a6682328358ed2a17bbeb8439fb0b9c79}\label{classRBTNode_a6682328358ed2a17bbeb8439fb0b9c79}} 
+\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}} \mbox{\hyperlink{classRBTNode_a6682328358ed2a17bbeb8439fb0b9c79}{right}} () const
+\begin{DoxyCompactList}\small\item\em get the right child. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}} \mbox{\hyperlink{classRBTNode_aa6a02b583e140e7988620276189ab009}{child}} (int idx) const
+\begin{DoxyCompactList}\small\item\em get one of the two childs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRBTNode_ab54be5a8cd3cc8a37d7809b7fcb1cd82}\label{classRBTNode_ab54be5a8cd3cc8a37d7809b7fcb1cd82}} 
+\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a7ef256e19a6451c65eb995338392936d}{Color}} \mbox{\hyperlink{classRBTNode_ab54be5a8cd3cc8a37d7809b7fcb1cd82}{color}} () const
+\begin{DoxyCompactList}\small\item\em get node\textquotesingle{}s color. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}} \& \mbox{\hyperlink{classRBTNode_ab1c21b1d21800689beae4fdd2439c398}{This}} () const
+\begin{DoxyCompactList}\small\item\em Return \char`\"{}this\char`\"{} as a reference. ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}} \mbox{\hyperlink{classRBTNode_a7ddca43f3df52b88d7f5fd95d945457f}{This}} ()
+\begin{DoxyCompactList}\small\item\em Return \char`\"{}this\char`\"{} as a reference. ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Modifiers.}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRBTNode_a045e843b03f5386145ad0cabf810917a}\label{classRBTNode_a045e843b03f5386145ad0cabf810917a}} 
+T {\bfseries item\+\_\+}
+\item 
+\mbox{\Hypertarget{classRBTNode_a4c396cb5024aa48190d211e2ce844abc}\label{classRBTNode_a4c396cb5024aa48190d211e2ce844abc}} 
+\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a7ef256e19a6451c65eb995338392936d}{Color}} {\bfseries color\+\_\+}
+\item 
+\mbox{\Hypertarget{classRBTNode_a4bbbff926196ccf2ce454b703a3020f6}\label{classRBTNode_a4bbbff926196ccf2ce454b703a3020f6}} 
+\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}} {\bfseries parent\+\_\+}
+\item 
+\mbox{\Hypertarget{classRBTNode_ac37b804951bbb9f07199cdf618eadbf0}\label{classRBTNode_ac37b804951bbb9f07199cdf618eadbf0}} 
+\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}} {\bfseries left\+\_\+}
+\item 
+\mbox{\Hypertarget{classRBTNode_ac8d30fccdf9414c94190ee4bf4860874}\label{classRBTNode_ac8d30fccdf9414c94190ee4bf4860874}} 
+\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}} {\bfseries right\+\_\+}
+\item 
+\mbox{\Hypertarget{classRBTNode_aab983578084dfe789c983a5c46909882}\label{classRBTNode_aab983578084dfe789c983a5c46909882}} 
+\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}} {\bfseries this\+\_\+}
+\item 
+void \mbox{\hyperlink{classRBTNode_a8772453e2646f7a9013073cd42ddbd53}{set\+\_\+item}} (const T \&new\+\_\+it)
+\begin{DoxyCompactList}\small\item\em Set the data item. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRBTNode_a7ab161e7bb76d5a29494a3ea8ce0eb59}{set\+\_\+parent}} (\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}} new\+\_\+parent)
+\begin{DoxyCompactList}\small\item\em Set the parent. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRBTNode_a1c2bb2cf9ab831ee66e680971cbcdf0d}{set\+\_\+left}} (\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}} new\+\_\+child)
+\begin{DoxyCompactList}\small\item\em Set the left child. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRBTNode_aa7581a07231d38fc6d299f89f4ad085d}{set\+\_\+right}} (\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}} new\+\_\+child)
+\begin{DoxyCompactList}\small\item\em Set the right child. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRBTNode_af3d243c63b0d1e530a1d75e08da20829}{set\+\_\+child}} (int idx, \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}} new\+\_\+child)
+\begin{DoxyCompactList}\small\item\em Set one of the two childs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRBTNode_adc7c2569ddd2d3d3335827deb4c15cba}{set\+\_\+color}} (\mbox{\hyperlink{classRBTNode_a7ef256e19a6451c65eb995338392936d}{Color}} new\+\_\+color)
+\begin{DoxyCompactList}\small\item\em Set the color of the node. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRBTNode_a42212497414b1382b5dd4c799a988425}{RBTNode}} (T const \&it=T(), \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a7ef256e19a6451c65eb995338392936d}{Color}} \mbox{\hyperlink{classRBTNode_ab54be5a8cd3cc8a37d7809b7fcb1cd82}{color}}=RED, \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}} \mbox{\hyperlink{classRBTNode_acbd3949e77d61ddd505a83edcc210499}{parent}}=nullptr, \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}} \mbox{\hyperlink{classRBTNode_a925a209dac82a4cbfe70c6dfb0cb5cef}{left}}=nullptr, \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}} \mbox{\hyperlink{classRBTNode_a6682328358ed2a17bbeb8439fb0b9c79}{right}}=nullptr)
+\begin{DoxyCompactList}\small\item\em Create a \mbox{\hyperlink{classRBTNode}{RBTNode}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Life cicle.}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}} \mbox{\hyperlink{classRBTNode_af0d5bca2cd1643b9d86f8aa4b3169f0d}{create}} (T const \&it=T(), \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a7ef256e19a6451c65eb995338392936d}{Color}} \mbox{\hyperlink{classRBTNode_ab54be5a8cd3cc8a37d7809b7fcb1cd82}{color}}=RED, \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}} \mbox{\hyperlink{classRBTNode_acbd3949e77d61ddd505a83edcc210499}{parent}}=nullptr, \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}} \mbox{\hyperlink{classRBTNode_a925a209dac82a4cbfe70c6dfb0cb5cef}{left}}=nullptr, \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}} \mbox{\hyperlink{classRBTNode_a6682328358ed2a17bbeb8439fb0b9c79}{right}}=nullptr)
+\begin{DoxyCompactList}\small\item\em Create a \mbox{\hyperlink{classRBTNode}{RBTNode}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRBTNode_a17e0edb199ae1e5c34bbc577d2d15d80}\label{classRBTNode_a17e0edb199ae1e5c34bbc577d2d15d80}} 
+\mbox{\hyperlink{classRBTNode_a17e0edb199ae1e5c34bbc577d2d15d80}{$\sim$\+RBTNode}} ()
+\begin{DoxyCompactList}\small\item\em Destroy a \mbox{\hyperlink{classRBTNode}{RBTNode}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class RBTNode$<$ T $>$}
+
+a \mbox{\hyperlink{classRBTree}{RBTree}}\textquotesingle{}s Node. Models a node of \mbox{\hyperlink{classRBTree}{RBTree}}. 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}\label{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}} 
+\index{RBTNode$<$ T $>$@{RBTNode$<$ T $>$}!Ref@{Ref}}
+\index{Ref@{Ref}!RBTNode$<$ T $>$@{RBTNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Ref}{Ref}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+typedef std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$T$>$ $>$ \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}}}
+
+
+
+Define a shared reference to a \mbox{\hyperlink{classRBTNode}{RBTNode}}. Manages the storage of a pointer, providing a limited garbage-\/collection facility, possibly sharing that management with other objects. 
+
+\begin{DoxySeeAlso}{See also}
+\href{http://www.cplusplus.com/reference/memory/shared_ptr/}{\texttt{ http\+://www.\+cplusplus.\+com/reference/memory/shared\+\_\+ptr/}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRBTNode_a42212497414b1382b5dd4c799a988425}\label{classRBTNode_a42212497414b1382b5dd4c799a988425}} 
+\index{RBTNode$<$ T $>$@{RBTNode$<$ T $>$}!RBTNode@{RBTNode}}
+\index{RBTNode@{RBTNode}!RBTNode$<$ T $>$@{RBTNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{RBTNode()}{RBTNode()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode}{RBTNode}} (\begin{DoxyParamCaption}\item[{T const \&}]{it = {\ttfamily T()},  }\item[{\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a7ef256e19a6451c65eb995338392936d}{Color}}}]{color = {\ttfamily RED},  }\item[{\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}}}]{parent = {\ttfamily nullptr},  }\item[{\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}}}]{left = {\ttfamily nullptr},  }\item[{\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}}}]{right = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Create a \mbox{\hyperlink{classRBTNode}{RBTNode}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em it} & is the node\textquotesingle{}s item value. \\
+\hline
+{\em color} & is the color of the node. \\
+\hline
+{\em parent} & is a link to the parent node of this. \\
+\hline
+{\em left} & is a link to the left child node. \\
+\hline
+{\em right} & is a link to the right child node. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a shared reference to node created. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRBTNode_aa6a02b583e140e7988620276189ab009}\label{classRBTNode_aa6a02b583e140e7988620276189ab009}} 
+\index{RBTNode$<$ T $>$@{RBTNode$<$ T $>$}!child@{child}}
+\index{child@{child}!RBTNode$<$ T $>$@{RBTNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{child()}{child()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}} \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::child (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption}) const}
+
+
+
+get one of the two childs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & specifies the what child\+: 0-\/$>$left, 1-\/$>$right. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+idx in \{0,1\} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+idx==0 $\vert$$\vert$ child(idx)==\mbox{\hyperlink{classRBTNode_a6682328358ed2a17bbeb8439fb0b9c79}{right()}} 
+
+idx==1 $\vert$$\vert$ child(idx)==\mbox{\hyperlink{classRBTNode_a925a209dac82a4cbfe70c6dfb0cb5cef}{left()}} 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classRBTNode_af0d5bca2cd1643b9d86f8aa4b3169f0d}\label{classRBTNode_af0d5bca2cd1643b9d86f8aa4b3169f0d}} 
+\index{RBTNode$<$ T $>$@{RBTNode$<$ T $>$}!create@{create}}
+\index{create@{create}!RBTNode$<$ T $>$@{RBTNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}} \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::create (\begin{DoxyParamCaption}\item[{T const \&}]{it = {\ttfamily T()},  }\item[{\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a7ef256e19a6451c65eb995338392936d}{Color}}}]{color = {\ttfamily RED},  }\item[{\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}}}]{parent = {\ttfamily nullptr},  }\item[{\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}}}]{left = {\ttfamily nullptr},  }\item[{\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}}}]{right = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a \mbox{\hyperlink{classRBTNode}{RBTNode}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em it} & is the node\textquotesingle{}s item value. \\
+\hline
+{\em parent} & is a link to the parent node of this. \\
+\hline
+{\em left} & is a link to the left child node. \\
+\hline
+{\em right} & is a link to the right child node. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a shared reference to node created. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRBTNode_af3d243c63b0d1e530a1d75e08da20829}\label{classRBTNode_af3d243c63b0d1e530a1d75e08da20829}} 
+\index{RBTNode$<$ T $>$@{RBTNode$<$ T $>$}!set\_child@{set\_child}}
+\index{set\_child@{set\_child}!RBTNode$<$ T $>$@{RBTNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_child()}{set\_child()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::set\+\_\+child (\begin{DoxyParamCaption}\item[{int}]{idx,  }\item[{\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}}}]{new\+\_\+child }\end{DoxyParamCaption})}
+
+
+
+Set one of the two childs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & specifies what child\+: 0-\/$>$left, 1-\/$>$right. \\
+\hline
+{\em new\+\_\+child} & is the new to child to attach. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+idx in \{0,1\} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+idx==0 $\vert$$\vert$ new\+\_\+child==\mbox{\hyperlink{classRBTNode_a6682328358ed2a17bbeb8439fb0b9c79}{right()}} 
+
+idx==1 $\vert$$\vert$ new\+\_\+child==\mbox{\hyperlink{classRBTNode_a925a209dac82a4cbfe70c6dfb0cb5cef}{left()}} 
+
+!new\+\_\+child $\vert$$\vert$ new\+\_\+child.\+parent()==\mbox{\hyperlink{classRBTNode_a7ddca43f3df52b88d7f5fd95d945457f}{This()}} 
+\end{DoxyPostcond}
+\begin{DoxyWarning}{Warning}
+collateral effect\+: change new\+\_\+child parent link to this. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classRBTNode_adc7c2569ddd2d3d3335827deb4c15cba}\label{classRBTNode_adc7c2569ddd2d3d3335827deb4c15cba}} 
+\index{RBTNode$<$ T $>$@{RBTNode$<$ T $>$}!set\_color@{set\_color}}
+\index{set\_color@{set\_color}!RBTNode$<$ T $>$@{RBTNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_color()}{set\_color()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::set\+\_\+color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRBTNode_a7ef256e19a6451c65eb995338392936d}{Color}}}]{new\+\_\+color }\end{DoxyParamCaption})}
+
+
+
+Set the color of the node. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em new\+\_\+color.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{classRBTNode_ab54be5a8cd3cc8a37d7809b7fcb1cd82}{color()}}==new\+\_\+color 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classRBTNode_a8772453e2646f7a9013073cd42ddbd53}\label{classRBTNode_a8772453e2646f7a9013073cd42ddbd53}} 
+\index{RBTNode$<$ T $>$@{RBTNode$<$ T $>$}!set\_item@{set\_item}}
+\index{set\_item@{set\_item}!RBTNode$<$ T $>$@{RBTNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_item()}{set\_item()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::set\+\_\+item (\begin{DoxyParamCaption}\item[{const T \&}]{new\+\_\+it }\end{DoxyParamCaption})}
+
+
+
+Set the data item. 
+
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{classRBTNode_ab0681e3d7227be21b345ac1dd515b129}{item()}} == new\+\_\+it 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classRBTNode_a1c2bb2cf9ab831ee66e680971cbcdf0d}\label{classRBTNode_a1c2bb2cf9ab831ee66e680971cbcdf0d}} 
+\index{RBTNode$<$ T $>$@{RBTNode$<$ T $>$}!set\_left@{set\_left}}
+\index{set\_left@{set\_left}!RBTNode$<$ T $>$@{RBTNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_left()}{set\_left()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::set\+\_\+left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}}}]{new\+\_\+child }\end{DoxyParamCaption})}
+
+
+
+Set the left child. 
+
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{classRBTNode_a925a209dac82a4cbfe70c6dfb0cb5cef}{left()}}==new\+\_\+child 
+
+!new\+\_\+child $\vert$$\vert$ new\+\_\+child.\+parent()==\mbox{\hyperlink{classRBTNode_a7ddca43f3df52b88d7f5fd95d945457f}{This()}} 
+\end{DoxyPostcond}
+\begin{DoxyWarning}{Warning}
+collateral effect\+: change new\+\_\+child parent link to this. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classRBTNode_a7ab161e7bb76d5a29494a3ea8ce0eb59}\label{classRBTNode_a7ab161e7bb76d5a29494a3ea8ce0eb59}} 
+\index{RBTNode$<$ T $>$@{RBTNode$<$ T $>$}!set\_parent@{set\_parent}}
+\index{set\_parent@{set\_parent}!RBTNode$<$ T $>$@{RBTNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_parent()}{set\_parent()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::set\+\_\+parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}}}]{new\+\_\+parent }\end{DoxyParamCaption})}
+
+
+
+Set the parent. 
+
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{classRBTNode_acbd3949e77d61ddd505a83edcc210499}{parent()}}==new\+\_\+parent 
+
+!new\+\_\+parent $\vert$$\vert$ (new\+\_\+parent-\/$>$\mbox{\hyperlink{classRBTNode_a925a209dac82a4cbfe70c6dfb0cb5cef}{left()}}==\mbox{\hyperlink{classRBTNode_a7ddca43f3df52b88d7f5fd95d945457f}{This()}} $\vert$$\vert$ new\+\_\+parent-\/$>$\mbox{\hyperlink{classRBTNode_a6682328358ed2a17bbeb8439fb0b9c79}{right()}}==\mbox{\hyperlink{classRBTNode_a7ddca43f3df52b88d7f5fd95d945457f}{This()}}) 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classRBTNode_aa7581a07231d38fc6d299f89f4ad085d}\label{classRBTNode_aa7581a07231d38fc6d299f89f4ad085d}} 
+\index{RBTNode$<$ T $>$@{RBTNode$<$ T $>$}!set\_right@{set\_right}}
+\index{set\_right@{set\_right}!RBTNode$<$ T $>$@{RBTNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_right()}{set\_right()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::set\+\_\+right (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}}}]{new\+\_\+child }\end{DoxyParamCaption})}
+
+
+
+Set the right child. 
+
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{classRBTNode_a6682328358ed2a17bbeb8439fb0b9c79}{right()}}==new\+\_\+child 
+
+!new\+\_\+child $\vert$$\vert$ new\+\_\+child.\+parent()==\mbox{\hyperlink{classRBTNode_a7ddca43f3df52b88d7f5fd95d945457f}{This()}} 
+\end{DoxyPostcond}
+\begin{DoxyWarning}{Warning}
+collateral effect\+: change new\+\_\+child parent link to this. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classRBTNode_a7ddca43f3df52b88d7f5fd95d945457f}\label{classRBTNode_a7ddca43f3df52b88d7f5fd95d945457f}} 
+\index{RBTNode$<$ T $>$@{RBTNode$<$ T $>$}!This@{This}}
+\index{This@{This}!RBTNode$<$ T $>$@{RBTNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{This()}{This()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}} \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::This}
+
+
+
+Return \char`\"{}this\char`\"{} as a reference. ~\newline
+ 
+
+\begin{DoxyReturn}{Returns}
+a reference to this node. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRBTNode_ab1c21b1d21800689beae4fdd2439c398}\label{classRBTNode_ab1c21b1d21800689beae4fdd2439c398}} 
+\index{RBTNode$<$ T $>$@{RBTNode$<$ T $>$}!This@{This}}
+\index{This@{This}!RBTNode$<$ T $>$@{RBTNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{This()}{This()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+const \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTNode_a27b28c9178bd93dbb6fd2ca02d23b1c8}{Ref}} \& \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::This}
+
+
+
+Return \char`\"{}this\char`\"{} as a reference. ~\newline
+ 
+
+\begin{DoxyReturn}{Returns}
+a const reference to this node. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{rbtree_8hpp}{rbtree.\+hpp}}\item 
+\mbox{\hyperlink{rbtree__imp_8hpp}{rbtree\+\_\+imp.\+hpp}}\end{DoxyCompactItemize}

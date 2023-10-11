@@ -1,0 +1,56 @@
+\hypertarget{system_8cpp}{}\doxysection{system.\+cpp File Reference}
+\label{system_8cpp}\index{system.cpp@{system.cpp}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include \char`\"{}system.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hash\+\_\+table\+\_\+imp.\+hpp\char`\"{}}\newline
+Include dependency graph for system.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::istream \& \mbox{\hyperlink{system_8cpp_a770a82aa088cc5f518583eea49f0fc33}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{system_8hpp_ae8fe7fc2fe46fe58abdc9cfd99f179bb}{Log}} \&log) noexcept(false)
+\begin{DoxyCompactList}\small\item\em Load the log from an stream. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classOS}{OS}} \& \mbox{\hyperlink{system_8cpp_a5197d3ade7728875761eae04705d43d8}{System}} ()
+\begin{DoxyCompactList}\small\item\em The Operating System. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{system_8cpp_a53951761f7686549fa79c4a1f63878ca}\label{system_8cpp_a53951761f7686549fa79c4a1f63878ca}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&out, std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{structIP}{IP}}, size\+\_\+t $>$$>$ const \&ips)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Copy\+Right F. J. Madrid-\/\+Cuevas \href{mailto:fjmadrid@uco.es}{\texttt{ fjmadrid@uco.\+es}}
+
+Sólo se permite el uso de este código en la docencia de las asignaturas sobre Estructuras de Datos de la Universidad de Córdoba.
+
+Está prohibido su uso para cualquier otro objetivo. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{system_8cpp_a770a82aa088cc5f518583eea49f0fc33}\label{system_8cpp_a770a82aa088cc5f518583eea49f0fc33}} 
+\index{system.cpp@{system.cpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!system.cpp@{system.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily std\+::istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{system_8hpp_ae8fe7fc2fe46fe58abdc9cfd99f179bb}{Log}} \&}]{log }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Load the log from an stream. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error(\char`\"{}\+Wrong} & input format for log entry."{}) \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{system_8cpp_a5197d3ade7728875761eae04705d43d8}\label{system_8cpp_a5197d3ade7728875761eae04705d43d8}} 
+\index{system.cpp@{system.cpp}!System@{System}}
+\index{System@{System}!system.cpp@{system.cpp}}
+\doxysubsubsection{\texorpdfstring{System()}{System()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classOS}{OS}}\& System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The Operating System. 
+
+\begin{DoxyReturn}{Returns}
+a reference that can be used as entry point to the \mbox{\hyperlink{classOS}{OS}}. 
+\end{DoxyReturn}

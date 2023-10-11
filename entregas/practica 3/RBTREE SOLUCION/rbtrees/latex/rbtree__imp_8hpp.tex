@@ -1,0 +1,92 @@
+\hypertarget{rbtree__imp_8hpp}{}\doxysection{rbtree\+\_\+imp.\+hpp File Reference}
+\label{rbtree__imp_8hpp}\index{rbtree\_imp.hpp@{rbtree\_imp.hpp}}
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include \char`\"{}rbtree.\+hpp\char`\"{}}\newline
+Include dependency graph for rbtree\+\_\+imp.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\size\+\_\+t \mbox{\hyperlink{rbtree__imp_8hpp_aa41258ef8f4806a057240954d2b1b81e}{compute\+\_\+size}} (typename \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::Ref const \&tree)
+\begin{DoxyCompactList}\small\item\em Return the number of keys stored in the tree. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\int \mbox{\hyperlink{rbtree__imp_8hpp_a37e9e99d9a84facb7868284b129e2a8e}{compute\+\_\+height}} (typename \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::Ref const \&tree)
+\begin{DoxyCompactList}\small\item\em Return the tree\textquotesingle{}s height. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T , class Processor $>$ }\\bool \mbox{\hyperlink{rbtree__imp_8hpp_abce067fe303d81b1c1c034baab5232af}{infix\+\_\+process}} (typename \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::Ref node, Processor \&p)
+\begin{DoxyCompactList}\small\item\em infix process of a node. The Processor must allow to be used as a function with a parameter (the item to be processed) and returning true if the process must continue or false if not. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{rbtree__imp_8hpp_a6cff5a306541e8f6dd2065368847a5cb}\label{rbtree__imp_8hpp_a6cff5a306541e8f6dd2065368847a5cb}} 
+{\footnotesize template$<$class T $>$ }\\std\+::tuple$<$ size\+\_\+t, size\+\_\+t $>$ {\bfseries compute\+\_\+min\+\_\+max\+\_\+branch\+\_\+length} (typename \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::Ref tree)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Copy\+Right F. J. Madrid-\/\+Cuevas \href{mailto:fjmadrid@uco.es}{\texttt{ fjmadrid@uco.\+es}}
+
+Sólo se permite el uso de este código en la docencia de las asignaturas sobre Estructuras de Datos de la Universidad de Córdoba.
+
+Está prohibido su uso para cualquier otro objetivo. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{rbtree__imp_8hpp_a37e9e99d9a84facb7868284b129e2a8e}\label{rbtree__imp_8hpp_a37e9e99d9a84facb7868284b129e2a8e}} 
+\index{rbtree\_imp.hpp@{rbtree\_imp.hpp}!compute\_height@{compute\_height}}
+\index{compute\_height@{compute\_height}!rbtree\_imp.hpp@{rbtree\_imp.hpp}}
+\doxysubsubsection{\texorpdfstring{compute\_height()}{compute\_height()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int compute\+\_\+height (\begin{DoxyParamCaption}\item[{typename \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::Ref const \&}]{tree }\end{DoxyParamCaption})}
+
+
+
+Return the tree\textquotesingle{}s height. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & is the tree. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the tree\textquotesingle{}s height. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{rbtree__imp_8hpp_aa41258ef8f4806a057240954d2b1b81e}\label{rbtree__imp_8hpp_aa41258ef8f4806a057240954d2b1b81e}} 
+\index{rbtree\_imp.hpp@{rbtree\_imp.hpp}!compute\_size@{compute\_size}}
+\index{compute\_size@{compute\_size}!rbtree\_imp.hpp@{rbtree\_imp.hpp}}
+\doxysubsubsection{\texorpdfstring{compute\_size()}{compute\_size()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+size\+\_\+t compute\+\_\+size (\begin{DoxyParamCaption}\item[{typename \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::Ref const \&}]{tree }\end{DoxyParamCaption})}
+
+
+
+Return the number of keys stored in the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & is the tree. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the tree\textquotesingle{}s size. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{rbtree__imp_8hpp_abce067fe303d81b1c1c034baab5232af}\label{rbtree__imp_8hpp_abce067fe303d81b1c1c034baab5232af}} 
+\index{rbtree\_imp.hpp@{rbtree\_imp.hpp}!infix\_process@{infix\_process}}
+\index{infix\_process@{infix\_process}!rbtree\_imp.hpp@{rbtree\_imp.hpp}}
+\doxysubsubsection{\texorpdfstring{infix\_process()}{infix\_process()}}
+{\footnotesize\ttfamily template$<$class T , class Processor $>$ \\
+bool infix\+\_\+process (\begin{DoxyParamCaption}\item[{typename \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::Ref}]{node,  }\item[{Processor \&}]{p }\end{DoxyParamCaption})}
+
+
+
+infix process of a node. The Processor must allow to be used as a function with a parameter (the item to be processed) and returning true if the process must continue or false if not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & is the node to be processed. \\
+\hline
+{\em p} & is the Processor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if all the tree was in-\/fix processed. 
+\end{DoxyReturn}

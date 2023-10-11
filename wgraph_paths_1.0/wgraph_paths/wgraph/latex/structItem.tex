@@ -1,0 +1,75 @@
+\hypertarget{structItem}{}\doxysection{Item$<$ T, Key $>$ Struct Template Reference}
+\label{structItem}\index{Item$<$ T, Key $>$@{Item$<$ T, Key $>$}}
+
+
+The a data \mbox{\hyperlink{structItem}{Item}}\mbox{[}G\mbox{]} ADT.  
+
+
+
+
+{\ttfamily \#include $<$item.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structItem_a85d37c8906b4142c25fc59f2be2d5a31}\label{structItem_a85d37c8906b4142c25fc59f2be2d5a31}} 
+typedef Key {\bfseries key\+\_\+t}
+\item 
+\mbox{\Hypertarget{structItem_a834f30938095c875a35433b445060104}\label{structItem_a834f30938095c875a35433b445060104}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structItem}{Item}}$<$ T, Key $>$ $>$ {\bfseries Ref}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structItem_a41ba7cf228655ebe4135ed2a543ddbe3}\label{structItem_a41ba7cf228655ebe4135ed2a543ddbe3}} 
+{\bfseries Item} (const T \&v)
+\item 
+key\+\_\+t \mbox{\hyperlink{structItem_a600103cf0b2c681a94c443a5cb5ff37b}{key}} () const
+\begin{DoxyCompactList}\small\item\em Template specialization to get the city\textquotesingle{}s key. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structItem_abf854b9ffeb748447f5e87367d4f1a36}\label{structItem_abf854b9ffeb748447f5e87367d4f1a36}} 
+bool {\bfseries operator==} (const key\+\_\+t \&k) const
+\item 
+\mbox{\Hypertarget{structItem_a5691dcbd16cf5c2bf44d94369ecfef53}\label{structItem_a5691dcbd16cf5c2bf44d94369ecfef53}} 
+bool {\bfseries operator$<$} (const key\+\_\+t \&k) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structItem_a658083cd60c94206001b208422cec7cb}\label{structItem_a658083cd60c94206001b208422cec7cb}} 
+static Ref {\bfseries create} (const T \&v)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structItem_a52ffd8bdf26b57a2717a11303a0a0146}\label{structItem_a52ffd8bdf26b57a2717a11303a0a0146}} 
+T {\bfseries data\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T, class Key$>$\newline
+struct Item$<$ T, Key $>$}
+
+The a data \mbox{\hyperlink{structItem}{Item}}\mbox{[}G\mbox{]} ADT. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structItem_a600103cf0b2c681a94c443a5cb5ff37b}\label{structItem_a600103cf0b2c681a94c443a5cb5ff37b}} 
+\index{Item$<$ T, Key $>$@{Item$<$ T, Key $>$}!key@{key}}
+\index{key@{key}!Item$<$ T, Key $>$@{Item$<$ T, Key $>$}}
+\doxysubsubsection{\texorpdfstring{key()}{key()}}
+{\footnotesize\ttfamily std\+::string City\+::key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Template specialization to get the city\textquotesingle{}s key. 
+
+\begin{DoxyReturn}{Returns}
+the key. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{item_8hpp}{item.\+hpp}}\item 
+\mbox{\hyperlink{city_8cpp}{city.\+cpp}}\item 
+\mbox{\hyperlink{city_8hpp}{city.\+hpp}}\end{DoxyCompactItemize}

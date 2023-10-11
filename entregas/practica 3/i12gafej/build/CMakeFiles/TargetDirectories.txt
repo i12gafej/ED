@@ -1,0 +1,4 @@
+/home/yabiel/Documents/ED/entregas/practica 3/i12gafej/build/CMakeFiles/test_bstree.dir
+/home/yabiel/Documents/ED/entregas/practica 3/i12gafej/build/CMakeFiles/test_rbtree.dir
+/home/yabiel/Documents/ED/entregas/practica 3/i12gafej/build/CMakeFiles/edit_cache.dir
+/home/yabiel/Documents/ED/entregas/practica 3/i12gafej/build/CMakeFiles/rebuild_cache.dir

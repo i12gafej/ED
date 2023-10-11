@@ -1,0 +1,48 @@
+\hypertarget{item_8hpp}{}\doxysection{item.\+hpp File Reference}
+\label{item_8hpp}\index{item.hpp@{item.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+Include dependency graph for item.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structItem}{Item$<$ T, Key $>$}}
+\begin{DoxyCompactList}\small\item\em The a data \mbox{\hyperlink{structItem}{Item}}\mbox{[}G\mbox{]} ADT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{item_8hpp_aa0344d3db52f885b8e2d8373ce388b35}\label{item_8hpp_aa0344d3db52f885b8e2d8373ce388b35}} 
+typedef \mbox{\hyperlink{structItem}{Item}}$<$ char, char $>$ {\bfseries Char}
+\item 
+\mbox{\Hypertarget{item_8hpp_a4705c8647eafbf80bddcdf4de19559ee}\label{item_8hpp_a4705c8647eafbf80bddcdf4de19559ee}} 
+typedef \mbox{\hyperlink{structItem}{Item}}$<$ std\+::string, std\+::string $>$ {\bfseries String}
+\item 
+\mbox{\Hypertarget{item_8hpp_a42d79cb6cb238f46d624cb6c45d78b4b}\label{item_8hpp_a42d79cb6cb238f46d624cb6c45d78b4b}} 
+typedef \mbox{\hyperlink{structItem}{Item}}$<$ int, int $>$ {\bfseries Int}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{item_8hpp_a72c3c739a0ce3f2fab4b2bbfc53fa095}\label{item_8hpp_a72c3c739a0ce3f2fab4b2bbfc53fa095}} 
+{\footnotesize template$<$class T , class Key $>$ }\\std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&out, const \mbox{\hyperlink{structItem}{Item}}$<$ T, Key $>$ \&v)
+\item 
+\mbox{\Hypertarget{item_8hpp_ac33217f2016efbe291ff0d302f77351d}\label{item_8hpp_ac33217f2016efbe291ff0d302f77351d}} 
+{\footnotesize template$<$class T , class Key $>$ }\\std\+::istream \& {\bfseries operator$>$$>$} (std\+::istream \&in, \mbox{\hyperlink{structItem}{Item}}$<$ T, Key $>$ \&v)
+\item 
+\mbox{\Hypertarget{item_8hpp_a1121de153c5bcb160da5b5afc06ea536}\label{item_8hpp_a1121de153c5bcb160da5b5afc06ea536}} 
+{\footnotesize template$<$class T , class Key $>$ }\\bool {\bfseries operator==} (\mbox{\hyperlink{structItem}{Item}}$<$ T, Key $>$ const \&a, \mbox{\hyperlink{structItem}{Item}}$<$ T, Key $>$ const \&b)
+\item 
+\mbox{\Hypertarget{item_8hpp_aa8f983e6d8df570b9f54161bcf9d87ec}\label{item_8hpp_aa8f983e6d8df570b9f54161bcf9d87ec}} 
+{\footnotesize template$<$class T , class Key $>$ }\\bool {\bfseries operator$<$=} (\mbox{\hyperlink{structItem}{Item}}$<$ T, Key $>$ const \&a, \mbox{\hyperlink{structItem}{Item}}$<$ T, Key $>$ const \&b)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Copy\+Right F. J. Madrid-\/\+Cuevas \href{mailto:fjmadrid@uco.es}{\texttt{ fjmadrid@uco.\+es}}
+
+Sólo se permite el uso de este código en la docencia de las asignaturas sobre Estructuras de Datos de la Universidad de Córdoba.
+
+Está prohibido su uso para cualquier otro objetivo. 

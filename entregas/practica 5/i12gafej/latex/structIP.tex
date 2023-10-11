@@ -1,0 +1,48 @@
+\hypertarget{structIP}{}\doxysection{IP Struct Reference}
+\label{structIP}\index{IP@{IP}}
+
+
+Represent a IPv4 address.  
+
+
+
+
+{\ttfamily \#include $<$ip\+\_\+utils.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structIP_ad69b5bf1da25bbb6f7674eeae80e4058}\label{structIP_ad69b5bf1da25bbb6f7674eeae80e4058}} 
+\mbox{\hyperlink{structIP_ad69b5bf1da25bbb6f7674eeae80e4058}{IP}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structIP_a30fa1c30fea060d0a267cc0b9edfc8ca}\label{structIP_a30fa1c30fea060d0a267cc0b9edfc8ca}} 
+\mbox{\hyperlink{structIP_a30fa1c30fea060d0a267cc0b9edfc8ca}{IP}} (std\+::uint8\+\_\+t a, std\+::uint8\+\_\+t b, std\+::uint8\+\_\+t c, std\+::uint8\+\_\+t d)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structIP_a9ab36a191fee9c3e99048887998af70d}\label{structIP_a9ab36a191fee9c3e99048887998af70d}} 
+bool \mbox{\hyperlink{structIP_a9ab36a191fee9c3e99048887998af70d}{operator==}} (\mbox{\hyperlink{structIP}{IP}} const \&b) const
+\begin{DoxyCompactList}\small\item\em Is b ip address b equal to this?. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structIP_af387704ef333a917823d18d25b9080a9}\label{structIP_af387704ef333a917823d18d25b9080a9}} 
+bool \mbox{\hyperlink{structIP_af387704ef333a917823d18d25b9080a9}{operator$<$}} (\mbox{\hyperlink{structIP}{IP}} const \&b) const
+\begin{DoxyCompactList}\small\item\em Is b ip address b less than this? A lexicographical order is check. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::array$<$ std\+::uint8\+\_\+t, 4 $>$ \mbox{\hyperlink{structIP_a5a0c21a4d2d87e8f5665e93d897d5cbf}{bytes}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represent a IPv4 address. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structIP_a5a0c21a4d2d87e8f5665e93d897d5cbf}\label{structIP_a5a0c21a4d2d87e8f5665e93d897d5cbf}} 
+\index{IP@{IP}!bytes@{bytes}}
+\index{bytes@{bytes}!IP@{IP}}
+\doxysubsubsection{\texorpdfstring{bytes}{bytes}}
+{\footnotesize\ttfamily std\+::array$<$std\+::uint8\+\_\+t, 4$>$ IP\+::bytes}
+
+The ip bytes so 150.\+214.\+110.\+3 are bytes\mbox{[}0\mbox{]}=150, bytes\mbox{[}1\mbox{]}=214, bytes\mbox{[}2\mbox{]}=110, bytes\mbox{[}3\mbox{]}=3 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ip__utils_8hpp}{ip\+\_\+utils.\+hpp}}\end{DoxyCompactItemize}

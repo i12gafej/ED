@@ -1,0 +1,1 @@
+/usr/bin/g++ -Wall -O0 -ggdb3 -rdynamic CMakeFiles/test_wgraph.dir/test_wgraph.cpp.o -o test_wgraph  libwgraph.a 

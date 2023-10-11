@@ -1,0 +1,47 @@
+\hypertarget{city_8cpp}{}\doxysection{city.\+cpp File Reference}
+\label{city_8cpp}\index{city.cpp@{city.cpp}}
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include \char`\"{}city.\+hpp\char`\"{}}\newline
+Include dependency graph for city.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{city_8cpp_af9fdf13dac75116baf2fc224cbe1bddb}\label{city_8cpp_af9fdf13dac75116baf2fc224cbe1bddb}} 
+double \mbox{\hyperlink{city_8cpp_af9fdf13dac75116baf2fc224cbe1bddb}{distance}} (const \mbox{\hyperlink{city_8hpp_ad67b53c55939a6bad9766bcf0953b28e}{City}} \&s, const \mbox{\hyperlink{city_8hpp_ad67b53c55939a6bad9766bcf0953b28e}{City}} \&d)
+\begin{DoxyCompactList}\small\item\em Compute the the distance between two cities given their locations. \end{DoxyCompactList}\item 
+std\+::istream \& \mbox{\hyperlink{city_8cpp_a774ae964eb29868cdd0fc29c1dccb965}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{structCity__data}{City\+\_\+data}} \&city)
+\begin{DoxyCompactList}\small\item\em unfold a city\textquotesingle{}s data from an input stream. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{city_8cpp_aba6574c9c9d13d1fb4992a47b76fc1ab}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{structCity__data}{City\+\_\+data}} \&city)
+\begin{DoxyCompactList}\small\item\em fold a City to an output stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Copy\+Right F. J. Madrid-\/\+Cuevas \href{mailto:fjmadrid@uco.es}{\texttt{ fjmadrid@uco.\+es}}
+
+Sólo se permite el uso de este código en la docencia de las asignaturas sobre Estructuras de Datos de la Universidad de Córdoba.
+
+Está prohibido su uso para cualquier otro objetivo. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{city_8cpp_aba6574c9c9d13d1fb4992a47b76fc1ab}\label{city_8cpp_aba6574c9c9d13d1fb4992a47b76fc1ab}} 
+\index{city.cpp@{city.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!city.cpp@{city.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{const \mbox{\hyperlink{structCity__data}{City\+\_\+data}} \&}]{city }\end{DoxyParamCaption})}
+
+
+
+fold a City to an output stream. 
+
+Fold the city data. \mbox{\Hypertarget{city_8cpp_a774ae964eb29868cdd0fc29c1dccb965}\label{city_8cpp_a774ae964eb29868cdd0fc29c1dccb965}} 
+\index{city.cpp@{city.cpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!city.cpp@{city.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily std\+::istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{structCity__data}{City\+\_\+data}} \&}]{city }\end{DoxyParamCaption})}
+
+
+
+unfold a city\textquotesingle{}s data from an input stream. 
+
+Unfold the city\textquotesingle{}s data from an input stream. 

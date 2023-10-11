@@ -1,0 +1,336 @@
+\hypertarget{classHashTable}{}\doxysection{Hash\+Table$<$ K, V, Key\+To\+Int $>$ Class Template Reference}
+\label{classHashTable}\index{HashTable$<$ K, V, KeyToInt $>$@{HashTable$<$ K, V, KeyToInt $>$}}
+
+
+Implement the \mbox{\hyperlink{classHashTable}{Hash\+Table}}\mbox{[}K,V\mbox{]} ADT.  
+
+
+
+
+{\ttfamily \#include $<$hash\+\_\+table.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHashTable_a7f7e719656521247c622d4d7027c45cc}\label{classHashTable_a7f7e719656521247c622d4d7027c45cc}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classHashTable}{Hash\+Table}}$<$ K, V, Key\+To\+Int $>$ $>$ \mbox{\hyperlink{classHashTable_a7f7e719656521247c622d4d7027c45cc}{Ref}}
+\begin{DoxyCompactList}\small\item\em A reference to a hash table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Observers}\par
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classHashTable_a295894dcfe3db25adf6e3002ee2b80be}{size}} () const
+\begin{DoxyCompactList}\small\item\em Get the table size. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classHashTable_a02f430a8d371ecf5ba92878c7580b65e}{load\+\_\+factor}} () const
+\begin{DoxyCompactList}\small\item\em Return the load factor of the table. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classHashTable_a3ebf95304763b58bedfcd081da81b35b}{has}} (K const \&k) const
+\begin{DoxyCompactList}\small\item\em Has the table this key? \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classHashTable_a8374994e0f32e1c475ce5f7cfe28a47a}{is\+\_\+valid}} () const
+\begin{DoxyCompactList}\small\item\em is the cursor at a valid position? \end{DoxyCompactList}\item 
+K \mbox{\hyperlink{classHashTable_a84c27b5f3edef988c56a3ebea01e6686}{get\+\_\+key}} () const
+\begin{DoxyCompactList}\small\item\em Get the key at cursor. \end{DoxyCompactList}\item 
+V \mbox{\hyperlink{classHashTable_a295f8c714179873c5af2e881c1f93e53}{get\+\_\+value}} () const
+\begin{DoxyCompactList}\small\item\em Get tha value at cursor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Modifiers}\par
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classHashTable_acdffe8a70d2676cc72cd5abe321df3da}{find}} (K const \&k)
+\begin{DoxyCompactList}\small\item\em Find a key value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHashTable_adc6bd349abd2a07b5966d00dab19da1d}{insert}} (K const \&k, V const \&v)
+\begin{DoxyCompactList}\small\item\em Insert a new entry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHashTable_a6ef9e7af0d66bc91e0ba96cfac046f24}{remove}} ()
+\begin{DoxyCompactList}\small\item\em Remove the entry at the cursor position. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHashTable_a8fae4d7934f964f9c7de0e0dd160ee9c}\label{classHashTable_a8fae4d7934f964f9c7de0e0dd160ee9c}} 
+void \mbox{\hyperlink{classHashTable_a8fae4d7934f964f9c7de0e0dd160ee9c}{set\+\_\+value}} (const V \&v)
+\begin{DoxyCompactList}\small\item\em Set the value of the entry at the cursor position. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHashTable_a1de0c8bbc52d8316a8f8a4eac90b944a}\label{classHashTable_a1de0c8bbc52d8316a8f8a4eac90b944a}} 
+void \mbox{\hyperlink{classHashTable_a1de0c8bbc52d8316a8f8a4eac90b944a}{goto\+\_\+begin}} ()
+\begin{DoxyCompactList}\small\item\em Move the cursor to the first valid entry if there is. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHashTable_ad13a13561e6e5e8234cca8db63186f01}\label{classHashTable_ad13a13561e6e5e8234cca8db63186f01}} 
+void \mbox{\hyperlink{classHashTable_ad13a13561e6e5e8234cca8db63186f01}{goto\+\_\+next}} ()
+\begin{DoxyCompactList}\small\item\em Move the cursor to next valid position if there is. @prec \mbox{\hyperlink{classHashTable_a8374994e0f32e1c475ce5f7cfe28a47a}{is\+\_\+valid()}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHashTable_ac9049880547af0438c351e45382ba255}\label{classHashTable_ac9049880547af0438c351e45382ba255}} 
+typedef std\+::vector$<$ \mbox{\hyperlink{classHashTableEntry}{Hash\+Table\+Entry}}$<$ K, V $>$ $>$ {\bfseries table\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classHashTable_a595a6d9a0d4db5ac335178bf3425c8d7}{rehash}} ()
+\begin{DoxyCompactList}\small\item\em Generate a new table with doble size when load factor $>$ 0.\+5. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHashTable_a802c2256ad106cd0dc89744a2e52a237}\label{classHashTable_a802c2256ad106cd0dc89744a2e52a237}} 
+Key\+To\+Int\+::\+Ref {\bfseries key\+\_\+to\+\_\+int\+\_\+}
+\item 
+\mbox{\Hypertarget{classHashTable_a49adb264bea73b2d4946610cb6bfc4f3}\label{classHashTable_a49adb264bea73b2d4946610cb6bfc4f3}} 
+\mbox{\hyperlink{classOACollisionResolution_ae41ff03a5958c5c360b8342ff29a0713}{OACollision\+Resolution\+::\+Ref}} {\bfseries hash\+\_\+}
+\item 
+\mbox{\Hypertarget{classHashTable_a5e7b3ee51d9a88a8a5289a4bd098d672}\label{classHashTable_a5e7b3ee51d9a88a8a5289a4bd098d672}} 
+std\+::shared\+\_\+ptr$<$ table\+\_\+t $>$ {\bfseries table\+\_\+}
+\item 
+\mbox{\Hypertarget{classHashTable_a5342ab2fe510dbaa35fb4fac9cc5cddd}\label{classHashTable_a5342ab2fe510dbaa35fb4fac9cc5cddd}} 
+size\+\_\+t {\bfseries curr\+\_\+}
+\item 
+\mbox{\Hypertarget{classHashTable_a13adc9274f96aeea0c0f2d9a5819f3fc}\label{classHashTable_a13adc9274f96aeea0c0f2d9a5819f3fc}} 
+size\+\_\+t {\bfseries used\+\_\+entries\+\_\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Life cicle.}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHashTable_a4c8abc5c515e5bd81497f5d38aa929e7}{Hash\+Table}} (size\+\_\+t m, typename Key\+To\+Int\+::\+Ref key\+\_\+to\+\_\+int, \mbox{\hyperlink{classOACollisionResolution_ae41ff03a5958c5c360b8342ff29a0713}{OACollision\+Resolution\+::\+Ref}} hash)
+\begin{DoxyCompactList}\small\item\em Create a new \mbox{\hyperlink{classHashTable}{Hash\+Table}}. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classHashTable_a7f7e719656521247c622d4d7027c45cc}{Ref}} \mbox{\hyperlink{classHashTable_a181cea40aa85a975b6dfe84de11df98f}{create}} (size\+\_\+t m, typename Key\+To\+Int\+::\+Ref key\+\_\+to\+\_\+int, \mbox{\hyperlink{classOACollisionResolution_ae41ff03a5958c5c360b8342ff29a0713}{OACollision\+Resolution\+::\+Ref}} hash)
+\begin{DoxyCompactList}\small\item\em Virtual constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class K, class V, class Key\+To\+Int$>$\newline
+class Hash\+Table$<$ K, V, Key\+To\+Int $>$}
+
+Implement the \mbox{\hyperlink{classHashTable}{Hash\+Table}}\mbox{[}K,V\mbox{]} ADT. 
+
+The template parameter key\+To\+Int is a functional to transform values of type K into size\+\_\+t. It must implement the interface\+: std\+::uint64\+\_\+t operator()(\+K const\&k)
+
+\begin{DoxyInvariant}{Invariant}
+\mbox{\hyperlink{classHashTable_a02f430a8d371ecf5ba92878c7580b65e}{load\+\_\+factor()}} $<$= 0.\+5 
+\end{DoxyInvariant}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHashTable_a4c8abc5c515e5bd81497f5d38aa929e7}\label{classHashTable_a4c8abc5c515e5bd81497f5d38aa929e7}} 
+\index{HashTable$<$ K, V, KeyToInt $>$@{HashTable$<$ K, V, KeyToInt $>$}!HashTable@{HashTable}}
+\index{HashTable@{HashTable}!HashTable$<$ K, V, KeyToInt $>$@{HashTable$<$ K, V, KeyToInt $>$}}
+\doxysubsubsection{\texorpdfstring{HashTable()}{HashTable()}}
+{\footnotesize\ttfamily template$<$class K , class V , class Key\+To\+Int $>$ \\
+\mbox{\hyperlink{classHashTable}{Hash\+Table}}$<$ K, V, Key\+To\+Int $>$\+::\mbox{\hyperlink{classHashTable}{Hash\+Table}} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{m,  }\item[{typename Key\+To\+Int\+::\+Ref}]{key\+\_\+to\+\_\+int,  }\item[{\mbox{\hyperlink{classOACollisionResolution_ae41ff03a5958c5c360b8342ff29a0713}{OACollision\+Resolution\+::\+Ref}}}]{hash }\end{DoxyParamCaption})}
+
+
+
+Create a new \mbox{\hyperlink{classHashTable}{Hash\+Table}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & is the table size. \\
+\hline
+{\em key\+\_\+to\+\_\+int} & is the converter from key values to int value. \\
+\hline
+{\em hash} & is the hash function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+not \mbox{\hyperlink{classHashTable_a8374994e0f32e1c475ce5f7cfe28a47a}{is\+\_\+valid()}} 
+
+\mbox{\hyperlink{classHashTable_a295894dcfe3db25adf6e3002ee2b80be}{size()}}==m 
+\end{DoxyPostcond}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHashTable_a181cea40aa85a975b6dfe84de11df98f}\label{classHashTable_a181cea40aa85a975b6dfe84de11df98f}} 
+\index{HashTable$<$ K, V, KeyToInt $>$@{HashTable$<$ K, V, KeyToInt $>$}!create@{create}}
+\index{create@{create}!HashTable$<$ K, V, KeyToInt $>$@{HashTable$<$ K, V, KeyToInt $>$}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily template$<$class K , class V , class Key\+To\+Int $>$ \\
+\mbox{\hyperlink{classHashTable}{Hash\+Table}}$<$ K, V, Key\+To\+Int $>$\+::\mbox{\hyperlink{classHashTable_a7f7e719656521247c622d4d7027c45cc}{Ref}} \mbox{\hyperlink{classHashTable}{Hash\+Table}}$<$ K, V, Key\+To\+Int $>$\+::create (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{m,  }\item[{typename Key\+To\+Int\+::\+Ref}]{key\+\_\+to\+\_\+int,  }\item[{\mbox{\hyperlink{classOACollisionResolution_ae41ff03a5958c5c360b8342ff29a0713}{OACollision\+Resolution\+::\+Ref}}}]{hash }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Virtual constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & is the table size. \\
+\hline
+{\em key\+\_\+to\+\_\+int} & is the converter from key values to int value. \\
+\hline
+{\em hash} & is a reference to the hash function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+is\+\_\+empty() 
+
+not \mbox{\hyperlink{classHashTable_a8374994e0f32e1c475ce5f7cfe28a47a}{is\+\_\+valid()}} 
+
+\mbox{\hyperlink{classHashTable_a295894dcfe3db25adf6e3002ee2b80be}{size()}}==m 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classHashTable_acdffe8a70d2676cc72cd5abe321df3da}\label{classHashTable_acdffe8a70d2676cc72cd5abe321df3da}} 
+\index{HashTable$<$ K, V, KeyToInt $>$@{HashTable$<$ K, V, KeyToInt $>$}!find@{find}}
+\index{find@{find}!HashTable$<$ K, V, KeyToInt $>$@{HashTable$<$ K, V, KeyToInt $>$}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily template$<$class K , class V , class Key\+To\+Int $>$ \\
+bool \mbox{\hyperlink{classHashTable}{Hash\+Table}}$<$ K, V, Key\+To\+Int $>$\+::find (\begin{DoxyParamCaption}\item[{K const \&}]{k }\end{DoxyParamCaption})}
+
+
+
+Find a key value. 
+
+\begin{DoxyReturn}{Returns}
+true if the key is found. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+!is\+\_\+valid() or \mbox{\hyperlink{classHashTable_a84c27b5f3edef988c56a3ebea01e6686}{get\+\_\+key()}}==k 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classHashTable_a84c27b5f3edef988c56a3ebea01e6686}\label{classHashTable_a84c27b5f3edef988c56a3ebea01e6686}} 
+\index{HashTable$<$ K, V, KeyToInt $>$@{HashTable$<$ K, V, KeyToInt $>$}!get\_key@{get\_key}}
+\index{get\_key@{get\_key}!HashTable$<$ K, V, KeyToInt $>$@{HashTable$<$ K, V, KeyToInt $>$}}
+\doxysubsubsection{\texorpdfstring{get\_key()}{get\_key()}}
+{\footnotesize\ttfamily template$<$class K , class V , class Key\+To\+Int $>$ \\
+K \mbox{\hyperlink{classHashTable}{Hash\+Table}}$<$ K, V, Key\+To\+Int $>$\+::get\+\_\+key}
+
+
+
+Get the key at cursor. 
+
+\begin{DoxyReturn}{Returns}
+return the key of the cursor. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{classHashTable_a8374994e0f32e1c475ce5f7cfe28a47a}{is\+\_\+valid()}} 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classHashTable_a295f8c714179873c5af2e881c1f93e53}\label{classHashTable_a295f8c714179873c5af2e881c1f93e53}} 
+\index{HashTable$<$ K, V, KeyToInt $>$@{HashTable$<$ K, V, KeyToInt $>$}!get\_value@{get\_value}}
+\index{get\_value@{get\_value}!HashTable$<$ K, V, KeyToInt $>$@{HashTable$<$ K, V, KeyToInt $>$}}
+\doxysubsubsection{\texorpdfstring{get\_value()}{get\_value()}}
+{\footnotesize\ttfamily template$<$class K , class V , class Key\+To\+Int $>$ \\
+V \mbox{\hyperlink{classHashTable}{Hash\+Table}}$<$ K, V, Key\+To\+Int $>$\+::get\+\_\+value}
+
+
+
+Get tha value at cursor. 
+
+\begin{DoxyReturn}{Returns}
+return the value of the cursor. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{classHashTable_a8374994e0f32e1c475ce5f7cfe28a47a}{is\+\_\+valid()}} 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classHashTable_a3ebf95304763b58bedfcd081da81b35b}\label{classHashTable_a3ebf95304763b58bedfcd081da81b35b}} 
+\index{HashTable$<$ K, V, KeyToInt $>$@{HashTable$<$ K, V, KeyToInt $>$}!has@{has}}
+\index{has@{has}!HashTable$<$ K, V, KeyToInt $>$@{HashTable$<$ K, V, KeyToInt $>$}}
+\doxysubsubsection{\texorpdfstring{has()}{has()}}
+{\footnotesize\ttfamily template$<$class K , class V , class Key\+To\+Int $>$ \\
+bool \mbox{\hyperlink{classHashTable}{Hash\+Table}}$<$ K, V, Key\+To\+Int $>$\+::has (\begin{DoxyParamCaption}\item[{K const \&}]{k }\end{DoxyParamCaption}) const}
+
+
+
+Has the table this key? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em k} & the key to find. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the key is saved into the table. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+The cursor is not affected by this operation. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classHashTable_adc6bd349abd2a07b5966d00dab19da1d}\label{classHashTable_adc6bd349abd2a07b5966d00dab19da1d}} 
+\index{HashTable$<$ K, V, KeyToInt $>$@{HashTable$<$ K, V, KeyToInt $>$}!insert@{insert}}
+\index{insert@{insert}!HashTable$<$ K, V, KeyToInt $>$@{HashTable$<$ K, V, KeyToInt $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily template$<$class K , class V , class Key\+To\+Int $>$ \\
+void \mbox{\hyperlink{classHashTable}{Hash\+Table}}$<$ K, V, Key\+To\+Int $>$\+::insert (\begin{DoxyParamCaption}\item[{K const \&}]{k,  }\item[{V const \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Insert a new entry. 
+
+If the key is currently in the table, the value is updated.
+
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{classHashTable_a8374994e0f32e1c475ce5f7cfe28a47a}{is\+\_\+valid()}} 
+
+\mbox{\hyperlink{classHashTable_a84c27b5f3edef988c56a3ebea01e6686}{get\+\_\+key()}}==k 
+
+\mbox{\hyperlink{classHashTable_a295f8c714179873c5af2e881c1f93e53}{get\+\_\+value()}}==v; 
+
+not old(has(k)) -\/$>$ num\+\_\+of\+\_\+valid\+\_\+keys() = old(num\+\_\+of\+\_\+valid\+\_\+keys())+1 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classHashTable_a8374994e0f32e1c475ce5f7cfe28a47a}\label{classHashTable_a8374994e0f32e1c475ce5f7cfe28a47a}} 
+\index{HashTable$<$ K, V, KeyToInt $>$@{HashTable$<$ K, V, KeyToInt $>$}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!HashTable$<$ K, V, KeyToInt $>$@{HashTable$<$ K, V, KeyToInt $>$}}
+\doxysubsubsection{\texorpdfstring{is\_valid()}{is\_valid()}}
+{\footnotesize\ttfamily template$<$class K , class V , class Key\+To\+Int $>$ \\
+bool \mbox{\hyperlink{classHashTable}{Hash\+Table}}$<$ K, V, Key\+To\+Int $>$\+::is\+\_\+valid}
+
+
+
+is the cursor at a valid position? 
+
+\begin{DoxyReturn}{Returns}
+true if the cursor is at a valid position. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHashTable_a02f430a8d371ecf5ba92878c7580b65e}\label{classHashTable_a02f430a8d371ecf5ba92878c7580b65e}} 
+\index{HashTable$<$ K, V, KeyToInt $>$@{HashTable$<$ K, V, KeyToInt $>$}!load\_factor@{load\_factor}}
+\index{load\_factor@{load\_factor}!HashTable$<$ K, V, KeyToInt $>$@{HashTable$<$ K, V, KeyToInt $>$}}
+\doxysubsubsection{\texorpdfstring{load\_factor()}{load\_factor()}}
+{\footnotesize\ttfamily template$<$class K , class V , class Key\+To\+Int $>$ \\
+float \mbox{\hyperlink{classHashTable}{Hash\+Table}}$<$ K, V, Key\+To\+Int $>$\+::load\+\_\+factor}
+
+
+
+Return the load factor of the table. 
+
+\begin{DoxyReturn}{Returns}
+the load factor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHashTable_a595a6d9a0d4db5ac335178bf3425c8d7}\label{classHashTable_a595a6d9a0d4db5ac335178bf3425c8d7}} 
+\index{HashTable$<$ K, V, KeyToInt $>$@{HashTable$<$ K, V, KeyToInt $>$}!rehash@{rehash}}
+\index{rehash@{rehash}!HashTable$<$ K, V, KeyToInt $>$@{HashTable$<$ K, V, KeyToInt $>$}}
+\doxysubsubsection{\texorpdfstring{rehash()}{rehash()}}
+{\footnotesize\ttfamily template$<$class K , class V , class Key\+To\+Int $>$ \\
+void \mbox{\hyperlink{classHashTable}{Hash\+Table}}$<$ K, V, Key\+To\+Int $>$\+::rehash\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Generate a new table with doble size when load factor $>$ 0.\+5. 
+
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{classHashTable_a02f430a8d371ecf5ba92878c7580b65e}{load\+\_\+factor()}}$<$=0.\+5 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classHashTable_a6ef9e7af0d66bc91e0ba96cfac046f24}\label{classHashTable_a6ef9e7af0d66bc91e0ba96cfac046f24}} 
+\index{HashTable$<$ K, V, KeyToInt $>$@{HashTable$<$ K, V, KeyToInt $>$}!remove@{remove}}
+\index{remove@{remove}!HashTable$<$ K, V, KeyToInt $>$@{HashTable$<$ K, V, KeyToInt $>$}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily template$<$class K , class V , class Key\+To\+Int $>$ \\
+void \mbox{\hyperlink{classHashTable}{Hash\+Table}}$<$ K, V, Key\+To\+Int $>$\+::remove}
+
+
+
+Remove the entry at the cursor position. 
+
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{classHashTable_a8374994e0f32e1c475ce5f7cfe28a47a}{is\+\_\+valid()}} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+!is\+\_\+valid() 
+
+!has(old.\+get\+\_\+key()) 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classHashTable_a295894dcfe3db25adf6e3002ee2b80be}\label{classHashTable_a295894dcfe3db25adf6e3002ee2b80be}} 
+\index{HashTable$<$ K, V, KeyToInt $>$@{HashTable$<$ K, V, KeyToInt $>$}!size@{size}}
+\index{size@{size}!HashTable$<$ K, V, KeyToInt $>$@{HashTable$<$ K, V, KeyToInt $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$class K , class V , class Key\+To\+Int $>$ \\
+size\+\_\+t \mbox{\hyperlink{classHashTable}{Hash\+Table}}$<$ K, V, Key\+To\+Int $>$\+::size}
+
+
+
+Get the table size. 
+
+\begin{DoxyReturn}{Returns}
+the size of the table. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{hash__table_8hpp}{hash\+\_\+table.\+hpp}}\item 
+\mbox{\hyperlink{hash__table__imp_8hpp}{hash\+\_\+table\+\_\+imp.\+hpp}}\end{DoxyCompactItemize}

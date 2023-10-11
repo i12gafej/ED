@@ -1,0 +1,82 @@
+\hypertarget{hash_8cpp}{}\doxysection{hash.\+cpp File Reference}
+\label{hash_8cpp}\index{hash.cpp@{hash.cpp}}
+{\ttfamily \#include \char`\"{}hash.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+Include dependency graph for hash.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{hash_8cpp_a30d1e43990eafb316df89c96cd213e6b}{uniform}} ()
+\begin{DoxyCompactList}\small\item\em Generate an uniform random number in \mbox{[}0.\+0, 1.\+0) interval. \end{DoxyCompactList}\item 
+std\+::uint64\+\_\+t \mbox{\hyperlink{hash_8cpp_a2f147a8cda351267a758d57ed39e316e}{pick\+\_\+at\+\_\+random}} (std\+::uint64\+\_\+t const \&a, std\+::uint64\+\_\+t const \&b)
+\begin{DoxyCompactList}\small\item\em pick at random a value from the integer range \mbox{[}a, b\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::minstd\+\_\+rand \mbox{\hyperlink{hash_8cpp_a5b952de4b694b54fa0b422f66b6e1f37}{Generator}}
+\begin{DoxyCompactList}\small\item\em Use this random bit generator to generate random numbers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Copy\+Right F. J. Madrid-\/\+Cuevas \href{mailto:fjmadrid@uco.es}{\texttt{ fjmadrid@uco.\+es}}
+
+Sólo se permite el uso de este código en la docencia de las asignaturas sobre Estructuras de Datos de la Universidad de Córdoba.
+
+Está prohibido su uso para cualquier otro objetivo. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{hash_8cpp_a2f147a8cda351267a758d57ed39e316e}\label{hash_8cpp_a2f147a8cda351267a758d57ed39e316e}} 
+\index{hash.cpp@{hash.cpp}!pick\_at\_random@{pick\_at\_random}}
+\index{pick\_at\_random@{pick\_at\_random}!hash.cpp@{hash.cpp}}
+\doxysubsubsection{\texorpdfstring{pick\_at\_random()}{pick\_at\_random()}}
+{\footnotesize\ttfamily std\+::uint64\+\_\+t pick\+\_\+at\+\_\+random (\begin{DoxyParamCaption}\item[{std\+::uint64\+\_\+t const \&}]{a,  }\item[{std\+::uint64\+\_\+t const \&}]{b }\end{DoxyParamCaption})}
+
+
+
+pick at random a value from the integer range \mbox{[}a, b\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is lower bound of the range (inclusive). \\
+\hline
+{\em b} & is upper bound of the range (exclusive). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the picked up value. @prec a$<$b 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+ret\+\_\+v in \mbox{[}a,b\mbox{]} 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{hash_8cpp_a30d1e43990eafb316df89c96cd213e6b}\label{hash_8cpp_a30d1e43990eafb316df89c96cd213e6b}} 
+\index{hash.cpp@{hash.cpp}!uniform@{uniform}}
+\index{uniform@{uniform}!hash.cpp@{hash.cpp}}
+\doxysubsubsection{\texorpdfstring{uniform()}{uniform()}}
+{\footnotesize\ttfamily double uniform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Generate an uniform random number in \mbox{[}0.\+0, 1.\+0) interval. 
+
+\begin{DoxyReturn}{Returns}
+the random number. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+ret\+\_\+v in \mbox{[}0.\+0, 1.\+0) 
+\end{DoxyPostcond}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{hash_8cpp_a5b952de4b694b54fa0b422f66b6e1f37}\label{hash_8cpp_a5b952de4b694b54fa0b422f66b6e1f37}} 
+\index{hash.cpp@{hash.cpp}!Generator@{Generator}}
+\index{Generator@{Generator}!hash.cpp@{hash.cpp}}
+\doxysubsubsection{\texorpdfstring{Generator}{Generator}}
+{\footnotesize\ttfamily std\+::minstd\+\_\+rand Generator}
+
+
+
+Use this random bit generator to generate random numbers. 
+
+Global object to generate random bits. 

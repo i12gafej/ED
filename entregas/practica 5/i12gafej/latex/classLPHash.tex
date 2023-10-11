@@ -1,0 +1,176 @@
+\hypertarget{classLPHash}{}\doxysection{LPHash Class Reference}
+\label{classLPHash}\index{LPHash@{LPHash}}
+
+
+Models an Universal Family hash function using linear probing to resolve collisions.  
+
+
+
+
+{\ttfamily \#include $<$hash.\+hpp$>$}
+
+
+
+Inheritance diagram for LPHash\+:
+% FIG 0
+
+
+Collaboration diagram for LPHash\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classLPHash_a33de72f623db64aa4340cf31309adb83}{operator()}} (std\+::uint64\+\_\+t k, size\+\_\+t iter=0) const override
+\begin{DoxyCompactList}\small\item\em hash a key with collision resolution. Hash the key to get a table index, giving alternatives for several probes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classOACollisionResolution_ae41ff03a5958c5c360b8342ff29a0713}{OACollision\+Resolution\+::\+Ref}} \mbox{\hyperlink{classLPHash_ad6aa86ffb5669da9b9869da8d37e74f5}{pick\+\_\+at\+\_\+new}} (std\+::uint64\+\_\+t new\+\_\+m) const override
+\begin{DoxyCompactList}\small\item\em Get a new version of the algorithm with a new table size choosing at random a new hash function. \end{DoxyCompactList}\item 
+std\+::uint64\+\_\+t \mbox{\hyperlink{classLPHash_a996d8d2ebc21ab1fb52c74c1d029067f}{m}} () const override
+\begin{DoxyCompactList}\small\item\em Return the cardinality of the hash function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} \mbox{\hyperlink{classLPHash_aea2376fd4de04676df278fb3c1e27700}{hash}} () const
+\begin{DoxyCompactList}\small\item\em Get the hash function used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLPHash_a81e4f3fd1f8c5115497671e411038e99}\label{classLPHash_a81e4f3fd1f8c5115497671e411038e99}} 
+\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} {\bfseries hash\+\_\+f\+\_\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Life cycle.}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLPHash_a053b150d670c11b331005874403b4b7e}{LPHash}} (\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} hash\+\_\+f)
+\begin{DoxyCompactList}\small\item\em Create picked at random the hash from Universal Family. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classOACollisionResolution_ae41ff03a5958c5c360b8342ff29a0713}{OACollision\+Resolution\+::\+Ref}} \mbox{\hyperlink{classLPHash_a3af608587940487722690fa024cf838b}{create}} (\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} hash\+\_\+f)
+\begin{DoxyCompactList}\small\item\em Create picked at random the hash from Universal Family. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Models an Universal Family hash function using linear probing to resolve collisions. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLPHash_a053b150d670c11b331005874403b4b7e}\label{classLPHash_a053b150d670c11b331005874403b4b7e}} 
+\index{LPHash@{LPHash}!LPHash@{LPHash}}
+\index{LPHash@{LPHash}!LPHash@{LPHash}}
+\doxysubsubsection{\texorpdfstring{LPHash()}{LPHash()}}
+{\footnotesize\ttfamily LPHash\+::\+LPHash (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}}}]{hash\+\_\+f }\end{DoxyParamCaption})}
+
+
+
+Create picked at random the hash from Universal Family. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hash\+\_\+f} & is the universal hash function used. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLPHash_a3af608587940487722690fa024cf838b}\label{classLPHash_a3af608587940487722690fa024cf838b}} 
+\index{LPHash@{LPHash}!create@{create}}
+\index{create@{create}!LPHash@{LPHash}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classOACollisionResolution_ae41ff03a5958c5c360b8342ff29a0713}{OACollision\+Resolution\+::\+Ref}} LPHash\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}}}]{hash\+\_\+f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create picked at random the hash from Universal Family. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hash\+\_\+f} & is the universal hash function used. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLPHash_aea2376fd4de04676df278fb3c1e27700}\label{classLPHash_aea2376fd4de04676df278fb3c1e27700}} 
+\index{LPHash@{LPHash}!hash@{hash}}
+\index{hash@{hash}!LPHash@{LPHash}}
+\doxysubsubsection{\texorpdfstring{hash()}{hash()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} LPHash\+::hash (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the hash function used. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} to the hash function. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLPHash_a996d8d2ebc21ab1fb52c74c1d029067f}\label{classLPHash_a996d8d2ebc21ab1fb52c74c1d029067f}} 
+\index{LPHash@{LPHash}!m@{m}}
+\index{m@{m}!LPHash@{LPHash}}
+\doxysubsubsection{\texorpdfstring{m()}{m()}}
+{\footnotesize\ttfamily std\+::uint64\+\_\+t LPHash\+::m (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Return the cardinality of the hash function. 
+
+\begin{DoxyReturn}{Returns}
+the cardinality of the hash function. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classOACollisionResolution_ad14c3995cccbe368f98c567fec5fac17}{OACollision\+Resolution}}.
+
+\mbox{\Hypertarget{classLPHash_a33de72f623db64aa4340cf31309adb83}\label{classLPHash_a33de72f623db64aa4340cf31309adb83}} 
+\index{LPHash@{LPHash}!operator()@{operator()}}
+\index{operator()@{operator()}!LPHash@{LPHash}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily size\+\_\+t LPHash\+::operator() (\begin{DoxyParamCaption}\item[{std\+::uint64\+\_\+t}]{k,  }\item[{size\+\_\+t}]{iter = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+hash a key with collision resolution. Hash the key to get a table index, giving alternatives for several probes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em k} & is the key to be hashed. \\
+\hline
+{\em iter} & is the number of probes generates upto now. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the table index. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+k$<$p() 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+iter==0 implies ret\+\_\+v is the universal hash function for integers. 
+
+iter$>$0 and ret\+\_\+v is the next value of the collision resolution algorithm. 
+\end{DoxyPostcond}
+
+
+Implements \mbox{\hyperlink{classOACollisionResolution_a16fe33a91672fe4f1cb695bbe4844d51}{OACollision\+Resolution}}.
+
+\mbox{\Hypertarget{classLPHash_ad6aa86ffb5669da9b9869da8d37e74f5}\label{classLPHash_ad6aa86ffb5669da9b9869da8d37e74f5}} 
+\index{LPHash@{LPHash}!pick\_at\_new@{pick\_at\_new}}
+\index{pick\_at\_new@{pick\_at\_new}!LPHash@{LPHash}}
+\doxysubsubsection{\texorpdfstring{pick\_at\_new()}{pick\_at\_new()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classOACollisionResolution_ae41ff03a5958c5c360b8342ff29a0713}{OACollision\+Resolution\+::\+Ref}} LPHash\+::pick\+\_\+at\+\_\+new (\begin{DoxyParamCaption}\item[{std\+::uint64\+\_\+t}]{new\+\_\+m }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get a new version of the algorithm with a new table size choosing at random a new hash function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+m} & is the new table size. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+new\+\_\+m is power of two greater than 1. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+a new version of the algorithm. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classOACollisionResolution_af82f0d098d11e35121679668bd02f092}{OACollision\+Resolution}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{hash_8hpp}{hash.\+hpp}}\item 
+\mbox{\hyperlink{hash_8cpp}{hash.\+cpp}}\end{DoxyCompactItemize}

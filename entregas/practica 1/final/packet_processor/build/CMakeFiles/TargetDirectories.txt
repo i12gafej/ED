@@ -1,0 +1,6 @@
+/home/yabiel/Documents/ED/entregas/practica 1/final/packet_processor/build/CMakeFiles/test_slist.dir
+/home/yabiel/Documents/ED/entregas/practica 1/final/packet_processor/build/CMakeFiles/test_stack.dir
+/home/yabiel/Documents/ED/entregas/practica 1/final/packet_processor/build/CMakeFiles/test_queue.dir
+/home/yabiel/Documents/ED/entregas/practica 1/final/packet_processor/build/CMakeFiles/test_packet_processor.dir
+/home/yabiel/Documents/ED/entregas/practica 1/final/packet_processor/build/CMakeFiles/edit_cache.dir
+/home/yabiel/Documents/ED/entregas/practica 1/final/packet_processor/build/CMakeFiles/rebuild_cache.dir

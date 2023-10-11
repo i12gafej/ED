@@ -1,0 +1,364 @@
+\hypertarget{classMatrix}{}\doxysection{Matrix$<$ T $>$ Class Template Reference}
+\label{classMatrix}\index{Matrix$<$ T $>$@{Matrix$<$ T $>$}}
+
+
+A matrix of scalar values.  
+
+
+
+
+{\ttfamily \#include $<$matrix.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMatrix_a86081140d8c1f043687455f8f549028c}\label{classMatrix_a86081140d8c1f043687455f8f549028c}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMatrix}{Matrix}}$<$ T $>$ $>$ \mbox{\hyperlink{classMatrix_a86081140d8c1f043687455f8f549028c}{Ref}}
+\begin{DoxyCompactList}\small\item\em a reference to a matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMatrix_a9d567e3a121b1be0c3f9c461cab524fe}\label{classMatrix_a9d567e3a121b1be0c3f9c461cab524fe}} 
+\mbox{\hyperlink{classMatrix_a9d567e3a121b1be0c3f9c461cab524fe}{Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Create an empty \mbox{\hyperlink{classMatrix}{Matrix}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMatrix_aafd8258dd256ecf752a31adf45fb138c}{Matrix}} (std\+::istream \&input) noexcept(false)
+\begin{DoxyCompactList}\small\item\em Unfold a matrix from a input stream. FORMAT \char`\"{}\mbox{[}$\,$\mbox{]}\char`\"{} if empty. \textquotesingle{}\mbox{[}\textquotesingle{} $<$rows$>$ $<$cols$>$ $<$rows x cols values of type T$>$ \textquotesingle{}\mbox{]}\textquotesingle{}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMatrix_a5ece830af3324fab6bb12dc5bc23c3ae}{Matrix}} (size\+\_\+t \mbox{\hyperlink{classMatrix_a5330adf02b284293259eb9f7c9acaa99}{rows}}, size\+\_\+t \mbox{\hyperlink{classMatrix_a26caef52a1b92f6665395a8ac21cee5b}{cols}}, const T fill\+\_\+v=T(0))
+\begin{DoxyCompactList}\small\item\em Create a matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMatrix_a523e1258ca515b86a23debba6661e649}{resize}} (size\+\_\+t \mbox{\hyperlink{classMatrix_a5330adf02b284293259eb9f7c9acaa99}{rows}}, size\+\_\+t \mbox{\hyperlink{classMatrix_a26caef52a1b92f6665395a8ac21cee5b}{cols}}, const T fill\+\_\+v=T(0))
+\begin{DoxyCompactList}\small\item\em resize the matrix to a new size \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classMatrix_a5330adf02b284293259eb9f7c9acaa99}{rows}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of rows. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classMatrix_a26caef52a1b92f6665395a8ac21cee5b}{cols}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of columns. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMatrix_ad3b21dc72c807c052616d110483638b8}{is\+\_\+empty}} () const
+\begin{DoxyCompactList}\small\item\em Is the matrix empty. \end{DoxyCompactList}\item 
+std\+::valarray$<$ T $>$ const  \& \mbox{\hyperlink{classMatrix_a3a52bebb2a1d3c68b977abae83194132}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t row) const
+\begin{DoxyCompactList}\small\item\em Gets a row vector. \end{DoxyCompactList}\item 
+std\+::valarray$<$ T $>$ \& \mbox{\hyperlink{classMatrix_ae9e43f623bc3fec0fc25bad8901d378d}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t row)
+\begin{DoxyCompactList}\small\item\em Gets a row vector. \end{DoxyCompactList}\item 
+const T \& \mbox{\hyperlink{classMatrix_a6c43b5e1a869cf5356d019186fa26259}{get}} (size\+\_\+t r, size\+\_\+t c) const
+\begin{DoxyCompactList}\small\item\em Get a matrix element. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMatrix_aa1c4e43367a8d9643dcd20455488cf4d}{set}} (size\+\_\+t r, size\+\_\+t c, const T \&v)
+\begin{DoxyCompactList}\small\item\em Set a matrix element. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{classMatrix_af6bae49e708be79b7b3787eb7822fec9}{fold}} (std\+::ostream \&out) const
+\begin{DoxyCompactList}\small\item\em Output the matrix to output stream. OUTPUT FORMAT \char`\"{}\mbox{[}$\,$\mbox{]}\char`\"{} if empty. \textquotesingle{}\mbox{[}\textquotesingle{} $<$rows$>$ $<$cols$>$ $<$rows x cols values of type T$>$ \textquotesingle{}\mbox{]}\textquotesingle{}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMatrix_a398bf18cb268772c30b330a26a2be71c}\label{classMatrix_a398bf18cb268772c30b330a26a2be71c}} 
+{\bfseries Matrix} (std\+::istream \&input) noexcept(false)
+\item 
+\mbox{\hyperlink{classMatrix_a398bf18cb268772c30b330a26a2be71c}{Matrix}} (std\+::istream \&input) noexcept(false)
+\begin{DoxyCompactList}\small\item\em Template specialization to load FMatrix from input stream. Allow matrix values \mbox{[}+$\vert$-\/\mbox{]}inf and \mbox{[}+$\vert$-\/\mbox{]}nan. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classMatrix_a86081140d8c1f043687455f8f549028c}{Ref}} \mbox{\hyperlink{classMatrix_a3673297a1bbbd3db8d7fc2a1448192a4}{create}} ()
+\begin{DoxyCompactList}\small\item\em Virtual constructor. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classMatrix_a86081140d8c1f043687455f8f549028c}{Ref}} \mbox{\hyperlink{classMatrix_a4ae408c3d78079d4d3885162303e17c8}{create}} (std\+::istream \&input) noexcept(false)
+\begin{DoxyCompactList}\small\item\em Virtual constructor. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classMatrix_a86081140d8c1f043687455f8f549028c}{Ref}} \mbox{\hyperlink{classMatrix_ae90622de625d7b15a091142321475c17}{create}} (size\+\_\+t \mbox{\hyperlink{classMatrix_a5330adf02b284293259eb9f7c9acaa99}{rows}}, size\+\_\+t \mbox{\hyperlink{classMatrix_a26caef52a1b92f6665395a8ac21cee5b}{cols}}, const T fill\+\_\+v=T(0))
+\begin{DoxyCompactList}\small\item\em Virtual constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMatrix_a3df21e170fa53538019e9fdf89e04bab}\label{classMatrix_a3df21e170fa53538019e9fdf89e04bab}} 
+std\+::valarray$<$ std\+::valarray$<$ T $>$ $>$ {\bfseries data\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Matrix$<$ T $>$}
+
+A matrix of scalar values. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMatrix_aafd8258dd256ecf752a31adf45fb138c}\label{classMatrix_aafd8258dd256ecf752a31adf45fb138c}} 
+\index{Matrix$<$ T $>$@{Matrix$<$ T $>$}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix$<$ T $>$@{Matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ T $>$\+::\mbox{\hyperlink{classMatrix}{Matrix}} (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Unfold a matrix from a input stream. FORMAT \char`\"{}\mbox{[}$\,$\mbox{]}\char`\"{} if empty. \textquotesingle{}\mbox{[}\textquotesingle{} $<$rows$>$ $<$cols$>$ $<$rows x cols values of type T$>$ \textquotesingle{}\mbox{]}\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & the input stream. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error(\char`\"{}\+Wrong} & matrix format"{}); \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classMatrix_a5ece830af3324fab6bb12dc5bc23c3ae}\label{classMatrix_a5ece830af3324fab6bb12dc5bc23c3ae}} 
+\index{Matrix$<$ T $>$@{Matrix$<$ T $>$}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix$<$ T $>$@{Matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ T $>$\+::\mbox{\hyperlink{classMatrix}{Matrix}} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{rows,  }\item[{size\+\_\+t}]{cols,  }\item[{const T}]{fill\+\_\+v = {\ttfamily T(0)} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rows} & the number of rows. \\
+\hline
+{\em cols} & the number of cols. \\
+\hline
+{\em fill\+\_\+v} & the value used to initialize the elements. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+rows==0 $\vert$$\vert$ cols$>$0 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classMatrix_a398bf18cb268772c30b330a26a2be71c}\label{classMatrix_a398bf18cb268772c30b330a26a2be71c}} 
+\index{Matrix$<$ T $>$@{Matrix$<$ T $>$}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix$<$ T $>$@{Matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ float $>$\+::\mbox{\hyperlink{classMatrix}{Matrix}} (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Template specialization to load FMatrix from input stream. Allow matrix values \mbox{[}+$\vert$-\/\mbox{]}inf and \mbox{[}+$\vert$-\/\mbox{]}nan. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & is the input stream. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMatrix_a26caef52a1b92f6665395a8ac21cee5b}\label{classMatrix_a26caef52a1b92f6665395a8ac21cee5b}} 
+\index{Matrix$<$ T $>$@{Matrix$<$ T $>$}!cols@{cols}}
+\index{cols@{cols}!Matrix$<$ T $>$@{Matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{cols()}{cols()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+size\+\_\+t \mbox{\hyperlink{classMatrix}{Matrix}}$<$ T $>$\+::cols (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the number of columns. 
+
+\begin{DoxyReturn}{Returns}
+the number of columns. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMatrix_a3673297a1bbbd3db8d7fc2a1448192a4}\label{classMatrix_a3673297a1bbbd3db8d7fc2a1448192a4}} 
+\index{Matrix$<$ T $>$@{Matrix$<$ T $>$}!create@{create}}
+\index{create@{create}!Matrix$<$ T $>$@{Matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+static \mbox{\hyperlink{classMatrix_a86081140d8c1f043687455f8f549028c}{Ref}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ T $>$\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Virtual constructor. 
+
+\begin{DoxyReturn}{Returns}
+a reference to an empty matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMatrix_ae90622de625d7b15a091142321475c17}\label{classMatrix_ae90622de625d7b15a091142321475c17}} 
+\index{Matrix$<$ T $>$@{Matrix$<$ T $>$}!create@{create}}
+\index{create@{create}!Matrix$<$ T $>$@{Matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+static \mbox{\hyperlink{classMatrix_a86081140d8c1f043687455f8f549028c}{Ref}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ T $>$\+::create (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{rows,  }\item[{size\+\_\+t}]{cols,  }\item[{const T}]{fill\+\_\+v = {\ttfamily T(0)} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Virtual constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rows} & the number of rows. \\
+\hline
+{\em cols} & the number of cols. \\
+\hline
+{\em fill\+\_\+v} & the value used to initialize the elements. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to a matrix. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+rows==0 $\vert$$\vert$ cols$>$0 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classMatrix_a4ae408c3d78079d4d3885162303e17c8}\label{classMatrix_a4ae408c3d78079d4d3885162303e17c8}} 
+\index{Matrix$<$ T $>$@{Matrix$<$ T $>$}!create@{create}}
+\index{create@{create}!Matrix$<$ T $>$@{Matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+static \mbox{\hyperlink{classMatrix_a86081140d8c1f043687455f8f549028c}{Ref}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ T $>$\+::create (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Virtual constructor. 
+
+\begin{DoxyReturn}{Returns}
+a reference to an empty matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMatrix_af6bae49e708be79b7b3787eb7822fec9}\label{classMatrix_af6bae49e708be79b7b3787eb7822fec9}} 
+\index{Matrix$<$ T $>$@{Matrix$<$ T $>$}!fold@{fold}}
+\index{fold@{fold}!Matrix$<$ T $>$@{Matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{fold()}{fold()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+std\+::ostream\& \mbox{\hyperlink{classMatrix}{Matrix}}$<$ T $>$\+::fold (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Output the matrix to output stream. OUTPUT FORMAT \char`\"{}\mbox{[}$\,$\mbox{]}\char`\"{} if empty. \textquotesingle{}\mbox{[}\textquotesingle{} $<$rows$>$ $<$cols$>$ $<$rows x cols values of type T$>$ \textquotesingle{}\mbox{]}\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & the output stream. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the modified stream. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMatrix_a6c43b5e1a869cf5356d019186fa26259}\label{classMatrix_a6c43b5e1a869cf5356d019186fa26259}} 
+\index{Matrix$<$ T $>$@{Matrix$<$ T $>$}!get@{get}}
+\index{get@{get}!Matrix$<$ T $>$@{Matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+const T\& \mbox{\hyperlink{classMatrix}{Matrix}}$<$ T $>$\+::get (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{r,  }\item[{size\+\_\+t}]{c }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a matrix element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & the row \\
+\hline
+{\em c} & the col \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value of element. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMatrix_ad3b21dc72c807c052616d110483638b8}\label{classMatrix_ad3b21dc72c807c052616d110483638b8}} 
+\index{Matrix$<$ T $>$@{Matrix$<$ T $>$}!is\_empty@{is\_empty}}
+\index{is\_empty@{is\_empty}!Matrix$<$ T $>$@{Matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{is\_empty()}{is\_empty()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classMatrix}{Matrix}}$<$ T $>$\+::is\+\_\+empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Is the matrix empty. 
+
+\begin{DoxyReturn}{Returns}
+true if the matrix is empty. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMatrix_ae9e43f623bc3fec0fc25bad8901d378d}\label{classMatrix_ae9e43f623bc3fec0fc25bad8901d378d}} 
+\index{Matrix$<$ T $>$@{Matrix$<$ T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Matrix$<$ T $>$@{Matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+std\+::valarray$<$T$>$\& \mbox{\hyperlink{classMatrix}{Matrix}}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets a row vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & is the row index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the row vector. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+row $<$ \mbox{\hyperlink{classMatrix_a5330adf02b284293259eb9f7c9acaa99}{rows()}} 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classMatrix_a3a52bebb2a1d3c68b977abae83194132}\label{classMatrix_a3a52bebb2a1d3c68b977abae83194132}} 
+\index{Matrix$<$ T $>$@{Matrix$<$ T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Matrix$<$ T $>$@{Matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+std\+::valarray$<$T$>$ const\& \mbox{\hyperlink{classMatrix}{Matrix}}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{row }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets a row vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & is the row index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a const reference to row vector. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+row $<$ \mbox{\hyperlink{classMatrix_a5330adf02b284293259eb9f7c9acaa99}{rows()}} 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classMatrix_a523e1258ca515b86a23debba6661e649}\label{classMatrix_a523e1258ca515b86a23debba6661e649}} 
+\index{Matrix$<$ T $>$@{Matrix$<$ T $>$}!resize@{resize}}
+\index{resize@{resize}!Matrix$<$ T $>$@{Matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classMatrix}{Matrix}}$<$ T $>$\+::resize (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{rows,  }\item[{size\+\_\+t}]{cols,  }\item[{const T}]{fill\+\_\+v = {\ttfamily T(0)} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+resize the matrix to a new size 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rows} & the number of rows. \\
+\hline
+{\em cols} & the number of columns. \\
+\hline
+{\em fill\+\_\+v} & the value used to initialize the elements. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+rows==0 $\vert$$\vert$ cols$>$0 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classMatrix_a5330adf02b284293259eb9f7c9acaa99}\label{classMatrix_a5330adf02b284293259eb9f7c9acaa99}} 
+\index{Matrix$<$ T $>$@{Matrix$<$ T $>$}!rows@{rows}}
+\index{rows@{rows}!Matrix$<$ T $>$@{Matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{rows()}{rows()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+size\+\_\+t \mbox{\hyperlink{classMatrix}{Matrix}}$<$ T $>$\+::rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the number of rows. 
+
+\begin{DoxyReturn}{Returns}
+the number of rows. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMatrix_aa1c4e43367a8d9643dcd20455488cf4d}\label{classMatrix_aa1c4e43367a8d9643dcd20455488cf4d}} 
+\index{Matrix$<$ T $>$@{Matrix$<$ T $>$}!set@{set}}
+\index{set@{set}!Matrix$<$ T $>$@{Matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classMatrix}{Matrix}}$<$ T $>$\+::set (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{r,  }\item[{size\+\_\+t}]{c,  }\item[{const T \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set a matrix element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & the row \\
+\hline
+{\em c} & the col \\
+\hline
+{\em v} & the value to set. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{matrix_8hpp}{matrix.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,65 @@
+\hypertarget{classIpToInt}{}\doxysection{Ip\+To\+Int Class Reference}
+\label{classIpToInt}\index{IpToInt@{IpToInt}}
+
+
+Functional class to convert a ipaddress into a std\+::uint64\+\_\+t.  
+
+
+
+
+{\ttfamily \#include $<$ip\+\_\+utils.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classIpToInt_a759c7630b63fcfd2e3b558fc51d8014b}\label{classIpToInt_a759c7630b63fcfd2e3b558fc51d8014b}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIpToInt}{Ip\+To\+Int}} $>$ \mbox{\hyperlink{classIpToInt_a759c7630b63fcfd2e3b558fc51d8014b}{Ref}}
+\begin{DoxyCompactList}\small\item\em A shared reference to a \mbox{\hyperlink{classIpToInt}{Ip\+To\+Int}} converter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::uint64\+\_\+t \mbox{\hyperlink{classIpToInt_a7973530a71d2908a21c7c8f371f353fd}{operator()}} (const \mbox{\hyperlink{structIP}{IP}} \&ip) const
+\begin{DoxyCompactList}\small\item\em Transform IPv4 addresses into std\+::uint64\+\_\+t. We apply a modified Poly\+Hash with x=2$^\wedge$8 without using module operation that means using a p$>$2$^\wedge$32. i.\+e. 150.\+214.\+117.\+3 -\/$>$ 150$\ast$2$^\wedge$24+214$\ast$2$^\wedge$16+2$^\wedge$8$\ast$117+3. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classIpToInt_a759c7630b63fcfd2e3b558fc51d8014b}{Ref}} \mbox{\hyperlink{classIpToInt_a5330c3461dd0b014540aa4d89f3afed3}{create}} ()
+\begin{DoxyCompactList}\small\item\em Virtual constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functional class to convert a ipaddress into a std\+::uint64\+\_\+t. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIpToInt_a5330c3461dd0b014540aa4d89f3afed3}\label{classIpToInt_a5330c3461dd0b014540aa4d89f3afed3}} 
+\index{IpToInt@{IpToInt}!create@{create}}
+\index{create@{create}!IpToInt@{IpToInt}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classIpToInt_a759c7630b63fcfd2e3b558fc51d8014b}{Ip\+To\+Int\+::\+Ref}} Ip\+To\+Int\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Virtual constructor. 
+
+\begin{DoxyReturn}{Returns}
+a reference to the converter. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classIpToInt_a7973530a71d2908a21c7c8f371f353fd}\label{classIpToInt_a7973530a71d2908a21c7c8f371f353fd}} 
+\index{IpToInt@{IpToInt}!operator()@{operator()}}
+\index{operator()@{operator()}!IpToInt@{IpToInt}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily std\+::uint64\+\_\+t Ip\+To\+Int\+::operator() (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structIP}{IP}} \&}]{ip }\end{DoxyParamCaption}) const}
+
+
+
+Transform IPv4 addresses into std\+::uint64\+\_\+t. We apply a modified Poly\+Hash with x=2$^\wedge$8 without using module operation that means using a p$>$2$^\wedge$32. i.\+e. 150.\+214.\+117.\+3 -\/$>$ 150$\ast$2$^\wedge$24+214$\ast$2$^\wedge$16+2$^\wedge$8$\ast$117+3. 
+
+\begin{DoxyReturn}{Returns}
+The corresponding std\+::uint64\+\_\+t. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ip__utils_8hpp}{ip\+\_\+utils.\+hpp}}\item 
+\mbox{\hyperlink{ip__utils_8cpp}{ip\+\_\+utils.\+cpp}}\end{DoxyCompactItemize}

@@ -73,15 +73,15 @@ CMakeFiles/test_btree_node.dir/test_btree_node.cpp.o: CMakeFiles/test_btree_node
 CMakeFiles/test_btree_node.dir/test_btree_node.cpp.o: ../test_btree_node.cpp
 CMakeFiles/test_btree_node.dir/test_btree_node.cpp.o: CMakeFiles/test_btree_node.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yabiel/Documents/ED/binary_tree/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test_btree_node.dir/test_btree_node.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_btree_node.dir/test_btree_node.cpp.o -MF CMakeFiles/test_btree_node.dir/test_btree_node.cpp.o.d -o CMakeFiles/test_btree_node.dir/test_btree_node.cpp.o -c /home/yabiel/Documents/ED/binary_tree/test_btree_node.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_btree_node.dir/test_btree_node.cpp.o -MF CMakeFiles/test_btree_node.dir/test_btree_node.cpp.o.d -o CMakeFiles/test_btree_node.dir/test_btree_node.cpp.o -c /home/yabiel/Documents/ED/binary_tree/test_btree_node.cpp
 
 CMakeFiles/test_btree_node.dir/test_btree_node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_btree_node.dir/test_btree_node.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yabiel/Documents/ED/binary_tree/test_btree_node.cpp > CMakeFiles/test_btree_node.dir/test_btree_node.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yabiel/Documents/ED/binary_tree/test_btree_node.cpp > CMakeFiles/test_btree_node.dir/test_btree_node.cpp.i
 
 CMakeFiles/test_btree_node.dir/test_btree_node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_btree_node.dir/test_btree_node.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yabiel/Documents/ED/binary_tree/test_btree_node.cpp -o CMakeFiles/test_btree_node.dir/test_btree_node.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yabiel/Documents/ED/binary_tree/test_btree_node.cpp -o CMakeFiles/test_btree_node.dir/test_btree_node.cpp.s
 
 # Object files for target test_btree_node
 test_btree_node_OBJECTS = \

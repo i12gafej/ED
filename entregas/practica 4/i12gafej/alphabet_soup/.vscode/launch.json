@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "g++.exe - Build and debug active file",
+        "type": "cppdbg",
+        "request": "launch",
+        "name": "Launch Program",
+        "program": "/home/yabiel/Documents/ED/alphabet_soup_2.2/alphabet_soup/build/test_trie",
+        "args": ["/home/yabiel/Documents/ED/alphabet_soup_2.2/alphabet_soup/tests_trie_fold_unfold/08"],
+        "cwd": "${workspaceFolder}"
+      }
+    ]
+  }

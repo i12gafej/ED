@@ -1,0 +1,178 @@
+\hypertarget{classQPHash}{}\doxysection{QPHash Class Reference}
+\label{classQPHash}\index{QPHash@{QPHash}}
+
+
+Models an Universal Family hash function using quadratic probing to resolve collisions.  
+
+
+
+
+{\ttfamily \#include $<$hash.\+hpp$>$}
+
+
+
+Inheritance diagram for QPHash\+:
+% FIG 0
+
+
+Collaboration diagram for QPHash\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classQPHash_a416ea08d814468b6ba3201a98439b76e}{operator()}} (std\+::uint64\+\_\+t k, size\+\_\+t iter=0) const override
+\begin{DoxyCompactList}\small\item\em hash a key with collision resolution. Hash the key to get a table index, giving alternatives for several probes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classOACollisionResolution_ae41ff03a5958c5c360b8342ff29a0713}{OACollision\+Resolution\+::\+Ref}} \mbox{\hyperlink{classQPHash_a640ecf61837759464731084b6257975e}{pick\+\_\+at\+\_\+new}} (std\+::uint64\+\_\+t new\+\_\+m) const override
+\begin{DoxyCompactList}\small\item\em Get a new version of the algorithm with a new table size choosing at random a new hash function. \end{DoxyCompactList}\item 
+std\+::uint64\+\_\+t \mbox{\hyperlink{classQPHash_a9a1b4bc6ffef1b1b0859ce622f304580}{m}} () const override
+\begin{DoxyCompactList}\small\item\em Return the cardinality of the hash function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} \mbox{\hyperlink{classQPHash_a80224b6df73d07e372fae5d340e206ed}{hash}} () const
+\begin{DoxyCompactList}\small\item\em Get the hash function used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQPHash_ae3ed8ef8c0d47076fb8d07a537417c9c}\label{classQPHash_ae3ed8ef8c0d47076fb8d07a537417c9c}} 
+\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} {\bfseries hash\+\_\+f\+\_\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Life cycle.}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQPHash_a0cf7af92a419562934962de85ea5406c}{QPHash}} (\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} hash\+\_\+f)
+\begin{DoxyCompactList}\small\item\em Create picked at random the hash from Universal Family. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classOACollisionResolution_ae41ff03a5958c5c360b8342ff29a0713}{OACollision\+Resolution\+::\+Ref}} \mbox{\hyperlink{classQPHash_a7017ca11de2a984f23fc0c5ea64fc009}{create}} (\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} hash\+\_\+f)
+\begin{DoxyCompactList}\small\item\em Create picked at random the hash from Universal Family. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Models an Universal Family hash function using quadratic probing to resolve collisions. 
+
+This function assume that the table size is two power and the parameters c1=c2=0.\+5 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classQPHash_a0cf7af92a419562934962de85ea5406c}\label{classQPHash_a0cf7af92a419562934962de85ea5406c}} 
+\index{QPHash@{QPHash}!QPHash@{QPHash}}
+\index{QPHash@{QPHash}!QPHash@{QPHash}}
+\doxysubsubsection{\texorpdfstring{QPHash()}{QPHash()}}
+{\footnotesize\ttfamily QPHash\+::\+QPHash (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}}}]{hash\+\_\+f }\end{DoxyParamCaption})}
+
+
+
+Create picked at random the hash from Universal Family. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hash\+\_\+f} & is the universal hash function used. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classQPHash_a7017ca11de2a984f23fc0c5ea64fc009}\label{classQPHash_a7017ca11de2a984f23fc0c5ea64fc009}} 
+\index{QPHash@{QPHash}!create@{create}}
+\index{create@{create}!QPHash@{QPHash}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classOACollisionResolution_ae41ff03a5958c5c360b8342ff29a0713}{OACollision\+Resolution\+::\+Ref}} QPHash\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}}}]{hash\+\_\+f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create picked at random the hash from Universal Family. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hash\+\_\+f} & is the universal hash function used. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQPHash_a80224b6df73d07e372fae5d340e206ed}\label{classQPHash_a80224b6df73d07e372fae5d340e206ed}} 
+\index{QPHash@{QPHash}!hash@{hash}}
+\index{hash@{hash}!QPHash@{QPHash}}
+\doxysubsubsection{\texorpdfstring{hash()}{hash()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} QPHash\+::hash (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the hash function used. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} to the hash function. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classQPHash_a9a1b4bc6ffef1b1b0859ce622f304580}\label{classQPHash_a9a1b4bc6ffef1b1b0859ce622f304580}} 
+\index{QPHash@{QPHash}!m@{m}}
+\index{m@{m}!QPHash@{QPHash}}
+\doxysubsubsection{\texorpdfstring{m()}{m()}}
+{\footnotesize\ttfamily std\+::uint64\+\_\+t QPHash\+::m (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Return the cardinality of the hash function. 
+
+\begin{DoxyReturn}{Returns}
+the cardinality of the hash function. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classOACollisionResolution_ad14c3995cccbe368f98c567fec5fac17}{OACollision\+Resolution}}.
+
+\mbox{\Hypertarget{classQPHash_a416ea08d814468b6ba3201a98439b76e}\label{classQPHash_a416ea08d814468b6ba3201a98439b76e}} 
+\index{QPHash@{QPHash}!operator()@{operator()}}
+\index{operator()@{operator()}!QPHash@{QPHash}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily size\+\_\+t QPHash\+::operator() (\begin{DoxyParamCaption}\item[{std\+::uint64\+\_\+t}]{k,  }\item[{size\+\_\+t}]{iter = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+hash a key with collision resolution. Hash the key to get a table index, giving alternatives for several probes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em k} & is the key to be hashed. \\
+\hline
+{\em iter} & is the number of probes generates upto now. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the table index. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+k$<$p() 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+iter==0 implies ret\+\_\+v is the universal hash function for integers. 
+
+iter$>$0 and ret\+\_\+v is the next value of the collision resolution algorithm. 
+\end{DoxyPostcond}
+
+
+Implements \mbox{\hyperlink{classOACollisionResolution_a16fe33a91672fe4f1cb695bbe4844d51}{OACollision\+Resolution}}.
+
+\mbox{\Hypertarget{classQPHash_a640ecf61837759464731084b6257975e}\label{classQPHash_a640ecf61837759464731084b6257975e}} 
+\index{QPHash@{QPHash}!pick\_at\_new@{pick\_at\_new}}
+\index{pick\_at\_new@{pick\_at\_new}!QPHash@{QPHash}}
+\doxysubsubsection{\texorpdfstring{pick\_at\_new()}{pick\_at\_new()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classOACollisionResolution_ae41ff03a5958c5c360b8342ff29a0713}{OACollision\+Resolution\+::\+Ref}} QPHash\+::pick\+\_\+at\+\_\+new (\begin{DoxyParamCaption}\item[{std\+::uint64\+\_\+t}]{new\+\_\+m }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get a new version of the algorithm with a new table size choosing at random a new hash function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+m} & is the new table size. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+new\+\_\+m is power of two greater than 1. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+a new version of the algorithm. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classOACollisionResolution_af82f0d098d11e35121679668bd02f092}{OACollision\+Resolution}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{hash_8hpp}{hash.\+hpp}}\item 
+\mbox{\hyperlink{hash_8cpp}{hash.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,76 @@
+\hypertarget{rbtree_8hpp}{}\doxysection{rbtree.\+hpp File Reference}
+\label{rbtree_8hpp}\index{rbtree.hpp@{rbtree.hpp}}
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$exception$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}rbtree\+\_\+imp.\+hpp\char`\"{}}\newline
+Include dependency graph for rbtree.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classRBTNode}{RBTNode$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em a \mbox{\hyperlink{classRBTree}{RBTree}}\textquotesingle{}s Node. Models a node of \mbox{\hyperlink{classRBTree}{RBTree}}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRBTree}{RBTree$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em ADT \mbox{\hyperlink{classRBTree}{RBTree}}. A \mbox{\hyperlink{classRBTree}{RBTree}} (red/black tree) is a self-\/balanced binary search tree that meets the next properties\+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\size\+\_\+t \mbox{\hyperlink{rbtree_8hpp_aa41258ef8f4806a057240954d2b1b81e}{compute\+\_\+size}} (typename \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::Ref const \&tree)
+\begin{DoxyCompactList}\small\item\em Return the number of keys stored in the tree. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\int \mbox{\hyperlink{rbtree_8hpp_a37e9e99d9a84facb7868284b129e2a8e}{compute\+\_\+height}} (typename \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::Ref const \&tree)
+\begin{DoxyCompactList}\small\item\em Return the tree\textquotesingle{}s height. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Copy\+Right F. J. Madrid-\/\+Cuevas \href{mailto:fjmadrid@uco.es}{\texttt{ fjmadrid@uco.\+es}}
+
+Sólo se permite el uso de este código en la docencia de las asignaturas sobre Estructuras de Datos de la Universidad de Córdoba.
+
+Está prohibido su uso para cualquier otro objetivo. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{rbtree_8hpp_a37e9e99d9a84facb7868284b129e2a8e}\label{rbtree_8hpp_a37e9e99d9a84facb7868284b129e2a8e}} 
+\index{rbtree.hpp@{rbtree.hpp}!compute\_height@{compute\_height}}
+\index{compute\_height@{compute\_height}!rbtree.hpp@{rbtree.hpp}}
+\doxysubsubsection{\texorpdfstring{compute\_height()}{compute\_height()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int compute\+\_\+height (\begin{DoxyParamCaption}\item[{typename \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::Ref const \&}]{tree }\end{DoxyParamCaption})}
+
+
+
+Return the tree\textquotesingle{}s height. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & is the tree. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the tree\textquotesingle{}s height. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{rbtree_8hpp_aa41258ef8f4806a057240954d2b1b81e}\label{rbtree_8hpp_aa41258ef8f4806a057240954d2b1b81e}} 
+\index{rbtree.hpp@{rbtree.hpp}!compute\_size@{compute\_size}}
+\index{compute\_size@{compute\_size}!rbtree.hpp@{rbtree.hpp}}
+\doxysubsubsection{\texorpdfstring{compute\_size()}{compute\_size()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+size\+\_\+t compute\+\_\+size (\begin{DoxyParamCaption}\item[{typename \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::Ref const \&}]{tree }\end{DoxyParamCaption})}
+
+
+
+Return the number of keys stored in the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & is the tree. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the tree\textquotesingle{}s size. 
+\end{DoxyReturn}

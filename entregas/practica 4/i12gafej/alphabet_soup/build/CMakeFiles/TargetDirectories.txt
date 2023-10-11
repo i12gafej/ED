@@ -1,0 +1,5 @@
+/home/yabiel/Documents/ED/entregas/practica 4/i12gafej/alphabet_soup/build/CMakeFiles/test_trie_node.dir
+/home/yabiel/Documents/ED/entregas/practica 4/i12gafej/alphabet_soup/build/CMakeFiles/test_trie.dir
+/home/yabiel/Documents/ED/entregas/practica 4/i12gafej/alphabet_soup/build/CMakeFiles/test_alphabet_soup_solver.dir
+/home/yabiel/Documents/ED/entregas/practica 4/i12gafej/alphabet_soup/build/CMakeFiles/edit_cache.dir
+/home/yabiel/Documents/ED/entregas/practica 4/i12gafej/alphabet_soup/build/CMakeFiles/rebuild_cache.dir

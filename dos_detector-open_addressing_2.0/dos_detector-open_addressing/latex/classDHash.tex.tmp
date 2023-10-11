@@ -1,0 +1,208 @@
+\hypertarget{classDHash}{}\doxysection{DHash Class Reference}
+\label{classDHash}\index{DHash@{DHash}}
+
+
+Models an Universal Family hash function using double hashing to resolve collisions.  
+
+
+
+
+{\ttfamily \#include $<$hash.\+hpp$>$}
+
+
+
+Inheritance diagram for DHash\+:
+% FIG 0
+
+
+Collaboration diagram for DHash\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classDHash_a6d3bac29e3691796fe476c93e11bbfaf}{operator()}} (std\+::uint64\+\_\+t k, size\+\_\+t iter=0) const override
+\begin{DoxyCompactList}\small\item\em hash a key with collision resolution. Hash the key to get a table index, giving alternatives for several probes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classOACollisionResolution_ae41ff03a5958c5c360b8342ff29a0713}{OACollision\+Resolution\+::\+Ref}} \mbox{\hyperlink{classDHash_a8e26b4a528a8419a02ca250ee4e6c049}{pick\+\_\+at\+\_\+new}} (std\+::uint64\+\_\+t new\+\_\+m) const override
+\begin{DoxyCompactList}\small\item\em Get a new version of the algorithm with a new table size choosing at random a new hash function. \end{DoxyCompactList}\item 
+std\+::uint64\+\_\+t \mbox{\hyperlink{classDHash_ae949210c52756711cf78901870d3d941}{m}} () const override
+\begin{DoxyCompactList}\small\item\em Return the cardinality of the hash function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} \mbox{\hyperlink{classDHash_ac0b6203c150c9afe2a877aeda773ce0d}{hash1}} () const
+\begin{DoxyCompactList}\small\item\em Get the first hash function used. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} \mbox{\hyperlink{classDHash_a542d6fd115b8b17884c7c2b1508d2b29}{hash2}} () const
+\begin{DoxyCompactList}\small\item\em Get the second hash function used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDHash_a1e244d1e95199d85dd9b311ab256a1e9}\label{classDHash_a1e244d1e95199d85dd9b311ab256a1e9}} 
+\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} {\bfseries hash1\+\_\+}
+\item 
+\mbox{\Hypertarget{classDHash_a2c3e822a870fb806561f86e2321dbade}\label{classDHash_a2c3e822a870fb806561f86e2321dbade}} 
+\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} {\bfseries hash2\+\_\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Life cycle.}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDHash_a7c8ec8db544cc05815dd8d9177d7b543}{DHash}} (\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} \mbox{\hyperlink{classDHash_ac0b6203c150c9afe2a877aeda773ce0d}{hash1}}, \mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} \mbox{\hyperlink{classDHash_a542d6fd115b8b17884c7c2b1508d2b29}{hash2}})
+\begin{DoxyCompactList}\small\item\em Create picked at random the hash from Universal Family. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classOACollisionResolution_ae41ff03a5958c5c360b8342ff29a0713}{OACollision\+Resolution\+::\+Ref}} \mbox{\hyperlink{classDHash_ae10c942596fe441d4de7260d07596193}{create}} (\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} \mbox{\hyperlink{classDHash_ac0b6203c150c9afe2a877aeda773ce0d}{hash1}}, \mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} \mbox{\hyperlink{classDHash_a542d6fd115b8b17884c7c2b1508d2b29}{hash2}})
+\begin{DoxyCompactList}\small\item\em Create picked at random the hash from Universal Family. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Models an Universal Family hash function using double hashing to resolve collisions. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDHash_a7c8ec8db544cc05815dd8d9177d7b543}\label{classDHash_a7c8ec8db544cc05815dd8d9177d7b543}} 
+\index{DHash@{DHash}!DHash@{DHash}}
+\index{DHash@{DHash}!DHash@{DHash}}
+\doxysubsubsection{\texorpdfstring{DHash()}{DHash()}}
+{\footnotesize\ttfamily DHash\+::\+DHash (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}}}]{hash1,  }\item[{\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}}}]{hash2 }\end{DoxyParamCaption})}
+
+
+
+Create picked at random the hash from Universal Family. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hash1} & is a universal hash function used. \\
+\hline
+{\em hash2} & is another universal hash function from the same family of hash1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+hash1-\/$>$\mbox{\hyperlink{classDHash_ae949210c52756711cf78901870d3d941}{m()}}==\mbox{\hyperlink{classDHash_a542d6fd115b8b17884c7c2b1508d2b29}{hash2()}}-\/$>$\mbox{\hyperlink{classDHash_ae949210c52756711cf78901870d3d941}{m()}} 
+
+hash1-\/$>$p()==\mbox{\hyperlink{classDHash_a542d6fd115b8b17884c7c2b1508d2b29}{hash2()}}-\/$>$p() 
+\end{DoxyPrecond}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDHash_ae10c942596fe441d4de7260d07596193}\label{classDHash_ae10c942596fe441d4de7260d07596193}} 
+\index{DHash@{DHash}!create@{create}}
+\index{create@{create}!DHash@{DHash}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classOACollisionResolution_ae41ff03a5958c5c360b8342ff29a0713}{OACollision\+Resolution\+::\+Ref}} DHash\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}}}]{hash1,  }\item[{\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}}}]{hash2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create picked at random the hash from Universal Family. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hash1} & is a universal hash function used. \\
+\hline
+{\em hash2} & is another universal hash function from the same family of hash1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+hash1-\/$>$\mbox{\hyperlink{classDHash_ae949210c52756711cf78901870d3d941}{m()}}==\mbox{\hyperlink{classDHash_a542d6fd115b8b17884c7c2b1508d2b29}{hash2()}}-\/$>$\mbox{\hyperlink{classDHash_ae949210c52756711cf78901870d3d941}{m()}} 
+
+hash1-\/$>$p()==\mbox{\hyperlink{classDHash_a542d6fd115b8b17884c7c2b1508d2b29}{hash2()}}-\/$>$p() 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classDHash_ac0b6203c150c9afe2a877aeda773ce0d}\label{classDHash_ac0b6203c150c9afe2a877aeda773ce0d}} 
+\index{DHash@{DHash}!hash1@{hash1}}
+\index{hash1@{hash1}!DHash@{DHash}}
+\doxysubsubsection{\texorpdfstring{hash1()}{hash1()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} DHash\+::hash1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the first hash function used. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} to the hash function. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDHash_a542d6fd115b8b17884c7c2b1508d2b29}\label{classDHash_a542d6fd115b8b17884c7c2b1508d2b29}} 
+\index{DHash@{DHash}!hash2@{hash2}}
+\index{hash2@{hash2}!DHash@{DHash}}
+\doxysubsubsection{\texorpdfstring{hash2()}{hash2()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} DHash\+::hash2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the second hash function used. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} to the hash function. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDHash_ae949210c52756711cf78901870d3d941}\label{classDHash_ae949210c52756711cf78901870d3d941}} 
+\index{DHash@{DHash}!m@{m}}
+\index{m@{m}!DHash@{DHash}}
+\doxysubsubsection{\texorpdfstring{m()}{m()}}
+{\footnotesize\ttfamily std\+::uint64\+\_\+t DHash\+::m (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Return the cardinality of the hash function. 
+
+\begin{DoxyReturn}{Returns}
+the cardinality of the hash function. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classOACollisionResolution_ad14c3995cccbe368f98c567fec5fac17}{OACollision\+Resolution}}.
+
+\mbox{\Hypertarget{classDHash_a6d3bac29e3691796fe476c93e11bbfaf}\label{classDHash_a6d3bac29e3691796fe476c93e11bbfaf}} 
+\index{DHash@{DHash}!operator()@{operator()}}
+\index{operator()@{operator()}!DHash@{DHash}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily size\+\_\+t DHash\+::operator() (\begin{DoxyParamCaption}\item[{std\+::uint64\+\_\+t}]{k,  }\item[{size\+\_\+t}]{iter = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+hash a key with collision resolution. Hash the key to get a table index, giving alternatives for several probes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em k} & is the key to be hashed. \\
+\hline
+{\em iter} & is the number of probes generates upto now. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the table index. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+k$<$p() 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+iter==0 implies ret\+\_\+v is the universal hash function for integers. 
+
+iter$>$0 and ret\+\_\+v is the next value of the collision resolution algorithm. 
+\end{DoxyPostcond}
+
+
+Implements \mbox{\hyperlink{classOACollisionResolution_a16fe33a91672fe4f1cb695bbe4844d51}{OACollision\+Resolution}}.
+
+\mbox{\Hypertarget{classDHash_a8e26b4a528a8419a02ca250ee4e6c049}\label{classDHash_a8e26b4a528a8419a02ca250ee4e6c049}} 
+\index{DHash@{DHash}!pick\_at\_new@{pick\_at\_new}}
+\index{pick\_at\_new@{pick\_at\_new}!DHash@{DHash}}
+\doxysubsubsection{\texorpdfstring{pick\_at\_new()}{pick\_at\_new()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classOACollisionResolution_ae41ff03a5958c5c360b8342ff29a0713}{OACollision\+Resolution\+::\+Ref}} DHash\+::pick\+\_\+at\+\_\+new (\begin{DoxyParamCaption}\item[{std\+::uint64\+\_\+t}]{new\+\_\+m }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get a new version of the algorithm with a new table size choosing at random a new hash function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+m} & is the new table size. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+new\+\_\+m is power of two greater than 1. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+a new version of the algorithm. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classOACollisionResolution_af82f0d098d11e35121679668bd02f092}{OACollision\+Resolution}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{hash_8hpp}{hash.\+hpp}}\item 
+\mbox{\hyperlink{hash_8cpp}{hash.\+cpp}}\end{DoxyCompactItemize}

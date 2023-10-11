@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "g++.exe - Build and debug active file",
+        "type": "cppdbg",
+        "request": "launch",
+        "name": "Launch Program",
+        "program": "/home/yabiel/Documents/ED/dos_detector-open_addressing_2.0/dos_detector-open_addressing/build/test_hash_table",
+        "args": ["/home/yabiel/Documents/ED/dos_detector-open_addressing_2.0/dos_detector-open_addressing/tests_hash_table/00"],
+        "cwd": "${workspaceFolder}"
+      }
+    ]
+  }

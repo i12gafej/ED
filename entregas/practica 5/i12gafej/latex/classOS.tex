@@ -1,0 +1,117 @@
+\hypertarget{classOS}{}\doxysection{OS Class Reference}
+\label{classOS}\index{OS@{OS}}
+
+
+This class abstracts several \mbox{\hyperlink{classOS}{OS}}\textquotesingle{}s operations.  
+
+
+
+
+{\ttfamily \#include $<$system.\+hpp$>$}
+
+
+
+Collaboration diagram for OS\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classOS_ae146d6a87baf58b6b2aa22186c8f7e39}{time}} () const
+\begin{DoxyCompactList}\small\item\em Abstracts the \mbox{\hyperlink{classOS_ae146d6a87baf58b6b2aa22186c8f7e39}{time()}} os call. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classOS_a64d423743c479e264685b7a235d660f4}\label{classOS_a64d423743c479e264685b7a235d660f4}} 
+bool \mbox{\hyperlink{classOS_a64d423743c479e264685b7a235d660f4}{is\+\_\+banned}} (\mbox{\hyperlink{structIP}{IP}} const \&ip) const
+\begin{DoxyCompactList}\small\item\em Is banned this ip address? \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{structIP}{IP}}, size\+\_\+t $>$ $>$ \mbox{\hyperlink{classOS_a2807ede68fd5b2560cea263bbaf7cbd6}{banned\+\_\+ips}} () const
+\begin{DoxyCompactList}\small\item\em Gets the the banned ips. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classOS_a3b16df8e14f4b982ce84410605ff9270}{sleep}} (size\+\_\+t seconds)
+\begin{DoxyCompactList}\small\item\em Abstracts the \mbox{\hyperlink{classOS_a3b16df8e14f4b982ce84410605ff9270}{sleep()}} os call. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classOS_a21f7f082b7b686aa5d4c7d219b4bd697}\label{classOS_a21f7f082b7b686aa5d4c7d219b4bd697}} 
+void \mbox{\hyperlink{classOS_a21f7f082b7b686aa5d4c7d219b4bd697}{ban\+\_\+ip}} (\mbox{\hyperlink{structIP}{IP}} const \&ip, size\+\_\+t ban\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Add an ip address to the banned ips list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classOS_a035ddf2b7c5ec67549092880280043aa}\label{classOS_a035ddf2b7c5ec67549092880280043aa}} 
+void \mbox{\hyperlink{classOS_a035ddf2b7c5ec67549092880280043aa}{kill}} ()
+\begin{DoxyCompactList}\small\item\em abstract the kill of the process. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOS_a060ca51a9ea590e341a178d8eb81ab4f}{remove\+\_\+banned\+\_\+ips}} (size\+\_\+t now)
+\begin{DoxyCompactList}\small\item\em Check if the banned time was finished for the banned ips. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Life cicle.}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classOS_aee121bb510546f335b13791c7c7b4330}\label{classOS_aee121bb510546f335b13791c7c7b4330}} 
+\mbox{\hyperlink{classOS_aee121bb510546f335b13791c7c7b4330}{OS}} ()
+\begin{DoxyCompactList}\small\item\em constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classOS_a5e0e6eadc24c4af6c6141f717adda5fb}\label{classOS_a5e0e6eadc24c4af6c6141f717adda5fb}} 
+size\+\_\+t {\bfseries time\+\_\+}
+\item 
+\mbox{\Hypertarget{classOS_ac7545206d5a1069897c30aec0fc32d1c}\label{classOS_ac7545206d5a1069897c30aec0fc32d1c}} 
+bool {\bfseries kill\+\_\+}
+\item 
+\mbox{\Hypertarget{classOS_ae5236529f2cae1e3ba5066bb82062a85}\label{classOS_ae5236529f2cae1e3ba5066bb82062a85}} 
+\mbox{\hyperlink{classHashTable}{Hash\+Table}}$<$ \mbox{\hyperlink{structIP}{IP}}, size\+\_\+t, \mbox{\hyperlink{classIpToInt}{Ip\+To\+Int}} $>$ {\bfseries banned\+\_\+ips\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class abstracts several \mbox{\hyperlink{classOS}{OS}}\textquotesingle{}s operations. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOS_a2807ede68fd5b2560cea263bbaf7cbd6}\label{classOS_a2807ede68fd5b2560cea263bbaf7cbd6}} 
+\index{OS@{OS}!banned\_ips@{banned\_ips}}
+\index{banned\_ips@{banned\_ips}!OS@{OS}}
+\doxysubsubsection{\texorpdfstring{banned\_ips()}{banned\_ips()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{structIP}{IP}}, size\+\_\+t $>$ $>$ OS\+::banned\+\_\+ips (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the the banned ips. 
+
+\begin{DoxyReturn}{Returns}
+a vector with pairs $<$ip, ban end time$>$. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classOS_a060ca51a9ea590e341a178d8eb81ab4f}\label{classOS_a060ca51a9ea590e341a178d8eb81ab4f}} 
+\index{OS@{OS}!remove\_banned\_ips@{remove\_banned\_ips}}
+\index{remove\_banned\_ips@{remove\_banned\_ips}!OS@{OS}}
+\doxysubsubsection{\texorpdfstring{remove\_banned\_ips()}{remove\_banned\_ips()}}
+{\footnotesize\ttfamily void OS\+::remove\+\_\+banned\+\_\+ips (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{now }\end{DoxyParamCaption})}
+
+
+
+Check if the banned time was finished for the banned ips. 
+
+\begin{DoxyItemize}
+\item now is the current system time. \end{DoxyItemize}
+\mbox{\Hypertarget{classOS_a3b16df8e14f4b982ce84410605ff9270}\label{classOS_a3b16df8e14f4b982ce84410605ff9270}} 
+\index{OS@{OS}!sleep@{sleep}}
+\index{sleep@{sleep}!OS@{OS}}
+\doxysubsubsection{\texorpdfstring{sleep()}{sleep()}}
+{\footnotesize\ttfamily size\+\_\+t OS\+::sleep (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{seconds }\end{DoxyParamCaption})}
+
+
+
+Abstracts the \mbox{\hyperlink{classOS_a3b16df8e14f4b982ce84410605ff9270}{sleep()}} os call. 
+
+\begin{DoxySeeAlso}{See also}
+man 3 \mbox{\hyperlink{classOS_a3b16df8e14f4b982ce84410605ff9270}{sleep}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classOS_ae146d6a87baf58b6b2aa22186c8f7e39}\label{classOS_ae146d6a87baf58b6b2aa22186c8f7e39}} 
+\index{OS@{OS}!time@{time}}
+\index{time@{time}!OS@{OS}}
+\doxysubsubsection{\texorpdfstring{time()}{time()}}
+{\footnotesize\ttfamily size\+\_\+t OS\+::time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Abstracts the \mbox{\hyperlink{classOS_ae146d6a87baf58b6b2aa22186c8f7e39}{time()}} os call. 
+
+\begin{DoxySeeAlso}{See also}
+man 3 \mbox{\hyperlink{classOS_ae146d6a87baf58b6b2aa22186c8f7e39}{time}} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{system_8hpp}{system.\+hpp}}\item 
+\mbox{\hyperlink{system_8cpp}{system.\+cpp}}\end{DoxyCompactItemize}

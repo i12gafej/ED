@@ -1,0 +1,39 @@
+\hypertarget{ip__utils_8cpp}{}\doxysection{ip\+\_\+utils.\+cpp File Reference}
+\label{ip__utils_8cpp}\index{ip\_utils.cpp@{ip\_utils.cpp}}
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include \char`\"{}ip\+\_\+utils.\+hpp\char`\"{}}\newline
+Include dependency graph for ip\+\_\+utils.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{ip__utils_8cpp_a719883321c50feaf4d53fb7c0ba982b1}\label{ip__utils_8cpp_a719883321c50feaf4d53fb7c0ba982b1}} 
+std\+::ostream \& \mbox{\hyperlink{ip__utils_8cpp_a719883321c50feaf4d53fb7c0ba982b1}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{structIP}{IP}} \&ip)
+\begin{DoxyCompactList}\small\item\em output a ip in text format. \end{DoxyCompactList}\item 
+std\+::istream \& \mbox{\hyperlink{ip__utils_8cpp_acf62ae73262277aae8543882cb50cb48}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{structIP}{IP}} \&ip) noexcept(false)
+\begin{DoxyCompactList}\small\item\em load an IPv4 address from a text input stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Copy\+Right F. J. Madrid-\/\+Cuevas \href{mailto:fjmadrid@uco.es}{\texttt{ fjmadrid@uco.\+es}}
+
+Sólo se permite el uso de este código en la docencia de las asignaturas sobre Estructuras de Datos de la Universidad de Córdoba.
+
+Está prohibido su uso para cualquier otro objetivo. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ip__utils_8cpp_acf62ae73262277aae8543882cb50cb48}\label{ip__utils_8cpp_acf62ae73262277aae8543882cb50cb48}} 
+\index{ip\_utils.cpp@{ip\_utils.cpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!ip\_utils.cpp@{ip\_utils.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily std\+::istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{structIP}{IP}} \&}]{ip }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+load an IPv4 address from a text input stream. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error(\char`\"{}\+Ip} & wrong input format."{}) in case of input error. \\
+\hline
+\end{DoxyExceptions}

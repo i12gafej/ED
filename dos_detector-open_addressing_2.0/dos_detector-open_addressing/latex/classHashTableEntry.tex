@@ -1,0 +1,246 @@
+\hypertarget{classHashTableEntry}{}\doxysection{Hash\+Table\+Entry$<$ K, V $>$ Class Template Reference}
+\label{classHashTableEntry}\index{HashTableEntry$<$ K, V $>$@{HashTableEntry$<$ K, V $>$}}
+
+
+Models an entry of a hash table.  
+
+
+
+
+{\ttfamily \#include $<$hash\+\_\+table\+\_\+entry.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Life cycle.}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHashTableEntry_a69b8e81a4ec017f131e512a8482ca5eb}{Hash\+Table\+Entry}} ()
+\begin{DoxyCompactList}\small\item\em Create an empty entry. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classHashTableEntry_a35ddc8fb58ff537e3d42400a236dc2c8}{Hash\+Table\+Entry}} (const K \&k, const V \&v)
+\begin{DoxyCompactList}\small\item\em Create a valid entry. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Observers.}\par
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classHashTableEntry_a61882fa40fc6ce58a8fdec72fc0238da}{is\+\_\+empty}} () const
+\begin{DoxyCompactList}\small\item\em Check if the entry\textquotesingle{}s state is Empty. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classHashTableEntry_a77838c275631c8faeb14d6e4dc3ee1f4}{is\+\_\+deleted}} () const
+\begin{DoxyCompactList}\small\item\em Check if the entry\textquotesingle{}s state is Deleted. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classHashTableEntry_afdee35f6cad9cc8582bd52ef3be9418a}{is\+\_\+valid}} () const
+\begin{DoxyCompactList}\small\item\em Check if the entry\textquotesingle{}s state is Valid. \end{DoxyCompactList}\item 
+K \mbox{\hyperlink{classHashTableEntry_ad5cc34b570ca3c3025f12d4ab4408731}{get\+\_\+key}} () const
+\begin{DoxyCompactList}\small\item\em Get the key value of the entry. \end{DoxyCompactList}\item 
+V \mbox{\hyperlink{classHashTableEntry_a1cbd396710d19e8b4db6628e53c3639a}{get\+\_\+value}} () const
+\begin{DoxyCompactList}\small\item\em Get the value data of the entry. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Modifiers.}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classHashTableEntry_ae9dcdb49a7c0beab32679d706c14afd5}{set}} (const K \&k, const V \&v)
+\begin{DoxyCompactList}\small\item\em Set the pair $<$key,value$>$. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHashTableEntry_a052e7ba217c8907c0ff86f5407b92f47}{set\+\_\+value}} (const V \&v)
+\begin{DoxyCompactList}\small\item\em Set the value data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHashTableEntry_a59faf6986ffbaa3089987c38df454a05}{set\+\_\+deleted}} ()
+\begin{DoxyCompactList}\small\item\em Set the state of the entry to Deleted. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHashTableEntry_a536c37389fc2e3fe91a59ee666fe06e1}\label{classHashTableEntry_a536c37389fc2e3fe91a59ee666fe06e1}} 
+enum \mbox{\hyperlink{classHashTableEntry_a536c37389fc2e3fe91a59ee666fe06e1}{Entry\+State}} \{ {\bfseries EMPTY} =0
+, {\bfseries VALID} =1
+, {\bfseries DELETED} =2
+ \}
+\begin{DoxyCompactList}\small\item\em The entry\textquotesingle{}s states. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class K, class V$>$\newline
+class Hash\+Table\+Entry$<$ K, V $>$}
+
+Models an entry of a hash table. 
+
+An entry has three states\+: empty, valid, deleted. The entry data is a $<$Key,Value$>$ pair.
+
+The template parameters K and V must have default constructors. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHashTableEntry_a69b8e81a4ec017f131e512a8482ca5eb}\label{classHashTableEntry_a69b8e81a4ec017f131e512a8482ca5eb}} 
+\index{HashTableEntry$<$ K, V $>$@{HashTableEntry$<$ K, V $>$}!HashTableEntry@{HashTableEntry}}
+\index{HashTableEntry@{HashTableEntry}!HashTableEntry$<$ K, V $>$@{HashTableEntry$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{HashTableEntry()}{HashTableEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class K , class V $>$ \\
+\mbox{\hyperlink{classHashTableEntry}{Hash\+Table\+Entry}}$<$ K, V $>$\+::\mbox{\hyperlink{classHashTableEntry}{Hash\+Table\+Entry}}}
+
+
+
+Create an empty entry. 
+
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{classHashTableEntry_a61882fa40fc6ce58a8fdec72fc0238da}{is\+\_\+empty()}} 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classHashTableEntry_a35ddc8fb58ff537e3d42400a236dc2c8}\label{classHashTableEntry_a35ddc8fb58ff537e3d42400a236dc2c8}} 
+\index{HashTableEntry$<$ K, V $>$@{HashTableEntry$<$ K, V $>$}!HashTableEntry@{HashTableEntry}}
+\index{HashTableEntry@{HashTableEntry}!HashTableEntry$<$ K, V $>$@{HashTableEntry$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{HashTableEntry()}{HashTableEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class K , class V $>$ \\
+\mbox{\hyperlink{classHashTableEntry}{Hash\+Table\+Entry}}$<$ K, V $>$\+::\mbox{\hyperlink{classHashTableEntry}{Hash\+Table\+Entry}} (\begin{DoxyParamCaption}\item[{const K \&}]{k,  }\item[{const V \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Create a valid entry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em k} & is the key data of the pair. \\
+\hline
+{\em v} & is the value data of the pair. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{classHashTableEntry_afdee35f6cad9cc8582bd52ef3be9418a}{is\+\_\+valid()}} 
+
+\mbox{\hyperlink{classHashTableEntry_ad5cc34b570ca3c3025f12d4ab4408731}{get\+\_\+key()}}==k 
+
+\mbox{\hyperlink{classHashTableEntry_a1cbd396710d19e8b4db6628e53c3639a}{get\+\_\+value()}}==v 
+\end{DoxyPostcond}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHashTableEntry_ad5cc34b570ca3c3025f12d4ab4408731}\label{classHashTableEntry_ad5cc34b570ca3c3025f12d4ab4408731}} 
+\index{HashTableEntry$<$ K, V $>$@{HashTableEntry$<$ K, V $>$}!get\_key@{get\_key}}
+\index{get\_key@{get\_key}!HashTableEntry$<$ K, V $>$@{HashTableEntry$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{get\_key()}{get\_key()}}
+{\footnotesize\ttfamily template$<$class K , class V $>$ \\
+K \mbox{\hyperlink{classHashTableEntry}{Hash\+Table\+Entry}}$<$ K, V $>$\+::get\+\_\+key}
+
+
+
+Get the key value of the entry. 
+
+\begin{DoxyReturn}{Returns}
+the key value. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+!is\+\_\+empty() 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classHashTableEntry_a1cbd396710d19e8b4db6628e53c3639a}\label{classHashTableEntry_a1cbd396710d19e8b4db6628e53c3639a}} 
+\index{HashTableEntry$<$ K, V $>$@{HashTableEntry$<$ K, V $>$}!get\_value@{get\_value}}
+\index{get\_value@{get\_value}!HashTableEntry$<$ K, V $>$@{HashTableEntry$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{get\_value()}{get\_value()}}
+{\footnotesize\ttfamily template$<$class K , class V $>$ \\
+V \mbox{\hyperlink{classHashTableEntry}{Hash\+Table\+Entry}}$<$ K, V $>$\+::get\+\_\+value}
+
+
+
+Get the value data of the entry. 
+
+\begin{DoxyReturn}{Returns}
+the value. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+!is\+\_\+empty() 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classHashTableEntry_a77838c275631c8faeb14d6e4dc3ee1f4}\label{classHashTableEntry_a77838c275631c8faeb14d6e4dc3ee1f4}} 
+\index{HashTableEntry$<$ K, V $>$@{HashTableEntry$<$ K, V $>$}!is\_deleted@{is\_deleted}}
+\index{is\_deleted@{is\_deleted}!HashTableEntry$<$ K, V $>$@{HashTableEntry$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{is\_deleted()}{is\_deleted()}}
+{\footnotesize\ttfamily template$<$class K , class V $>$ \\
+bool \mbox{\hyperlink{classHashTableEntry}{Hash\+Table\+Entry}}$<$ K, V $>$\+::is\+\_\+deleted}
+
+
+
+Check if the entry\textquotesingle{}s state is Deleted. 
+
+\begin{DoxyReturn}{Returns}
+true if the entry\textquotesingle{}s state is Deleted. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHashTableEntry_a61882fa40fc6ce58a8fdec72fc0238da}\label{classHashTableEntry_a61882fa40fc6ce58a8fdec72fc0238da}} 
+\index{HashTableEntry$<$ K, V $>$@{HashTableEntry$<$ K, V $>$}!is\_empty@{is\_empty}}
+\index{is\_empty@{is\_empty}!HashTableEntry$<$ K, V $>$@{HashTableEntry$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{is\_empty()}{is\_empty()}}
+{\footnotesize\ttfamily template$<$class K , class V $>$ \\
+bool \mbox{\hyperlink{classHashTableEntry}{Hash\+Table\+Entry}}$<$ K, V $>$\+::is\+\_\+empty}
+
+
+
+Check if the entry\textquotesingle{}s state is Empty. 
+
+\begin{DoxyReturn}{Returns}
+true if the entry\textquotesingle{}s state is empty. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHashTableEntry_afdee35f6cad9cc8582bd52ef3be9418a}\label{classHashTableEntry_afdee35f6cad9cc8582bd52ef3be9418a}} 
+\index{HashTableEntry$<$ K, V $>$@{HashTableEntry$<$ K, V $>$}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!HashTableEntry$<$ K, V $>$@{HashTableEntry$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{is\_valid()}{is\_valid()}}
+{\footnotesize\ttfamily template$<$class K , class V $>$ \\
+bool \mbox{\hyperlink{classHashTableEntry}{Hash\+Table\+Entry}}$<$ K, V $>$\+::is\+\_\+valid}
+
+
+
+Check if the entry\textquotesingle{}s state is Valid. 
+
+\begin{DoxyReturn}{Returns}
+true if the entry\textquotesingle{}s state is Valid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHashTableEntry_ae9dcdb49a7c0beab32679d706c14afd5}\label{classHashTableEntry_ae9dcdb49a7c0beab32679d706c14afd5}} 
+\index{HashTableEntry$<$ K, V $>$@{HashTableEntry$<$ K, V $>$}!set@{set}}
+\index{set@{set}!HashTableEntry$<$ K, V $>$@{HashTableEntry$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily template$<$class K , class V $>$ \\
+void \mbox{\hyperlink{classHashTableEntry}{Hash\+Table\+Entry}}$<$ K, V $>$\+::set (\begin{DoxyParamCaption}\item[{const K \&}]{k,  }\item[{const V \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Set the pair $<$key,value$>$. 
+
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{classHashTableEntry_afdee35f6cad9cc8582bd52ef3be9418a}{is\+\_\+valid()}} 
+
+\mbox{\hyperlink{classHashTableEntry_ad5cc34b570ca3c3025f12d4ab4408731}{get\+\_\+key()}}==k 
+
+\mbox{\hyperlink{classHashTableEntry_a1cbd396710d19e8b4db6628e53c3639a}{get\+\_\+value()}}==v 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classHashTableEntry_a59faf6986ffbaa3089987c38df454a05}\label{classHashTableEntry_a59faf6986ffbaa3089987c38df454a05}} 
+\index{HashTableEntry$<$ K, V $>$@{HashTableEntry$<$ K, V $>$}!set\_deleted@{set\_deleted}}
+\index{set\_deleted@{set\_deleted}!HashTableEntry$<$ K, V $>$@{HashTableEntry$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{set\_deleted()}{set\_deleted()}}
+{\footnotesize\ttfamily template$<$class K , class V $>$ \\
+void \mbox{\hyperlink{classHashTableEntry}{Hash\+Table\+Entry}}$<$ K, V $>$\+::set\+\_\+deleted}
+
+
+
+Set the state of the entry to Deleted. 
+
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{classHashTableEntry_afdee35f6cad9cc8582bd52ef3be9418a}{is\+\_\+valid()}} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{classHashTableEntry_a77838c275631c8faeb14d6e4dc3ee1f4}{is\+\_\+deleted()}} 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classHashTableEntry_a052e7ba217c8907c0ff86f5407b92f47}\label{classHashTableEntry_a052e7ba217c8907c0ff86f5407b92f47}} 
+\index{HashTableEntry$<$ K, V $>$@{HashTableEntry$<$ K, V $>$}!set\_value@{set\_value}}
+\index{set\_value@{set\_value}!HashTableEntry$<$ K, V $>$@{HashTableEntry$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{set\_value()}{set\_value()}}
+{\footnotesize\ttfamily template$<$class K , class V $>$ \\
+void \mbox{\hyperlink{classHashTableEntry}{Hash\+Table\+Entry}}$<$ K, V $>$\+::set\+\_\+value (\begin{DoxyParamCaption}\item[{const V \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Set the value data. 
+
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{classHashTableEntry_afdee35f6cad9cc8582bd52ef3be9418a}{is\+\_\+valid()}} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{classHashTableEntry_afdee35f6cad9cc8582bd52ef3be9418a}{is\+\_\+valid()}} 
+
+old.\+get\+\_\+key()==\mbox{\hyperlink{classHashTableEntry_ad5cc34b570ca3c3025f12d4ab4408731}{get\+\_\+key()}} 
+
+\mbox{\hyperlink{classHashTableEntry_a1cbd396710d19e8b4db6628e53c3639a}{get\+\_\+value()}}==v 
+\end{DoxyPostcond}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{hash__table__entry_8hpp}{hash\+\_\+table\+\_\+entry.\+hpp}}\item 
+\mbox{\hyperlink{hash__table__entry__imp_8hpp}{hash\+\_\+table\+\_\+entry\+\_\+imp.\+hpp}}\end{DoxyCompactItemize}

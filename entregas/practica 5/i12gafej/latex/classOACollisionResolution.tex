@@ -1,0 +1,115 @@
+\hypertarget{classOACollisionResolution}{}\doxysection{OACollision\+Resolution Class Reference}
+\label{classOACollisionResolution}\index{OACollisionResolution@{OACollisionResolution}}
+
+
+Base class for Open Addressing Collision Resolution algorithms. $\ast$.  
+
+
+
+
+{\ttfamily \#include $<$hash.\+hpp$>$}
+
+
+
+Inheritance diagram for OACollision\+Resolution\+:
+% FIG 0
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classOACollisionResolution_ae41ff03a5958c5c360b8342ff29a0713}\label{classOACollisionResolution_ae41ff03a5958c5c360b8342ff29a0713}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classOACollisionResolution}{OACollision\+Resolution}} $>$ \mbox{\hyperlink{classOACollisionResolution_ae41ff03a5958c5c360b8342ff29a0713}{Ref}}
+\begin{DoxyCompactList}\small\item\em A reference to a hash function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual size\+\_\+t \mbox{\hyperlink{classOACollisionResolution_a16fe33a91672fe4f1cb695bbe4844d51}{operator()}} (std\+::uint64\+\_\+t k, size\+\_\+t iter) const =0
+\begin{DoxyCompactList}\small\item\em hash a key with collision resolution. Hash the key to get a table index, giving alternatives for several probes. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classOACollisionResolution_ae41ff03a5958c5c360b8342ff29a0713}{OACollision\+Resolution\+::\+Ref}} \mbox{\hyperlink{classOACollisionResolution_af82f0d098d11e35121679668bd02f092}{pick\+\_\+at\+\_\+new}} (std\+::uint64\+\_\+t new\+\_\+m) const =0
+\begin{DoxyCompactList}\small\item\em Get a new version of the algorithm with a new table size choosing at random a new hash function. \end{DoxyCompactList}\item 
+virtual std\+::uint64\+\_\+t \mbox{\hyperlink{classOACollisionResolution_ad14c3995cccbe368f98c567fec5fac17}{m}} () const =0
+\begin{DoxyCompactList}\small\item\em Return the cardinality of the hash function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for Open Addressing Collision Resolution algorithms. $\ast$. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOACollisionResolution_ad14c3995cccbe368f98c567fec5fac17}\label{classOACollisionResolution_ad14c3995cccbe368f98c567fec5fac17}} 
+\index{OACollisionResolution@{OACollisionResolution}!m@{m}}
+\index{m@{m}!OACollisionResolution@{OACollisionResolution}}
+\doxysubsubsection{\texorpdfstring{m()}{m()}}
+{\footnotesize\ttfamily virtual std\+::uint64\+\_\+t OACollision\+Resolution\+::m (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Return the cardinality of the hash function. 
+
+\begin{DoxyReturn}{Returns}
+the cardinality of the hash function. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDHash_ae949210c52756711cf78901870d3d941}{DHash}}, \mbox{\hyperlink{classRPHash_ad1418ed4a891ff228404258990790364}{RPHash}}, \mbox{\hyperlink{classQPHash_a9a1b4bc6ffef1b1b0859ce622f304580}{QPHash}}, and \mbox{\hyperlink{classLPHash_a996d8d2ebc21ab1fb52c74c1d029067f}{LPHash}}.
+
+\mbox{\Hypertarget{classOACollisionResolution_a16fe33a91672fe4f1cb695bbe4844d51}\label{classOACollisionResolution_a16fe33a91672fe4f1cb695bbe4844d51}} 
+\index{OACollisionResolution@{OACollisionResolution}!operator()@{operator()}}
+\index{operator()@{operator()}!OACollisionResolution@{OACollisionResolution}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily virtual size\+\_\+t OACollision\+Resolution\+::operator() (\begin{DoxyParamCaption}\item[{std\+::uint64\+\_\+t}]{k,  }\item[{size\+\_\+t}]{iter }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+hash a key with collision resolution. Hash the key to get a table index, giving alternatives for several probes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em k} & is the key to be hashed. \\
+\hline
+{\em iter} & is the number of probes generates upto now. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the table index. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+k$<$p() 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+iter==0 implies ret\+\_\+v is the universal hash function for integers. 
+
+iter$>$0 and ret\+\_\+v is the next value of the collision resolution algorithm. 
+\end{DoxyPostcond}
+
+
+Implemented in \mbox{\hyperlink{classDHash_a6d3bac29e3691796fe476c93e11bbfaf}{DHash}}, \mbox{\hyperlink{classRPHash_a72e12324fb2a62efe2d89fe7ec7a71d9}{RPHash}}, \mbox{\hyperlink{classQPHash_a416ea08d814468b6ba3201a98439b76e}{QPHash}}, and \mbox{\hyperlink{classLPHash_a33de72f623db64aa4340cf31309adb83}{LPHash}}.
+
+\mbox{\Hypertarget{classOACollisionResolution_af82f0d098d11e35121679668bd02f092}\label{classOACollisionResolution_af82f0d098d11e35121679668bd02f092}} 
+\index{OACollisionResolution@{OACollisionResolution}!pick\_at\_new@{pick\_at\_new}}
+\index{pick\_at\_new@{pick\_at\_new}!OACollisionResolution@{OACollisionResolution}}
+\doxysubsubsection{\texorpdfstring{pick\_at\_new()}{pick\_at\_new()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classOACollisionResolution_ae41ff03a5958c5c360b8342ff29a0713}{OACollision\+Resolution\+::\+Ref}} OACollision\+Resolution\+::pick\+\_\+at\+\_\+new (\begin{DoxyParamCaption}\item[{std\+::uint64\+\_\+t}]{new\+\_\+m }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get a new version of the algorithm with a new table size choosing at random a new hash function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+m} & is the new table size. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+new\+\_\+m is power of two greater than 1. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+a new version of the algorithm. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDHash_a8e26b4a528a8419a02ca250ee4e6c049}{DHash}}, \mbox{\hyperlink{classRPHash_a65fb5653ced2ba8133c7d3a730ccc154}{RPHash}}, \mbox{\hyperlink{classQPHash_a640ecf61837759464731084b6257975e}{QPHash}}, and \mbox{\hyperlink{classLPHash_ad6aa86ffb5669da9b9869da8d37e74f5}{LPHash}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{hash_8hpp}{hash.\+hpp}}\end{DoxyCompactItemize}

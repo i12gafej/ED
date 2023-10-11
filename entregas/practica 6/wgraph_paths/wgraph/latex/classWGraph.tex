@@ -1,0 +1,880 @@
+\hypertarget{classWGraph}{}\doxysection{WGraph$<$ T $>$ Class Template Reference}
+\label{classWGraph}\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+
+
+Models the Weighted Graph ADT. A Weighted graph is directed graph where all nodes are connected with all by default with infinity weight. Two nodes u,v are adjacent if the weight of the edge u-\/$>$v is less than infinity.  
+
+
+
+
+{\ttfamily \#include $<$wgraph.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWGraph_afe1fa07c6bab3f23c097c9bde88c4320}\label{classWGraph_afe1fa07c6bab3f23c097c9bde88c4320}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$ $>$ \mbox{\hyperlink{classWGraph_afe1fa07c6bab3f23c097c9bde88c4320}{Ref}}
+\begin{DoxyCompactList}\small\item\em Models a reference to a \mbox{\hyperlink{classWGraph}{WGraph}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}\label{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}} 
+typedef \mbox{\hyperlink{classWNode}{WNode}}$<$ T $>$\+::\mbox{\hyperlink{classWGraph_afe1fa07c6bab3f23c097c9bde88c4320}{Ref}} \mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}}
+\begin{DoxyCompactList}\small\item\em a ref to a graph\textquotesingle{}s node. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWGraph_a0a295755b1865d25820444671d8a1653}\label{classWGraph_a0a295755b1865d25820444671d8a1653}} 
+typedef T\+::key\+\_\+t \mbox{\hyperlink{classWGraph_a0a295755b1865d25820444671d8a1653}{key\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em the type used as node\textquotesingle{}s key. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWGraph_ad5226120d71c8ecf0a5896106872efd6}\label{classWGraph_ad5226120d71c8ecf0a5896106872efd6}} 
+typedef \mbox{\hyperlink{classWEdge}{WEdge}}$<$ T, float $>$\+::\mbox{\hyperlink{classWGraph_afe1fa07c6bab3f23c097c9bde88c4320}{Ref}} \mbox{\hyperlink{classWGraph_ad5226120d71c8ecf0a5896106872efd6}{Edge\+Ref}}
+\begin{DoxyCompactList}\small\item\em a ref to a graph\textquotesingle{}s edge. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Observers}\par
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classWGraph_ab30b97989a498e74a63f1b8f86ee3840}{is\+\_\+empty}} () const
+\begin{DoxyCompactList}\small\item\em is the graph empty? \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWGraph_a498278724904bbab068473d686da8eb5}{is\+\_\+full}} () const
+\begin{DoxyCompactList}\small\item\em is the graph empty? \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWGraph_adddac180f4d5cd0f830f911beda34253}\label{classWGraph_adddac180f4d5cd0f830f911beda34253}} 
+size\+\_\+t \mbox{\hyperlink{classWGraph_adddac180f4d5cd0f830f911beda34253}{size}} () const
+\begin{DoxyCompactList}\small\item\em Get current number of nodes. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classWGraph_a485788dfb09a06525d10f077736f151d}{capacity}} () const
+\begin{DoxyCompactList}\small\item\em Get the max number of nodes to be added. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWGraph_a71b73ba0c19074ba20f059519a9a3392}{has}} (\mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}} u) const
+\begin{DoxyCompactList}\small\item\em is u a node of this graph? \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWGraph_abefd56a6423a5065f3016fe1eabb73f7}{are\+\_\+adjacent}} (\mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}} u, \mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}} v) const
+\begin{DoxyCompactList}\small\item\em Are nodes u and v adjacent? A vertex u is adjacent to v if the weight of the edge u-\/$>$v is less than inf. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWGraph_ad9009f428859a3609062ccc07ca8464b}{has\+\_\+current\+\_\+node}} () const
+\begin{DoxyCompactList}\small\item\em Is the node cursor valid? \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}} \mbox{\hyperlink{classWGraph_a2381d1a27c547086416f48571d7a93f7}{current\+\_\+node}} () const
+\begin{DoxyCompactList}\small\item\em Get the current node. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWGraph_aa7f2ffa81f5046dd3e1790171431c777}{has\+\_\+current\+\_\+edge}} () const
+\begin{DoxyCompactList}\small\item\em Is the edge cursor valid?. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classWGraph_a697c1f69b4094ab71fb5a0ea0f181ddb}{current\+\_\+weight}} () const
+\begin{DoxyCompactList}\small\item\em Get the weight of current edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classWGraph_ad5226120d71c8ecf0a5896106872efd6}{Edge\+Ref}} \mbox{\hyperlink{classWGraph_a0c635d75e504f0fbd485a083e901ab65}{current\+\_\+edge}} () const
+\begin{DoxyCompactList}\small\item\em Get the weight of current edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}} \mbox{\hyperlink{classWGraph_afd96f191d7a62eee482af9be49cafbaa}{node}} (size\+\_\+t label) const
+\begin{DoxyCompactList}\small\item\em get a node by its label. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classWGraph_a694188254463b6e9d830106a168bb36c}{weight}} (\mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}} u, \mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}} v) const
+\begin{DoxyCompactList}\small\item\em Get the weight of a u-\/$>$v edge. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classWGraph_a4922dbaf4be1f8fa77d356e373c35b9f}{weight}} (size\+\_\+t u\+\_\+label, size\+\_\+t v\+\_\+label) const
+\begin{DoxyCompactList}\small\item\em Get the weight of a u-\/$>$v edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classWGraph_ad5226120d71c8ecf0a5896106872efd6}{Edge\+Ref}} \mbox{\hyperlink{classWGraph_a53bd3fe047a347d2eeb78c46bdba854d}{edge}} (\mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}} u, \mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}} v) const
+\begin{DoxyCompactList}\small\item\em Get the edge (u,v). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classWGraph_ad5226120d71c8ecf0a5896106872efd6}{Edge\+Ref}} \mbox{\hyperlink{classWGraph_a6e2d42ce4dfd702808e9690f94f5d60e}{edge}} (size\+\_\+t u\+\_\+label, size\+\_\+t v\+\_\+label) const
+\begin{DoxyCompactList}\small\item\em Get the edge (u,v). \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{classWGraph_a804e8f481a326e1a2b802e155a6e8a8f}{fold}} (std\+::ostream \&out) const
+\begin{DoxyCompactList}\small\item\em Fold a weighted graph to an output stream. FORMAT\+: \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMatrix_a86081140d8c1f043687455f8f549028c}{FMatrix\+::\+Ref}} \mbox{\hyperlink{classWGraph_a1f2a51d511524c1f7165ea309ccb7db8}{weight\+\_\+matrix}} () const
+\begin{DoxyCompactList}\small\item\em get the Weight \mbox{\hyperlink{classMatrix}{Matrix}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Cursor Management}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWGraph_a17ac974c50703195cc2fbbdc2bc141a6}\label{classWGraph_a17ac974c50703195cc2fbbdc2bc141a6}} 
+void \mbox{\hyperlink{classWGraph_a17ac974c50703195cc2fbbdc2bc141a6}{set\+\_\+visited}} (bool state)
+\begin{DoxyCompactList}\small\item\em set the visited state for all then nodes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWGraph_a990f903f598d5b1a2bdc5fd96fc6e04d}{goto\+\_\+first\+\_\+node}} ()
+\begin{DoxyCompactList}\small\item\em Goto to the first node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWGraph_ac271b66a85a55e4b4ca63cbeddcde069}{goto\+\_\+first\+\_\+edge}} ()
+\begin{DoxyCompactList}\small\item\em Goto to the first edge (with weight $<$ inf). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWGraph_a648e255c9943dff1e272f4e73b216360}{goto\+\_\+next\+\_\+node}} ()
+\begin{DoxyCompactList}\small\item\em Move the cursor to the next node if there is. The edge cursor is also affected. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWGraph_acca4d81f790201335b58a8916a4cd0c3}{goto\+\_\+next\+\_\+edge}} ()
+\begin{DoxyCompactList}\small\item\em Move the cursor to the next edge with weight $<$ inf. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWGraph_a6fad61ec8a55830746f7e2f7a3ebe55a}{goto\+\_\+node}} (\mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}} u)
+\begin{DoxyCompactList}\small\item\em Move the cursor to a node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWGraph_aee13fc1281c835791e934a3a3576abca}{goto\+\_\+edge}} (\mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}} u, \mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}} v)
+\begin{DoxyCompactList}\small\item\em Move the node and graph cursors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWGraph_aa2ec48c7d7b6697f000f43db3302057b}{goto\+\_\+edge}} (\mbox{\hyperlink{classWGraph_ad5226120d71c8ecf0a5896106872efd6}{Edge\+Ref}} e)
+\begin{DoxyCompactList}\small\item\em Move the node and graph cursors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}} \mbox{\hyperlink{classWGraph_ac43bb4efe39d4631b0452ccaf35b2808}{find\+\_\+node}} (typename T\+::key\+\_\+t const \&key)
+\begin{DoxyCompactList}\small\item\em Move cursor to the first node with data item equal to key. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}} \mbox{\hyperlink{classWGraph_a44662e1c76bd3979342eb77412d4dd5f}{find\+\_\+next\+\_\+node}} (typename T\+::key\+\_\+t const \&key)
+\begin{DoxyCompactList}\small\item\em Move cursor to next node with data item equal to key. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Graph editing}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classWGraph_ac09d94c2d2655a6b5942f35635a35b3a}{set\+\_\+current\+\_\+weight}} (float new\+\_\+w)
+\begin{DoxyCompactList}\small\item\em Set the weight of current edge. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWGraph_ab8281cc00ca6b7b9d147d539b09a3d50}{set\+\_\+weight}} (size\+\_\+t u\+\_\+label, size\+\_\+t v\+\_\+label, float new\+\_\+w)
+\begin{DoxyCompactList}\small\item\em Set the weight of u-\/$>$v edge. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWGraph_a90e1761b3c00342544065e1ffa47e9cb}{set\+\_\+weight}} (\mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}} u, \mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}} v, float new\+\_\+w)
+\begin{DoxyCompactList}\small\item\em Set the weight of u-\/$>$v edge. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWGraph_a21b9ca767447760ea8e985ee27653cb2}{add\+\_\+node}} (T const \&v)
+\begin{DoxyCompactList}\small\item\em Add a new node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWGraph_aae5ab75f469e5beba7571a3057179175}\label{classWGraph_aae5ab75f469e5beba7571a3057179175}} 
+std\+::vector$<$ \mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}} $>$ {\bfseries nodes\+\_\+}
+\item 
+\mbox{\Hypertarget{classWGraph_a1d2157346b462bb0a019f753c239fb5d}\label{classWGraph_a1d2157346b462bb0a019f753c239fb5d}} 
+\mbox{\hyperlink{classMatrix_a86081140d8c1f043687455f8f549028c}{FMatrix\+::\+Ref}} {\bfseries a\+\_\+mat\+\_\+}
+\item 
+\mbox{\Hypertarget{classWGraph_ad993a4853e3a1192f60b455f141860dd}\label{classWGraph_ad993a4853e3a1192f60b455f141860dd}} 
+size\+\_\+t {\bfseries size\+\_\+}
+\item 
+\mbox{\Hypertarget{classWGraph_ae4a4b928466f52488faf8643298f2596}\label{classWGraph_ae4a4b928466f52488faf8643298f2596}} 
+size\+\_\+t {\bfseries curr\+\_\+node\+\_\+}
+\item 
+\mbox{\Hypertarget{classWGraph_a3edc57a5259ddb9c2495bc1440c8b008}\label{classWGraph_a3edc57a5259ddb9c2495bc1440c8b008}} 
+size\+\_\+t {\bfseries curr\+\_\+edge\+\_\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Makers}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWGraph_ac04f73279774a4af5ca55c236c24122f}{WGraph}} (size\+\_\+t \mbox{\hyperlink{classWGraph_a485788dfb09a06525d10f077736f151d}{capacity}}, float default\+\_\+weight=std\+::numeric\+\_\+limits$<$ float $>$\+::infinity())
+\begin{DoxyCompactList}\small\item\em Makes a Weighted Graph with capacity nodes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classWGraph_ab7b1a69797529e12df5f090fd518e896}{WGraph}} (std\+::istream \&input) noexcept(false)
+\begin{DoxyCompactList}\small\item\em Makes a Weighted graph from an input stream. FORMAT\+: \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWGraph_a4db49270686b9ec71df5441494fa9198}\label{classWGraph_a4db49270686b9ec71df5441494fa9198}} 
+{\bfseries $\sim$\+WGraph} ()
+\item 
+static \mbox{\hyperlink{classWGraph_afe1fa07c6bab3f23c097c9bde88c4320}{Ref}} \mbox{\hyperlink{classWGraph_a5cf5203ddfa04ac030accd33bfd46d52}{create}} (size\+\_\+t \mbox{\hyperlink{classWGraph_a485788dfb09a06525d10f077736f151d}{capacity}}, float default\+\_\+weight=std\+::numeric\+\_\+limits$<$ float $>$\+::infinity())
+\begin{DoxyCompactList}\small\item\em Virtual constructor. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classWGraph_afe1fa07c6bab3f23c097c9bde88c4320}{Ref}} \mbox{\hyperlink{classWGraph_a2168ed9287abb69f3fb44b01df6b3001}{create}} (std\+::istream \&input)
+\begin{DoxyCompactList}\small\item\em Virtual constructor from an input stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class WGraph$<$ T $>$}
+
+Models the Weighted Graph ADT. A Weighted graph is directed graph where all nodes are connected with all by default with infinity weight. Two nodes u,v are adjacent if the weight of the edge u-\/$>$v is less than infinity. 
+
+\begin{DoxyInvariant}{Invariant}
+!is\+\_\+empty() $\vert$$\vert$ \mbox{\hyperlink{classWGraph_adddac180f4d5cd0f830f911beda34253}{size()}}==0 
+
+!is\+\_\+full() $\vert$$\vert$ \mbox{\hyperlink{classWGraph_adddac180f4d5cd0f830f911beda34253}{size()}}$>$=\mbox{\hyperlink{classWGraph_a485788dfb09a06525d10f077736f151d}{capacity()}} 
+\end{DoxyInvariant}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWGraph_ac04f73279774a4af5ca55c236c24122f}\label{classWGraph_ac04f73279774a4af5ca55c236c24122f}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!WGraph@{WGraph}}
+\index{WGraph@{WGraph}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{WGraph()}{WGraph()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::\mbox{\hyperlink{classWGraph}{WGraph}} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{capacity,  }\item[{float}]{default\+\_\+weight = {\ttfamily std\+:\+:numeric\+\_\+limits$<$float$>$\+:\+:infinity()} }\end{DoxyParamCaption})}
+
+
+
+Makes a Weighted Graph with capacity nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & is the maximum number of vertices. \\
+\hline
+{\em default\+\_\+weight} & used to initialize edges\textquotesingle{} weight. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+capacity $>$ 0 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{classWGraph_ab30b97989a498e74a63f1b8f86ee3840}{is\+\_\+empty()}} 
+
+!has\+\_\+current\+\_\+node() 
+
+!has\+\_\+current\+\_\+edge()
+\end{DoxyPostcond}
+\mbox{\hyperlink{classWGraph}{WGraph}} implementation \mbox{\Hypertarget{classWGraph_ab7b1a69797529e12df5f090fd518e896}\label{classWGraph_ab7b1a69797529e12df5f090fd518e896}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!WGraph@{WGraph}}
+\index{WGraph@{WGraph}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{WGraph()}{WGraph()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::\mbox{\hyperlink{classWGraph}{WGraph}} (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Makes a Weighted graph from an input stream. FORMAT\+: 
+
+\textquotesingle{}\mbox{\hyperlink{classWGraph}{WGraph}}\textquotesingle{} $<$capacity$>$ $<$size$>$ $<$node\+\_\+item\+\_\+0$>$ ... $<$node\+\_\+item\+\_\+size-\/1$>$ $<$\+Weight Matrix capacity x capacity$>$
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & is the input stream. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error(\char`\"{}\+Wrong} & \mbox{\hyperlink{classWGraph}{WGraph}} format."{}) \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWGraph_a21b9ca767447760ea8e985ee27653cb2}\label{classWGraph_a21b9ca767447760ea8e985ee27653cb2}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!add\_node@{add\_node}}
+\index{add\_node@{add\_node}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{add\_node()}{add\_node()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::add\+\_\+node (\begin{DoxyParamCaption}\item[{T const \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Add a new node. 
+
+\begin{DoxyItemize}
+\item \mbox{[}in\mbox{]} v is the data item to be save in the new node. \begin{DoxyPrecond}{Precondition}
+not \mbox{\hyperlink{classWGraph_a498278724904bbab068473d686da8eb5}{is\+\_\+full()}} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{classWGraph_ad9009f428859a3609062ccc07ca8464b}{has\+\_\+current\+\_\+node()}} 
+
+not \mbox{\hyperlink{classWGraph_aa7f2ffa81f5046dd3e1790171431c777}{has\+\_\+current\+\_\+edge()}} 
+\end{DoxyPostcond}
+\end{DoxyItemize}
+\mbox{\Hypertarget{classWGraph_abefd56a6423a5065f3016fe1eabb73f7}\label{classWGraph_abefd56a6423a5065f3016fe1eabb73f7}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!are\_adjacent@{are\_adjacent}}
+\index{are\_adjacent@{are\_adjacent}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{are\_adjacent()}{are\_adjacent()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::are\+\_\+adjacent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}}}]{u,  }\item[{\mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}}}]{v }\end{DoxyParamCaption}) const}
+
+
+
+Are nodes u and v adjacent? A vertex u is adjacent to v if the weight of the edge u-\/$>$v is less than inf. 
+
+\begin{DoxyItemize}
+\item \mbox{[}in\mbox{]} u , \item \mbox{[}in\mbox{]} v are nodes. \begin{DoxyReturn}{Returns}
+true if the weight of the edge u-\/$>$v $<$ inf. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+u and v are nodes of the graph. 
+\end{DoxyPrecond}
+\end{DoxyItemize}
+\mbox{\Hypertarget{classWGraph_a485788dfb09a06525d10f077736f151d}\label{classWGraph_a485788dfb09a06525d10f077736f151d}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!capacity@{capacity}}
+\index{capacity@{capacity}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{capacity()}{capacity()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+size\+\_\+t \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::capacity}
+
+
+
+Get the max number of nodes to be added. 
+
+\begin{DoxyReturn}{Returns}
+return the graph\textquotesingle{}s capacity. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWGraph_a5cf5203ddfa04ac030accd33bfd46d52}\label{classWGraph_a5cf5203ddfa04ac030accd33bfd46d52}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!create@{create}}
+\index{create@{create}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+static \mbox{\hyperlink{classWGraph_afe1fa07c6bab3f23c097c9bde88c4320}{Ref}} \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::create (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{capacity,  }\item[{float}]{default\+\_\+weight = {\ttfamily std\+:\+:numeric\+\_\+limits$<$float$>$\+:\+:infinity()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Virtual constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & maximum number of vertices. \\
+\hline
+{\em default\+\_\+weight} & used to initialize edges\textquotesingle{} weight. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the created graph. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWGraph_a2168ed9287abb69f3fb44b01df6b3001}\label{classWGraph_a2168ed9287abb69f3fb44b01df6b3001}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!create@{create}}
+\index{create@{create}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::\mbox{\hyperlink{classWGraph_afe1fa07c6bab3f23c097c9bde88c4320}{Ref}} \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::create (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Virtual constructor from an input stream. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classWGraph_a804e8f481a326e1a2b802e155a6e8a8f}{fold}} to the input format. 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em input} & is the input stream.\+capacity maximum number of vertices. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the created graph. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWGraph_a0c635d75e504f0fbd485a083e901ab65}\label{classWGraph_a0c635d75e504f0fbd485a083e901ab65}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!current\_edge@{current\_edge}}
+\index{current\_edge@{current\_edge}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{current\_edge()}{current\_edge()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::\mbox{\hyperlink{classWGraph_ad5226120d71c8ecf0a5896106872efd6}{Edge\+Ref}} \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::current\+\_\+edge}
+
+
+
+Get the weight of current edge. 
+
+\begin{DoxyReturn}{Returns}
+a reference to the current edge. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{classWGraph_aa7f2ffa81f5046dd3e1790171431c777}{has\+\_\+current\+\_\+edge()}} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+ret\+\_\+v-\/$>$first()==\mbox{\hyperlink{classWGraph_a2381d1a27c547086416f48571d7a93f7}{current\+\_\+node()}} 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classWGraph_a2381d1a27c547086416f48571d7a93f7}\label{classWGraph_a2381d1a27c547086416f48571d7a93f7}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!current\_node@{current\_node}}
+\index{current\_node@{current\_node}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{current\_node()}{current\_node()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::\mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}} \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::current\+\_\+node}
+
+
+
+Get the current node. 
+
+\begin{DoxyReturn}{Returns}
+a reference to the current node. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{classWGraph_ad9009f428859a3609062ccc07ca8464b}{has\+\_\+current\+\_\+node()}} 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classWGraph_a697c1f69b4094ab71fb5a0ea0f181ddb}\label{classWGraph_a697c1f69b4094ab71fb5a0ea0f181ddb}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!current\_weight@{current\_weight}}
+\index{current\_weight@{current\_weight}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{current\_weight()}{current\_weight()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+float \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::current\+\_\+weight}
+
+
+
+Get the weight of current edge. 
+
+\begin{DoxyReturn}{Returns}
+the weight of the current edge. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{classWGraph_aa7f2ffa81f5046dd3e1790171431c777}{has\+\_\+current\+\_\+edge()}} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+ret\+\_\+v $<$ inf 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classWGraph_a53bd3fe047a347d2eeb78c46bdba854d}\label{classWGraph_a53bd3fe047a347d2eeb78c46bdba854d}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!edge@{edge}}
+\index{edge@{edge}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{edge()}{edge()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::\mbox{\hyperlink{classWGraph_ad5226120d71c8ecf0a5896106872efd6}{Edge\+Ref}} \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}}}]{u,  }\item[{\mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}}}]{v }\end{DoxyParamCaption}) const}
+
+
+
+Get the edge (u,v). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & is the first vertex. \\
+\hline
+{\em v} & is the second vertex. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the edge. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+has(u) 
+
+has(v) 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+ret\+\_\+v-\/$>$first()==u 
+
+ret\+\_\+v-\/$>$second()==v 
+
+ret\+\_\+val-\/$>$\mbox{\hyperlink{classWGraph_a694188254463b6e9d830106a168bb36c}{weight()}}==weight(u, v) 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classWGraph_a6e2d42ce4dfd702808e9690f94f5d60e}\label{classWGraph_a6e2d42ce4dfd702808e9690f94f5d60e}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!edge@{edge}}
+\index{edge@{edge}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{edge()}{edge()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::\mbox{\hyperlink{classWGraph_ad5226120d71c8ecf0a5896106872efd6}{Edge\+Ref}} \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::edge (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{u\+\_\+label,  }\item[{size\+\_\+t}]{v\+\_\+label }\end{DoxyParamCaption}) const}
+
+
+
+Get the edge (u,v). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u\+\_\+label} & is the label of the first vertex. \\
+\hline
+{\em v\+\_\+label} & is the label of the second vertex. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the edge. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+u\+\_\+label $<$ \mbox{\hyperlink{classWGraph_adddac180f4d5cd0f830f911beda34253}{size()}} 
+
+v\+\_\+label $<$ \mbox{\hyperlink{classWGraph_adddac180f4d5cd0f830f911beda34253}{size()}} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+ret\+\_\+v-\/$>$first()-\/$>$label()==u\+\_\+label 
+
+ret\+\_\+v-\/$>$second()-\/$>$label()==v\+\_\+label 
+
+ret\+\_\+val-\/$>$\mbox{\hyperlink{classWGraph_a694188254463b6e9d830106a168bb36c}{weight()}}==weight(u\+\_\+label, v\+\_\+label) 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classWGraph_a44662e1c76bd3979342eb77412d4dd5f}\label{classWGraph_a44662e1c76bd3979342eb77412d4dd5f}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!find\_next\_node@{find\_next\_node}}
+\index{find\_next\_node@{find\_next\_node}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{find\_next\_node()}{find\_next\_node()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::\mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}} \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::find\+\_\+next\+\_\+node (\begin{DoxyParamCaption}\item[{typename T\+::key\+\_\+t const \&}]{key }\end{DoxyParamCaption})}
+
+
+
+Move cursor to next node with data item equal to key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & is the data item to be found. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the node. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{classWGraph_ad9009f428859a3609062ccc07ca8464b}{has\+\_\+current\+\_\+node()}} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+ret\+\_\+v==nullptr $\vert$$\vert$ \mbox{\hyperlink{classWGraph_ad9009f428859a3609062ccc07ca8464b}{has\+\_\+current\+\_\+node()}} \&\& \mbox{\hyperlink{classWGraph_a2381d1a27c547086416f48571d7a93f7}{current\+\_\+node()}}==ret\+\_\+v 
+
+!has\+\_\+current\+\_\+node() $\vert$$\vert$ \mbox{\hyperlink{classWGraph_a2381d1a27c547086416f48571d7a93f7}{current\+\_\+node()}}-\/$>$item()==key 
+
+!has\+\_\+current\+\_\+edge() $\vert$$\vert$ \mbox{\hyperlink{classWGraph_a0c635d75e504f0fbd485a083e901ab65}{current\+\_\+edge()}}-\/$>$first()==\mbox{\hyperlink{classWGraph_a2381d1a27c547086416f48571d7a93f7}{current\+\_\+node()}} 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classWGraph_ac43bb4efe39d4631b0452ccaf35b2808}\label{classWGraph_ac43bb4efe39d4631b0452ccaf35b2808}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!find\_node@{find\_node}}
+\index{find\_node@{find\_node}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{find\_node()}{find\_node()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::\mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}} \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::find\+\_\+node (\begin{DoxyParamCaption}\item[{typename T\+::key\+\_\+t const \&}]{key }\end{DoxyParamCaption})}
+
+
+
+Move cursor to the first node with data item equal to key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & is the data item to be found. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the node. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+!is\+\_\+empty() 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+ret\+\_\+v==nullptr $\vert$$\vert$ \mbox{\hyperlink{classWGraph_ad9009f428859a3609062ccc07ca8464b}{has\+\_\+current\+\_\+node()}} \&\& \mbox{\hyperlink{classWGraph_a2381d1a27c547086416f48571d7a93f7}{current\+\_\+node()}}==ret\+\_\+v 
+
+!has\+\_\+current\+\_\+node() $\vert$$\vert$ \mbox{\hyperlink{classWGraph_a2381d1a27c547086416f48571d7a93f7}{current\+\_\+node()}}-\/$>$item()==key 
+
+!has\+\_\+current\+\_\+edge() $\vert$$\vert$ \mbox{\hyperlink{classWGraph_a0c635d75e504f0fbd485a083e901ab65}{current\+\_\+edge()}}-\/$>$first()==\mbox{\hyperlink{classWGraph_a2381d1a27c547086416f48571d7a93f7}{current\+\_\+node()}} 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classWGraph_a804e8f481a326e1a2b802e155a6e8a8f}\label{classWGraph_a804e8f481a326e1a2b802e155a6e8a8f}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!fold@{fold}}
+\index{fold@{fold}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{fold()}{fold()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+std\+::ostream \& \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::fold (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption}) const}
+
+
+
+Fold a weighted graph to an output stream. FORMAT\+: 
+
+\textquotesingle{}\mbox{[} \textquotesingle{}$<$capacity$>$\textquotesingle{} \textquotesingle{}$<$size$>$\{\textquotesingle{} \textquotesingle{}$<$node\+\_\+item$>$\}$\ast$\textquotesingle{} \mbox{[} \textquotesingle{}$<$rows$>$\textquotesingle{} \textquotesingle{}$<$cols$>$\textquotesingle{}\{\textquotesingle{} \textquotesingle{}weight\}$\ast$\textquotesingle{} \mbox{]} \mbox{]}\textquotesingle{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & is the output stream. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the output stream. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWGraph_aa2ec48c7d7b6697f000f43db3302057b}\label{classWGraph_aa2ec48c7d7b6697f000f43db3302057b}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!goto\_edge@{goto\_edge}}
+\index{goto\_edge@{goto\_edge}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{goto\_edge()}{goto\_edge()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::goto\+\_\+edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWGraph_ad5226120d71c8ecf0a5896106872efd6}{Edge\+Ref}}}]{e }\end{DoxyParamCaption})}
+
+
+
+Move the node and graph cursors. 
+
+\begin{DoxyItemize}
+\item \mbox{[}in\mbox{]} e is the edge where moving cursors. \begin{DoxyPrecond}{Precondition}
+has(e-\/$>$fist()) and has(e-\/$>$second()) 
+
+e-\/$>$\mbox{\hyperlink{classWGraph_a694188254463b6e9d830106a168bb36c}{weight()}}$<$inf 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{classWGraph_a2381d1a27c547086416f48571d7a93f7}{current\+\_\+node()}}==e-\/$>$first() 
+
+\mbox{\hyperlink{classWGraph_a0c635d75e504f0fbd485a083e901ab65}{current\+\_\+edge()}}-\/$>$second()==e-\/$>$second() 
+
+\mbox{\hyperlink{classWGraph_a697c1f69b4094ab71fb5a0ea0f181ddb}{current\+\_\+weight()}}==e-\/$>$\mbox{\hyperlink{classWGraph_a694188254463b6e9d830106a168bb36c}{weight()}} 
+\end{DoxyPostcond}
+\end{DoxyItemize}
+\mbox{\Hypertarget{classWGraph_aee13fc1281c835791e934a3a3576abca}\label{classWGraph_aee13fc1281c835791e934a3a3576abca}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!goto\_edge@{goto\_edge}}
+\index{goto\_edge@{goto\_edge}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{goto\_edge()}{goto\_edge()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::goto\+\_\+edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}}}]{u,  }\item[{\mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}}}]{v }\end{DoxyParamCaption})}
+
+
+
+Move the node and graph cursors. 
+
+\begin{DoxyItemize}
+\item \mbox{[}in\mbox{]} u, \item \mbox{[}in\mbox{]} v are nodes. \begin{DoxyPrecond}{Precondition}
+has(u) 
+
+has(v) 
+
+weight(u, v) $<$ inf 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{classWGraph_a2381d1a27c547086416f48571d7a93f7}{current\+\_\+node()}}==u 
+
+\mbox{\hyperlink{classWGraph_a0c635d75e504f0fbd485a083e901ab65}{current\+\_\+edge()}}-\/$>$first()==u 
+
+\mbox{\hyperlink{classWGraph_a0c635d75e504f0fbd485a083e901ab65}{current\+\_\+edge()}}-\/$>$second()==v 
+
+\mbox{\hyperlink{classWGraph_a697c1f69b4094ab71fb5a0ea0f181ddb}{current\+\_\+weight()}}==weight(u,v) 
+\end{DoxyPostcond}
+\end{DoxyItemize}
+\mbox{\Hypertarget{classWGraph_ac271b66a85a55e4b4ca63cbeddcde069}\label{classWGraph_ac271b66a85a55e4b4ca63cbeddcde069}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!goto\_first\_edge@{goto\_first\_edge}}
+\index{goto\_first\_edge@{goto\_first\_edge}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{goto\_first\_edge()}{goto\_first\_edge()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::goto\+\_\+first\+\_\+edge}
+
+
+
+Goto to the first edge (with weight $<$ inf). 
+
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{classWGraph_ad9009f428859a3609062ccc07ca8464b}{has\+\_\+current\+\_\+node()}} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+!has\+\_\+current\+\_\+edge() $\vert$$\vert$ \mbox{\hyperlink{classWGraph_a0c635d75e504f0fbd485a083e901ab65}{current\+\_\+edge()}}-\/$>$first() == \mbox{\hyperlink{classWGraph_a2381d1a27c547086416f48571d7a93f7}{current\+\_\+node()}} 
+
+!has\+\_\+current\+\_\+edge() $\vert$$\vert$ \mbox{\hyperlink{classWGraph_a697c1f69b4094ab71fb5a0ea0f181ddb}{current\+\_\+weight()}}$<$inf 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classWGraph_a990f903f598d5b1a2bdc5fd96fc6e04d}\label{classWGraph_a990f903f598d5b1a2bdc5fd96fc6e04d}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!goto\_first\_node@{goto\_first\_node}}
+\index{goto\_first\_node@{goto\_first\_node}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{goto\_first\_node()}{goto\_first\_node()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::goto\+\_\+first\+\_\+node}
+
+
+
+Goto to the first node. 
+
+\begin{DoxyPrecond}{Precondition}
+!is\+\_\+empty(). 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+!has\+\_\+current\+\_\+edge() $\vert$$\vert$ \mbox{\hyperlink{classWGraph_a0c635d75e504f0fbd485a083e901ab65}{current\+\_\+edge()}}-\/$>$first() == \mbox{\hyperlink{classWGraph_a2381d1a27c547086416f48571d7a93f7}{current\+\_\+node()}} 
+
+!has\+\_\+current\+\_\+edge() $\vert$$\vert$ \mbox{\hyperlink{classWGraph_a697c1f69b4094ab71fb5a0ea0f181ddb}{current\+\_\+weight()}}$<$inf 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classWGraph_acca4d81f790201335b58a8916a4cd0c3}\label{classWGraph_acca4d81f790201335b58a8916a4cd0c3}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!goto\_next\_edge@{goto\_next\_edge}}
+\index{goto\_next\_edge@{goto\_next\_edge}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{goto\_next\_edge()}{goto\_next\_edge()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::goto\+\_\+next\+\_\+edge}
+
+
+
+Move the cursor to the next edge with weight $<$ inf. 
+
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{classWGraph_aa7f2ffa81f5046dd3e1790171431c777}{has\+\_\+current\+\_\+edge()}}. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+!has\+\_\+current\+\_\+edge()$\vert$$\vert$current\+\_\+edge()-\/$>$first() == \mbox{\hyperlink{classWGraph_a2381d1a27c547086416f48571d7a93f7}{current\+\_\+node()}} 
+
+!has\+\_\+current\+\_\+edge()$\vert$$\vert$current\+\_\+weight()$<$inf 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classWGraph_a648e255c9943dff1e272f4e73b216360}\label{classWGraph_a648e255c9943dff1e272f4e73b216360}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!goto\_next\_node@{goto\_next\_node}}
+\index{goto\_next\_node@{goto\_next\_node}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{goto\_next\_node()}{goto\_next\_node()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::goto\+\_\+next\+\_\+node}
+
+
+
+Move the cursor to the next node if there is. The edge cursor is also affected. 
+
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{classWGraph_ad9009f428859a3609062ccc07ca8464b}{has\+\_\+current\+\_\+node()}}. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+!has\+\_\+current\+\_\+edge()$\vert$$\vert$current\+\_\+edge()-\/$>$first() == \mbox{\hyperlink{classWGraph_a2381d1a27c547086416f48571d7a93f7}{current\+\_\+node()}} 
+
+!has\+\_\+current\+\_\+edge()$\vert$$\vert$current\+\_\+weight()$<$inf 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classWGraph_a6fad61ec8a55830746f7e2f7a3ebe55a}\label{classWGraph_a6fad61ec8a55830746f7e2f7a3ebe55a}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!goto\_node@{goto\_node}}
+\index{goto\_node@{goto\_node}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{goto\_node()}{goto\_node()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::goto\+\_\+node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}}}]{u }\end{DoxyParamCaption})}
+
+
+
+Move the cursor to a node. 
+
+\begin{DoxyItemize}
+\item \mbox{[}in\mbox{]} u is a node. \begin{DoxyPrecond}{Precondition}
+has(u) 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{classWGraph_a2381d1a27c547086416f48571d7a93f7}{current\+\_\+node()}}==u. 
+
+!has\+\_\+current\+\_\+edge()$\vert$$\vert$current\+\_\+edge()-\/$>$first()==u 
+
+!has\+\_\+current\+\_\+edge()$\vert$$\vert$current\+\_\+weight()$<$inf 
+\end{DoxyPostcond}
+\end{DoxyItemize}
+\mbox{\Hypertarget{classWGraph_a71b73ba0c19074ba20f059519a9a3392}\label{classWGraph_a71b73ba0c19074ba20f059519a9a3392}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!has@{has}}
+\index{has@{has}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{has()}{has()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::has (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}}}]{u }\end{DoxyParamCaption}) const}
+
+
+
+is u a node of this graph? 
+
+\begin{DoxyPrecond}{Precondition}
+u is not nullptr. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+if its true. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWGraph_aa7f2ffa81f5046dd3e1790171431c777}\label{classWGraph_aa7f2ffa81f5046dd3e1790171431c777}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!has\_current\_edge@{has\_current\_edge}}
+\index{has\_current\_edge@{has\_current\_edge}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{has\_current\_edge()}{has\_current\_edge()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::has\+\_\+current\+\_\+edge}
+
+
+
+Is the edge cursor valid?. 
+
+\begin{DoxyReturn}{Returns}
+true if the edge cursor references a valid edge. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+!ret\+\_\+v $\vert$$\vert$ \mbox{\hyperlink{classWGraph_ad9009f428859a3609062ccc07ca8464b}{has\+\_\+current\+\_\+node()}}; 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classWGraph_ad9009f428859a3609062ccc07ca8464b}\label{classWGraph_ad9009f428859a3609062ccc07ca8464b}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!has\_current\_node@{has\_current\_node}}
+\index{has\_current\_node@{has\_current\_node}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{has\_current\_node()}{has\_current\_node()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::has\+\_\+current\+\_\+node}
+
+
+
+Is the node cursor valid? 
+
+\begin{DoxyReturn}{Returns}
+true if the node cursor references to a valid node. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWGraph_ab30b97989a498e74a63f1b8f86ee3840}\label{classWGraph_ab30b97989a498e74a63f1b8f86ee3840}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!is\_empty@{is\_empty}}
+\index{is\_empty@{is\_empty}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{is\_empty()}{is\_empty()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::is\+\_\+empty}
+
+
+
+is the graph empty? 
+
+\begin{DoxyReturn}{Returns}
+true if there is not any node. @pos !is\+\_\+empty() or \mbox{\hyperlink{classWGraph_adddac180f4d5cd0f830f911beda34253}{size()}}==0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWGraph_a498278724904bbab068473d686da8eb5}\label{classWGraph_a498278724904bbab068473d686da8eb5}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!is\_full@{is\_full}}
+\index{is\_full@{is\_full}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{is\_full()}{is\_full()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::is\+\_\+full}
+
+
+
+is the graph empty? 
+
+\begin{DoxyReturn}{Returns}
+true if there is not any node. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWGraph_afd96f191d7a62eee482af9be49cafbaa}\label{classWGraph_afd96f191d7a62eee482af9be49cafbaa}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!node@{node}}
+\index{node@{node}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{node()}{node()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::\mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}} \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::node (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{label }\end{DoxyParamCaption}) const}
+
+
+
+get a node by its label. 
+
+\begin{DoxyPrecond}{Precondition}
+label$<$ \mbox{\hyperlink{classWGraph_adddac180f4d5cd0f830f911beda34253}{size()}} 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classWGraph_ac09d94c2d2655a6b5942f35635a35b3a}\label{classWGraph_ac09d94c2d2655a6b5942f35635a35b3a}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!set\_current\_weight@{set\_current\_weight}}
+\index{set\_current\_weight@{set\_current\_weight}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_current\_weight()}{set\_current\_weight()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::set\+\_\+current\+\_\+weight (\begin{DoxyParamCaption}\item[{float}]{new\+\_\+w }\end{DoxyParamCaption})}
+
+
+
+Set the weight of current edge. 
+
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{classWGraph_aa7f2ffa81f5046dd3e1790171431c777}{has\+\_\+current\+\_\+edge()}} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{classWGraph_a697c1f69b4094ab71fb5a0ea0f181ddb}{current\+\_\+weight()}}==new\+\_\+w 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classWGraph_a90e1761b3c00342544065e1ffa47e9cb}\label{classWGraph_a90e1761b3c00342544065e1ffa47e9cb}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!set\_weight@{set\_weight}}
+\index{set\_weight@{set\_weight}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_weight()}{set\_weight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::set\+\_\+weight (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}}}]{u,  }\item[{\mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}}}]{v,  }\item[{float}]{new\+\_\+w }\end{DoxyParamCaption})}
+
+
+
+Set the weight of u-\/$>$v edge. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & and \\
+\hline
+{\em v} & are the edge ends. \\
+\hline
+{\em new\+\_\+w} & is the weight value to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+has(u) and has(v). 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+weight(u, v)==new\+\_\+w 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classWGraph_ab8281cc00ca6b7b9d147d539b09a3d50}\label{classWGraph_ab8281cc00ca6b7b9d147d539b09a3d50}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!set\_weight@{set\_weight}}
+\index{set\_weight@{set\_weight}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_weight()}{set\_weight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::set\+\_\+weight (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{u\+\_\+label,  }\item[{size\+\_\+t}]{v\+\_\+label,  }\item[{float}]{new\+\_\+w }\end{DoxyParamCaption})}
+
+
+
+Set the weight of u-\/$>$v edge. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u\+\_\+label} & is the label of the u node. \\
+\hline
+{\em v\+\_\+label} & is the label of the v node. \\
+\hline
+{\em new\+\_\+w} & is the weight value to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+u\+\_\+label$<$\mbox{\hyperlink{classWGraph_adddac180f4d5cd0f830f911beda34253}{size()}} 
+
+v\+\_\+label$<$\mbox{\hyperlink{classWGraph_adddac180f4d5cd0f830f911beda34253}{size()}} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+weight(u\+\_\+label, v\+\_\+label)==new\+\_\+w 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classWGraph_a694188254463b6e9d830106a168bb36c}\label{classWGraph_a694188254463b6e9d830106a168bb36c}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!weight@{weight}}
+\index{weight@{weight}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{weight()}{weight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+float \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::weight (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}}}]{u,  }\item[{\mbox{\hyperlink{classWGraph_a6e2ee6a4545cce9fb886fb4d35718b1b}{Node\+Ref}}}]{v }\end{DoxyParamCaption}) const}
+
+
+
+Get the weight of a u-\/$>$v edge. 
+
+\begin{DoxyPrecond}{Precondition}
+has(u) and has(v) 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classWGraph_a4922dbaf4be1f8fa77d356e373c35b9f}\label{classWGraph_a4922dbaf4be1f8fa77d356e373c35b9f}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!weight@{weight}}
+\index{weight@{weight}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{weight()}{weight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+float \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::weight (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{u\+\_\+label,  }\item[{size\+\_\+t}]{v\+\_\+label }\end{DoxyParamCaption}) const}
+
+
+
+Get the weight of a u-\/$>$v edge. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u\+\_\+label} & is the label of the u node. \\
+\hline
+{\em v\+\_\+label} & is the label of the v node. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+u\+\_\+label$<$\mbox{\hyperlink{classWGraph_adddac180f4d5cd0f830f911beda34253}{size()}} 
+
+v\+\_\+label$<$\mbox{\hyperlink{classWGraph_adddac180f4d5cd0f830f911beda34253}{size()}} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+ret\+\_\+v = weight(node(u\+\_\+label), node(v\+\_\+label)) 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classWGraph_a1f2a51d511524c1f7165ea309ccb7db8}\label{classWGraph_a1f2a51d511524c1f7165ea309ccb7db8}} 
+\index{WGraph$<$ T $>$@{WGraph$<$ T $>$}!weight\_matrix@{weight\_matrix}}
+\index{weight\_matrix@{weight\_matrix}!WGraph$<$ T $>$@{WGraph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{weight\_matrix()}{weight\_matrix()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classMatrix_a86081140d8c1f043687455f8f549028c}{FMatrix\+::\+Ref}} \mbox{\hyperlink{classWGraph}{WGraph}}$<$ T $>$\+::weight\+\_\+matrix}
+
+
+
+get the Weight \mbox{\hyperlink{classMatrix}{Matrix}}. 
+
+\begin{DoxyReturn}{Returns}
+a reference to the weight matrix. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+wgraph.\+hpp\item 
+wgraph\+\_\+imp.\+hpp\end{DoxyCompactItemize}

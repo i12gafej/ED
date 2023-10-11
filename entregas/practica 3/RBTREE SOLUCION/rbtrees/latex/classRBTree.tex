@@ -1,0 +1,819 @@
+\hypertarget{classRBTree}{}\doxysection{RBTree$<$ T $>$ Class Template Reference}
+\label{classRBTree}\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+
+
+ADT \mbox{\hyperlink{classRBTree}{RBTree}}. A \mbox{\hyperlink{classRBTree}{RBTree}} (red/black tree) is a self-\/balanced binary search tree that meets the next properties\+:  
+
+
+
+
+{\ttfamily \#include $<$rbtree.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$ $>$ \mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}}
+\begin{DoxyCompactList}\small\item\em Define a shared reference to a \mbox{\hyperlink{classRBTNode}{RBTNode}}. Manages the storage of a pointer, providing a limited garbage-\/collection facility, possibly sharing that management with other objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Observers}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRBTree_a510579b72f4879a567291ff978309548}\label{classRBTree_a510579b72f4879a567291ff978309548}} 
+bool \mbox{\hyperlink{classRBTree_a510579b72f4879a567291ff978309548}{is\+\_\+empty}} () const
+\begin{DoxyCompactList}\small\item\em is it empty?. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classRBTree_a9cc0140534704afbd7e008f85b711c65}{item}} () const
+\begin{DoxyCompactList}\small\item\em Get the root item. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{classRBTree_a5a888f7d3edf157bd997adcc55b2c5b2}{fold}} (std\+::ostream \&out) const
+\begin{DoxyCompactList}\small\item\em Fold an \mbox{\hyperlink{classRBTree}{RBTree}} into an output stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRBTree_a692dda2c3621f51aa56475e8474c0e7f}\label{classRBTree_a692dda2c3621f51aa56475e8474c0e7f}} 
+bool \mbox{\hyperlink{classRBTree_a692dda2c3621f51aa56475e8474c0e7f}{current\+\_\+exists}} () const
+\begin{DoxyCompactList}\small\item\em Is the cursor at a valid position? \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classRBTree_aa4f7dbcba2ad0361194e0c6dca428e21}{current}} () const
+\begin{DoxyCompactList}\small\item\em Get the current\textquotesingle{}s item. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classRBTree_ae9c04da0f229cfca42188d9dc24759a8}{current\+\_\+level}} () const
+\begin{DoxyCompactList}\small\item\em Computes the current\textquotesingle{}s level (depth) in the tree. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} \mbox{\hyperlink{classRBTree_a186815fea529f671e122bdbed3c0d982}{left}} () const
+\begin{DoxyCompactList}\small\item\em Get the left subtree. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} \mbox{\hyperlink{classRBTree_a80a9ad72a29d327e13f33e14ba1d42fc}{right}} () const
+\begin{DoxyCompactList}\small\item\em Get the right subtree. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRBTree_a79477c6b693f630b1b604731b238c370}{has}} (const T \&k) const
+\begin{DoxyCompactList}\small\item\em Has the tree this key? \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} \& \mbox{\hyperlink{classRBTree_aa30c0edcd60730ebc286192af08a14e4}{This}} () const
+\begin{DoxyCompactList}\small\item\em Get a reference to \char`\"{}this\char`\"{} tree. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} \mbox{\hyperlink{classRBTree_a14e25c6f5a393c7f3f92085f61652115}{This}} ()
+\begin{DoxyCompactList}\small\item\em Get a reference to \char`\"{}this\char`\"{} tree. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{classRBTree_aab6a1ae1994a1699eedb786a6841cece}{draw\+\_\+rbtree}} (std\+::ostream \&out) const
+\begin{DoxyCompactList}\small\item\em Output a Dot representation of the tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Modifiers}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classRBTree_aa4b9061631575c06990bb7d91b25fa25}{create\+\_\+root}} (T const \&\mbox{\hyperlink{classRBTree_a9cc0140534704afbd7e008f85b711c65}{item}})
+\begin{DoxyCompactList}\small\item\em Create the Root node. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRBTree_a178e8092631c36cb2c6bf024f89dfddc}{search}} (T const \&k)
+\begin{DoxyCompactList}\small\item\em Search a key moving the cursor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRBTree_a494c703d097b93d96c951e37d526b822}{insert}} (T const \&k)
+\begin{DoxyCompactList}\small\item\em Insert a new key in the tree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRBTree_a8db20f031007e3e888b281f556bd44ad}{remove}} ()
+\begin{DoxyCompactList}\small\item\em remove current from the tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRBTree_a3535e8fc231c75844ff699b97416ee4d}{RBTree}} ()
+\begin{DoxyCompactList}\small\item\em Create an empty \mbox{\hyperlink{classRBTree}{RBTree}}. We only want to create References using \char`\"{}create\char`\"{} methods. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRBTree_a3c88c1e37327fceba3828320721e77f6}{RBTree}} (T const \&\mbox{\hyperlink{classRBTree_a9cc0140534704afbd7e008f85b711c65}{item}})
+\begin{DoxyCompactList}\small\item\em Create a leaf tree. We only want to create References using \char`\"{}create\char`\"{} methods. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRBTree_a06c738aed3a2422b60f4283d562e0792}\label{classRBTree_a06c738aed3a2422b60f4283d562e0792}} 
+\mbox{\hyperlink{classRBTree_a06c738aed3a2422b60f4283d562e0792}{RBTree}} (typename \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} \mbox{\hyperlink{classRBTree_a674d9b3acefcb9c6a51b9372adb2ac83}{root\+\_\+node}})
+\begin{DoxyCompactList}\small\item\em Create a \mbox{\hyperlink{classRBTree}{RBTree}} using a given node as root. We only want to create References using \char`\"{}create\char`\"{} methods. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRBTree_a16283d8875f6a0704a5b7883ee409c44}{is\+\_\+a\+\_\+binary\+\_\+search\+\_\+tree}} () const
+\begin{DoxyCompactList}\small\item\em Check the binary search tree invariant. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRBTree_a0cb875dda72c609432b78cf52a3e72ec}{meet\+\_\+red\+\_\+invariant}} () const
+\begin{DoxyCompactList}\small\item\em Check the Red tree invariant. A Red node must not have a red child. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRBTree_affa14be725da38427f5d80b4f3826067}{meet\+\_\+black\+\_\+invariant}} () const
+\begin{DoxyCompactList}\small\item\em Check the Red tree invariant. All paths from root node to any leaf must have the same black length. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRBTree_afc594429cd9075862c615c9d4c9e9874}{is\+\_\+a\+\_\+rbtree}} () const
+\begin{DoxyCompactList}\small\item\em Check if the tree is a rbtree. A rbtree is a colored bstree that meet both the red and black invariants. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRBTree_a0070aa24cff94e1f063377818d7e6d4b}{set\+\_\+left}} (\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} subtree)
+\begin{DoxyCompactList}\small\item\em Attach a new subtree as left child. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRBTree_aa14a595494f44f4762548890cc7c5339}{set\+\_\+right}} (\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} subtree)
+\begin{DoxyCompactList}\small\item\em Attach a new subtree as right child. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRBTree_a5888a8ad8ffd872a141f7c359e980593}{find\+\_\+inorder\+\_\+successor}} ()
+\begin{DoxyCompactList}\small\item\em find the in order successor of current. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} \mbox{\hyperlink{classRBTree_a083130bf882072bf9db571a2fb96bfeb}{rotate}} (typename \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} P, int dir)
+\begin{DoxyCompactList}\small\item\em rotate to re-\/balanced a subtree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRBTree_a8e7cbc67ade9635a322c45076a1e19ef}{make\+\_\+red\+\_\+black\+\_\+after\+\_\+inserting}} ()
+\begin{DoxyCompactList}\small\item\em Restore the red and black conditions after inserting. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRBTree_acbfcaeb9fa4e6df220867da1154ffecc}{make\+\_\+red\+\_\+black\+\_\+after\+\_\+removing}} (typename \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} V)
+\begin{DoxyCompactList}\small\item\em Restore the red and black conditions after removing. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} \mbox{\hyperlink{classRBTree_a674d9b3acefcb9c6a51b9372adb2ac83}{root\+\_\+node}} () const
+\begin{DoxyCompactList}\small\item\em get the root node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRBTree_a545dd10514301ac6ce5f64ba66963744}{set\+\_\+root\+\_\+node}} (typename \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} new\+\_\+root)
+\begin{DoxyCompactList}\small\item\em set a new root node. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} \mbox{\hyperlink{classRBTree_abdaa4d92f7f36974d9c21f9783588e89}{current\+\_\+node}} () const
+\begin{DoxyCompactList}\small\item\em get the current node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRBTree_a9a3ece23fef7fb69a697eaef6b8f4057}{set\+\_\+current\+\_\+node}} (typename \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} new\+\_\+curr)
+\begin{DoxyCompactList}\small\item\em set a new current node. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} \mbox{\hyperlink{classRBTree_a033a725674a34a89fda7fb5b6dfe4b27}{parent\+\_\+node}} () const
+\begin{DoxyCompactList}\small\item\em get the parent node. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRBTree_a9981633b1b4ffd0f3efa1369271c09bc}\label{classRBTree_a9981633b1b4ffd0f3efa1369271c09bc}} 
+bool \mbox{\hyperlink{classRBTree_a9981633b1b4ffd0f3efa1369271c09bc}{check\+\_\+parent\+\_\+chains}} ()
+\begin{DoxyCompactList}\small\item\em Check the chains from leaf nodes to the root node are ok. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRBTree_ae7267e46d4606b736165a903e7588b19}{check\+\_\+min\+\_\+max\+\_\+branch\+\_\+length}} () const
+\begin{DoxyCompactList}\small\item\em Check Red-\/\+Black tree property. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRBTree_ac7fb82ef84c3ce936f7a3839a2bc4be4}\label{classRBTree_ac7fb82ef84c3ce936f7a3839a2bc4be4}} 
+int {\bfseries prefix\+\_\+draw\+\_\+node} (std\+::ostream \&out, typename \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} const \&node) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} \mbox{\hyperlink{classRBTree_ab3909b19ca9c130e58106a374d773f59}{create}} (typename \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} root)
+\begin{DoxyCompactList}\small\item\em Create a \mbox{\hyperlink{classRBTree}{RBTree}} given a node as root. Use this method to generate the left/right subtrees rooted on node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRBTree_af63f5d2b6e12b7a7ee74cd71ef53d2e2}\label{classRBTree_af63f5d2b6e12b7a7ee74cd71ef53d2e2}} 
+\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} {\bfseries root\+\_\+}
+\item 
+\mbox{\Hypertarget{classRBTree_a79ebedd37fc987d148e0f41d2cd2d337}\label{classRBTree_a79ebedd37fc987d148e0f41d2cd2d337}} 
+\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} {\bfseries parent\+\_\+}
+\item 
+\mbox{\Hypertarget{classRBTree_a0db8a601e6ba5037c9f99a7cadeed0fa}\label{classRBTree_a0db8a601e6ba5037c9f99a7cadeed0fa}} 
+\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} {\bfseries current\+\_\+}
+\item 
+\mbox{\Hypertarget{classRBTree_a077c7866da0105c6d526dc169d9a4e4a}\label{classRBTree_a077c7866da0105c6d526dc169d9a4e4a}} 
+\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} {\bfseries this\+\_\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Life cicle.}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} \mbox{\hyperlink{classRBTree_aa95b689323885c89d09f98828a9a4739}{create}} ()
+\begin{DoxyCompactList}\small\item\em Create an empty \mbox{\hyperlink{classRBTree}{RBTree}}. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} \mbox{\hyperlink{classRBTree_a52ad9b1a27835a5f0203553830c4e576}{create}} (T const \&\mbox{\hyperlink{classRBTree_a9cc0140534704afbd7e008f85b711c65}{item}})
+\begin{DoxyCompactList}\small\item\em Create a leaf tree. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} \mbox{\hyperlink{classRBTree_a88609d681d5a809b39d3853f32c6f726}{create}} (std\+::istream \&in) noexcept(false)
+\begin{DoxyCompactList}\small\item\em Unfold an \mbox{\hyperlink{classRBTree}{RBTree}} from an input stream. The input format will be\+: \textquotesingle{}\mbox{[}\mbox{]}\textquotesingle{} for the empty tree. \textquotesingle{}\mbox{[} \textquotesingle{}\textquotesingle{} \textquotesingle{}$<$R$\vert$B$>$\textquotesingle{} \textquotesingle{}$<$left-\/subtree$>$\textquotesingle{} \textquotesingle{}$<$right-\/subtree$>$\textquotesingle{} \mbox{]}\textquotesingle{}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRBTree_aa1c2d89d50390e8855780342c11dd77c}\label{classRBTree_aa1c2d89d50390e8855780342c11dd77c}} 
+\mbox{\hyperlink{classRBTree_aa1c2d89d50390e8855780342c11dd77c}{$\sim$\+RBTree}} ()
+\begin{DoxyCompactList}\small\item\em Destroy a \mbox{\hyperlink{classRBTree}{RBTree}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class RBTree$<$ T $>$}
+
+ADT \mbox{\hyperlink{classRBTree}{RBTree}}. A \mbox{\hyperlink{classRBTree}{RBTree}} (red/black tree) is a self-\/balanced binary search tree that meets the next properties\+: 
+
+\begin{DoxyInvariant}{Invariant}
+\mbox{\hyperlink{classRBTree_a16283d8875f6a0704a5b7883ee409c44}{is\+\_\+a\+\_\+binary\+\_\+search\+\_\+tree()}} 
+
+the red condition. 
+
+the black condition. 
+\end{DoxyInvariant}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}\label{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!Ref@{Ref}}
+\index{Ref@{Ref}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Ref}{Ref}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+typedef std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classRBTree}{RBTree}}$<$T$>$ $>$ \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}}}
+
+
+
+Define a shared reference to a \mbox{\hyperlink{classRBTNode}{RBTNode}}. Manages the storage of a pointer, providing a limited garbage-\/collection facility, possibly sharing that management with other objects. 
+
+\begin{DoxySeeAlso}{See also}
+\href{http://www.cplusplus.com/reference/memory/shared_ptr/}{\texttt{ http\+://www.\+cplusplus.\+com/reference/memory/shared\+\_\+ptr/}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRBTree_a3535e8fc231c75844ff699b97416ee4d}\label{classRBTree_a3535e8fc231c75844ff699b97416ee4d}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!RBTree@{RBTree}}
+\index{RBTree@{RBTree}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{RBTree()}{RBTree()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree}{RBTree}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Create an empty \mbox{\hyperlink{classRBTree}{RBTree}}. We only want to create References using \char`\"{}create\char`\"{} methods. 
+
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{classRBTree_a510579b72f4879a567291ff978309548}{is\+\_\+empty()}} 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classRBTree_a3c88c1e37327fceba3828320721e77f6}\label{classRBTree_a3c88c1e37327fceba3828320721e77f6}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!RBTree@{RBTree}}
+\index{RBTree@{RBTree}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{RBTree()}{RBTree()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree}{RBTree}} (\begin{DoxyParamCaption}\item[{T const \&}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Create a leaf tree. We only want to create References using \char`\"{}create\char`\"{} methods. 
+
+\begin{DoxyPostcond}{Postcondition}
+!is\+\_\+empty() 
+\end{DoxyPostcond}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRBTree_ae7267e46d4606b736165a903e7588b19}\label{classRBTree_ae7267e46d4606b736165a903e7588b19}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!check\_min\_max\_branch\_length@{check\_min\_max\_branch\_length}}
+\index{check\_min\_max\_branch\_length@{check\_min\_max\_branch\_length}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{check\_min\_max\_branch\_length()}{check\_min\_max\_branch\_length()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::check\+\_\+min\+\_\+max\+\_\+branch\+\_\+length\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Check Red-\/\+Black tree property. 
+
+Number of nodes from a node to its farthest descendant leaf is no more than twice as the number of nodes to the nearest descendant leaf. We test this from the root node only.
+
+\begin{DoxyReturn}{Returns}
+true if the property is meet. ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRBTree_aa95b689323885c89d09f98828a9a4739}\label{classRBTree_aa95b689323885c89d09f98828a9a4739}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!create@{create}}
+\index{create@{create}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::create\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create an empty \mbox{\hyperlink{classRBTree}{RBTree}}. 
+
+\begin{DoxyReturn}{Returns}
+a shared reference to the new tree. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRBTree_a88609d681d5a809b39d3853f32c6f726}\label{classRBTree_a88609d681d5a809b39d3853f32c6f726}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!create@{create}}
+\index{create@{create}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::create (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Unfold an \mbox{\hyperlink{classRBTree}{RBTree}} from an input stream. The input format will be\+: \textquotesingle{}\mbox{[}\mbox{]}\textquotesingle{} for the empty tree. \textquotesingle{}\mbox{[} \textquotesingle{}\textquotesingle{} \textquotesingle{}$<$R$\vert$B$>$\textquotesingle{} \textquotesingle{}$<$left-\/subtree$>$\textquotesingle{} \textquotesingle{}$<$right-\/subtree$>$\textquotesingle{} \mbox{]}\textquotesingle{}. 
+
+For example a tree with three nodes\+: \char`\"{}\mbox{[} 2 B \mbox{[} 1 R \mbox{[}$\,$\mbox{]} \mbox{[}$\,$\mbox{]} \mbox{]} \mbox{[} 3 R \mbox{[}$\,$\mbox{]} \mbox{[}$\,$\mbox{]} \mbox{]} \mbox{]}\char`\"{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & is the input stream. \\
+\hline
+{\em parent} & is the parent node of the node to be unfolded. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The node unfolded on success. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+std\+::runtime\+\_\+error(\char`\"{}\+Wrong input format\char`\"{}), std\+::runtime\+\_\+error(\char`\"{}\+It is not a binary search tree\char`\"{}) or std\+::runtime\+\_\+error(\char`\"{}\+It is not an rbtree\char`\"{}) will throw if an error happened. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classRBTree_a52ad9b1a27835a5f0203553830c4e576}\label{classRBTree_a52ad9b1a27835a5f0203553830c4e576}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!create@{create}}
+\index{create@{create}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::create (\begin{DoxyParamCaption}\item[{T const \&}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a leaf tree. 
+
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{classRBTree_a510579b72f4879a567291ff978309548}{is\+\_\+empty()}} 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classRBTree_ab3909b19ca9c130e58106a374d773f59}\label{classRBTree_ab3909b19ca9c130e58106a374d773f59}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!create@{create}}
+\index{create@{create}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::create (\begin{DoxyParamCaption}\item[{typename \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}}}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Create a \mbox{\hyperlink{classRBTree}{RBTree}} given a node as root. Use this method to generate the left/right subtrees rooted on node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & is the root node of the new sub-\/tree. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a shared reference to the new sub-\/tree. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRBTree_aa4b9061631575c06990bb7d91b25fa25}\label{classRBTree_aa4b9061631575c06990bb7d91b25fa25}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!create\_root@{create\_root}}
+\index{create\_root@{create\_root}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{create\_root()}{create\_root()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::create\+\_\+root (\begin{DoxyParamCaption}\item[{T const \&}]{item }\end{DoxyParamCaption})}
+
+
+
+Create the Root node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & is value of the root\textquotesingle{}s item. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{classRBTree_a510579b72f4879a567291ff978309548}{is\+\_\+empty()}} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+!is\+\_\+empty() 
+
+\mbox{\hyperlink{classRBTree_a9cc0140534704afbd7e008f85b711c65}{item()}}==item 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classRBTree_aa4f7dbcba2ad0361194e0c6dca428e21}\label{classRBTree_aa4f7dbcba2ad0361194e0c6dca428e21}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!current@{current}}
+\index{current@{current}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{current()}{current()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::current}
+
+
+
+Get the current\textquotesingle{}s item. 
+
+\begin{DoxyReturn}{Returns}
+The item save in current node. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+current\+\_\+exist() 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classRBTree_ae9c04da0f229cfca42188d9dc24759a8}\label{classRBTree_ae9c04da0f229cfca42188d9dc24759a8}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!current\_level@{current\_level}}
+\index{current\_level@{current\_level}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{current\_level()}{current\_level()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::current\+\_\+level}
+
+
+
+Computes the current\textquotesingle{}s level (depth) in the tree. 
+
+\begin{DoxyReturn}{Returns}
+the level (depth) of current in the tree. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+current\+\_\+exist() 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Time analysis\+: O(\+N) 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classRBTree_abdaa4d92f7f36974d9c21f9783588e89}\label{classRBTree_abdaa4d92f7f36974d9c21f9783588e89}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!current\_node@{current\_node}}
+\index{current\_node@{current\_node}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{current\_node()}{current\_node()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::current\+\_\+node\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+get the current node. 
+
+\begin{DoxyReturn}{Returns}
+the current node. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRBTree_aab6a1ae1994a1699eedb786a6841cece}\label{classRBTree_aab6a1ae1994a1699eedb786a6841cece}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!draw\_rbtree@{draw\_rbtree}}
+\index{draw\_rbtree@{draw\_rbtree}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{draw\_rbtree()}{draw\_rbtree()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+std\+::ostream\& \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::draw\+\_\+rbtree (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption}) const}
+
+
+
+Output a Dot representation of the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & is the output stream. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the output stream. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRBTree_a5888a8ad8ffd872a141f7c359e980593}\label{classRBTree_a5888a8ad8ffd872a141f7c359e980593}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!find\_inorder\_successor@{find\_inorder\_successor}}
+\index{find\_inorder\_successor@{find\_inorder\_successor}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{find\_inorder\_successor()}{find\_inorder\_successor()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::find\+\_\+inorder\+\_\+successor\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+find the in order successor of current. 
+
+\begin{DoxyPrecond}{Precondition}
+current\+\_\+exist() 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+current\+\_\+exist() \&\& !current\+\_\+-\/$>$has\+\_\+left() 
+
+\mbox{\hyperlink{classRBTree_aa4f7dbcba2ad0361194e0c6dca428e21}{current()}}$>$old.\+current() 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classRBTree_a5a888f7d3edf157bd997adcc55b2c5b2}\label{classRBTree_a5a888f7d3edf157bd997adcc55b2c5b2}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!fold@{fold}}
+\index{fold@{fold}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{fold()}{fold()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+std\+::ostream \& \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::fold (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption}) const}
+
+
+
+Fold an \mbox{\hyperlink{classRBTree}{RBTree}} into an output stream. 
+
+
+\begin{DoxyItemize}
+\item The output format will be\+: \mbox{[}  $<$left$>$ $<$right$>$ \mbox{]} or \mbox{[}\mbox{]} if it is a empty tree. 
+\begin{DoxyParams}{Parameters}
+{\em out} & is the output stream. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the output stream. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\mbox{\Hypertarget{classRBTree_a79477c6b693f630b1b604731b238c370}\label{classRBTree_a79477c6b693f630b1b604731b238c370}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!has@{has}}
+\index{has@{has}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{has()}{has()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::has (\begin{DoxyParamCaption}\item[{const T \&}]{k }\end{DoxyParamCaption}) const}
+
+
+
+Has the tree this key? 
+
+\begin{DoxyPostcond}{Postcondition}
+!is\+\_\+empty() $\vert$$\vert$ has==false; 
+
+!old.\mbox{\hyperlink{classRBTree_a692dda2c3621f51aa56475e8474c0e7f}{current\+\_\+exists()}} $\vert$$\vert$ old.\+current()==\mbox{\hyperlink{classRBTree_aa4f7dbcba2ad0361194e0c6dca428e21}{current()}} 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classRBTree_a494c703d097b93d96c951e37d526b822}\label{classRBTree_a494c703d097b93d96c951e37d526b822}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!insert@{insert}}
+\index{insert@{insert}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{T const \&}]{k }\end{DoxyParamCaption})}
+
+
+
+Insert a new key in the tree. 
+
+\begin{DoxyWarning}{Warning}
+if k is already in the tree, only it is updated. 
+\end{DoxyWarning}
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{classRBTree_a692dda2c3621f51aa56475e8474c0e7f}{current\+\_\+exists()}} 
+
+\mbox{\hyperlink{classRBTree_aa4f7dbcba2ad0361194e0c6dca428e21}{current()}}==k 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classRBTree_a16283d8875f6a0704a5b7883ee409c44}\label{classRBTree_a16283d8875f6a0704a5b7883ee409c44}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!is\_a\_binary\_search\_tree@{is\_a\_binary\_search\_tree}}
+\index{is\_a\_binary\_search\_tree@{is\_a\_binary\_search\_tree}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{is\_a\_binary\_search\_tree()}{is\_a\_binary\_search\_tree()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::is\+\_\+a\+\_\+binary\+\_\+search\+\_\+tree\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Check the binary search tree invariant. 
+
+\begin{DoxyReturn}{Returns}
+true if in-\/order traversal follow an ordered key sequence. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Time Analysis\+: O(\+N) 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classRBTree_afc594429cd9075862c615c9d4c9e9874}\label{classRBTree_afc594429cd9075862c615c9d4c9e9874}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!is\_a\_rbtree@{is\_a\_rbtree}}
+\index{is\_a\_rbtree@{is\_a\_rbtree}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{is\_a\_rbtree()}{is\_a\_rbtree()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::is\+\_\+a\+\_\+rbtree\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Check if the tree is a rbtree. A rbtree is a colored bstree that meet both the red and black invariants. 
+
+\begin{DoxyReturn}{Returns}
+true if the invariant is met. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRBTree_a9cc0140534704afbd7e008f85b711c65}\label{classRBTree_a9cc0140534704afbd7e008f85b711c65}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!item@{item}}
+\index{item@{item}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{item()}{item()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::item}
+
+
+
+Get the root item. 
+
+\begin{DoxyPrecond}{Precondition}
+not \mbox{\hyperlink{classRBTree_a510579b72f4879a567291ff978309548}{is\+\_\+empty()}}; 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classRBTree_a186815fea529f671e122bdbed3c0d982}\label{classRBTree_a186815fea529f671e122bdbed3c0d982}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!left@{left}}
+\index{left@{left}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{left()}{left()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::left}
+
+
+
+Get the left subtree. 
+
+\begin{DoxyPrecond}{Precondition}
+!is\+\_\+empty() 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classRBTree_a8e7cbc67ade9635a322c45076a1e19ef}\label{classRBTree_a8e7cbc67ade9635a322c45076a1e19ef}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!make\_red\_black\_after\_inserting@{make\_red\_black\_after\_inserting}}
+\index{make\_red\_black\_after\_inserting@{make\_red\_black\_after\_inserting}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{make\_red\_black\_after\_inserting()}{make\_red\_black\_after\_inserting()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::make\+\_\+red\+\_\+black\+\_\+after\+\_\+inserting\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Restore the red and black conditions after inserting. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{classRBTree_acbfcaeb9fa4e6df220867da1154ffecc}\label{classRBTree_acbfcaeb9fa4e6df220867da1154ffecc}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!make\_red\_black\_after\_removing@{make\_red\_black\_after\_removing}}
+\index{make\_red\_black\_after\_removing@{make\_red\_black\_after\_removing}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{make\_red\_black\_after\_removing()}{make\_red\_black\_after\_removing()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::make\+\_\+red\+\_\+black\+\_\+after\+\_\+removing (\begin{DoxyParamCaption}\item[{typename \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}}}]{V }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Restore the red and black conditions after removing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em V} & is the root of the subtree that replaced the removed node. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRBTree_affa14be725da38427f5d80b4f3826067}\label{classRBTree_affa14be725da38427f5d80b4f3826067}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!meet\_black\_invariant@{meet\_black\_invariant}}
+\index{meet\_black\_invariant@{meet\_black\_invariant}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{meet\_black\_invariant()}{meet\_black\_invariant()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::meet\+\_\+black\+\_\+invariant\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Check the Red tree invariant. All paths from root node to any leaf must have the same black length. 
+
+\begin{DoxyReturn}{Returns}
+true if the invariant is met. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRBTree_a0cb875dda72c609432b78cf52a3e72ec}\label{classRBTree_a0cb875dda72c609432b78cf52a3e72ec}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!meet\_red\_invariant@{meet\_red\_invariant}}
+\index{meet\_red\_invariant@{meet\_red\_invariant}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{meet\_red\_invariant()}{meet\_red\_invariant()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::meet\+\_\+red\+\_\+invariant\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Check the Red tree invariant. A Red node must not have a red child. 
+
+\begin{DoxyReturn}{Returns}
+true if the invariant is met. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRBTree_a033a725674a34a89fda7fb5b6dfe4b27}\label{classRBTree_a033a725674a34a89fda7fb5b6dfe4b27}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!parent\_node@{parent\_node}}
+\index{parent\_node@{parent\_node}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{parent\_node()}{parent\_node()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::parent\+\_\+node\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+get the parent node. 
+
+\begin{DoxyReturn}{Returns}
+the parent node. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRBTree_a8db20f031007e3e888b281f556bd44ad}\label{classRBTree_a8db20f031007e3e888b281f556bd44ad}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!remove@{remove}}
+\index{remove@{remove}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::remove}
+
+
+
+remove current from the tree. 
+
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{classRBTree_a692dda2c3621f51aa56475e8474c0e7f}{current\+\_\+exists()}} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+not \mbox{\hyperlink{classRBTree_a692dda2c3621f51aa56475e8474c0e7f}{current\+\_\+exists()}} 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classRBTree_a80a9ad72a29d327e13f33e14ba1d42fc}\label{classRBTree_a80a9ad72a29d327e13f33e14ba1d42fc}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!right@{right}}
+\index{right@{right}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{right()}{right()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::right}
+
+
+
+Get the right subtree. 
+
+\begin{DoxyPrecond}{Precondition}
+!is\+\_\+empty() 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classRBTree_a674d9b3acefcb9c6a51b9372adb2ac83}\label{classRBTree_a674d9b3acefcb9c6a51b9372adb2ac83}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!root\_node@{root\_node}}
+\index{root\_node@{root\_node}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{root\_node()}{root\_node()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::root\+\_\+node\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+get the root node. 
+
+\begin{DoxyReturn}{Returns}
+the root node. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRBTree_a083130bf882072bf9db571a2fb96bfeb}\label{classRBTree_a083130bf882072bf9db571a2fb96bfeb}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!rotate@{rotate}}
+\index{rotate@{rotate}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::rotate (\begin{DoxyParamCaption}\item[{typename \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}}}]{P,  }\item[{int}]{dir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+rotate to re-\/balanced a subtree. 
+
+Rotate left ({\itshape dir} == 0) \begin{DoxyVerb}          P      ->    S
+         / \          / \
+        N   S        P   D
+           /  \     / \
+          C    D   N   C
+\end{DoxyVerb}
+ Rotate right ({\itshape dir} == 1) \begin{DoxyVerb}          P      ->    S
+         / \          / \
+        S   N        D   P
+      /  \              / \
+     D    C            C   N
+\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em P} & is the root node of the subtree. \\
+\hline
+{\em dir} & is the direction (0-\/$>$left, 1-\/$>$right) to rotate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S, the new root node of the rotated subtree. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+P!=nullptr 
+
+dir in \{0,1\} 
+
+S==P-\/$>$child(1-\/dir) != nullptr 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classRBTree_a178e8092631c36cb2c6bf024f89dfddc}\label{classRBTree_a178e8092631c36cb2c6bf024f89dfddc}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!search@{search}}
+\index{search@{search}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::search (\begin{DoxyParamCaption}\item[{T const \&}]{k }\end{DoxyParamCaption})}
+
+
+
+Search a key moving the cursor. 
+
+\begin{DoxyPostcond}{Postcondition}
+search==false $\vert$$\vert$ \mbox{\hyperlink{classRBTree_aa4f7dbcba2ad0361194e0c6dca428e21}{current()}}==k 
+
+search==true $\vert$$\vert$ !current\+\_\+exits() 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classRBTree_a9a3ece23fef7fb69a697eaef6b8f4057}\label{classRBTree_a9a3ece23fef7fb69a697eaef6b8f4057}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!set\_current\_node@{set\_current\_node}}
+\index{set\_current\_node@{set\_current\_node}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_current\_node()}{set\_current\_node()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::set\+\_\+current\+\_\+node (\begin{DoxyParamCaption}\item[{typename \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}}}]{new\+\_\+curr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+set a new current node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+root} & is the new current node. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{classRBTree_abdaa4d92f7f36974d9c21f9783588e89}{current\+\_\+node()}}==new\+\_\+curr 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classRBTree_a0070aa24cff94e1f063377818d7e6d4b}\label{classRBTree_a0070aa24cff94e1f063377818d7e6d4b}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!set\_left@{set\_left}}
+\index{set\_left@{set\_left}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_left()}{set\_left()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::set\+\_\+left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}}}]{subtree }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Attach a new subtree as left child. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subtree} & is the tree to be attached. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+(subtree-\/$>$\mbox{\hyperlink{classRBTree_a510579b72f4879a567291ff978309548}{is\+\_\+empty()}} $\vert$$\vert$ \mbox{\hyperlink{classRBTree_a186815fea529f671e122bdbed3c0d982}{left()}}-\/$>$\mbox{\hyperlink{classRBTree_a9cc0140534704afbd7e008f85b711c65}{item()}}==subtree-\/$>$\mbox{\hyperlink{classRBTree_a9cc0140534704afbd7e008f85b711c65}{item()}}) 
+
+(!subtree-\/$>$\mbox{\hyperlink{classRBTree_a510579b72f4879a567291ff978309548}{is\+\_\+empty()}} $\vert$$\vert$ \mbox{\hyperlink{classRBTree_a186815fea529f671e122bdbed3c0d982}{left()}}-\/$>$\mbox{\hyperlink{classRBTree_a510579b72f4879a567291ff978309548}{is\+\_\+empty()}}) 
+\end{DoxyPostcond}
+\begin{DoxyWarning}{Warning}
+this method does not check invariants. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classRBTree_aa14a595494f44f4762548890cc7c5339}\label{classRBTree_aa14a595494f44f4762548890cc7c5339}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!set\_right@{set\_right}}
+\index{set\_right@{set\_right}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_right()}{set\_right()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::set\+\_\+right (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}}}]{subtree }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Attach a new subtree as right child. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subtree} & is the tree to be attached. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+(subtree-\/$>$\mbox{\hyperlink{classRBTree_a510579b72f4879a567291ff978309548}{is\+\_\+empty()}}$\vert$$\vert$ \mbox{\hyperlink{classRBTree_a80a9ad72a29d327e13f33e14ba1d42fc}{right()}}-\/$>$\mbox{\hyperlink{classRBTree_a9cc0140534704afbd7e008f85b711c65}{item()}}==subtree-\/$>$\mbox{\hyperlink{classRBTree_a9cc0140534704afbd7e008f85b711c65}{item()}}) 
+
+(!subtree-\/$>$\mbox{\hyperlink{classRBTree_a510579b72f4879a567291ff978309548}{is\+\_\+empty()}}$\vert$$\vert$ \mbox{\hyperlink{classRBTree_a80a9ad72a29d327e13f33e14ba1d42fc}{right()}}-\/$>$\mbox{\hyperlink{classRBTree_a510579b72f4879a567291ff978309548}{is\+\_\+empty()}}) 
+\end{DoxyPostcond}
+\begin{DoxyWarning}{Warning}
+this method does not check invariants. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classRBTree_a545dd10514301ac6ce5f64ba66963744}\label{classRBTree_a545dd10514301ac6ce5f64ba66963744}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!set\_root\_node@{set\_root\_node}}
+\index{set\_root\_node@{set\_root\_node}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_root\_node()}{set\_root\_node()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::set\+\_\+root\+\_\+node (\begin{DoxyParamCaption}\item[{typename \mbox{\hyperlink{classRBTNode}{RBTNode}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}}}]{new\+\_\+root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+set a new root node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+root} & is the new tree\textquotesingle{}s root node. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{classRBTree_a674d9b3acefcb9c6a51b9372adb2ac83}{root\+\_\+node()}}==new\+\_\+root 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classRBTree_a14e25c6f5a393c7f3f92085f61652115}\label{classRBTree_a14e25c6f5a393c7f3f92085f61652115}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!This@{This}}
+\index{This@{This}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{This()}{This()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::This}
+
+
+
+Get a reference to \char`\"{}this\char`\"{} tree. 
+
+\begin{DoxyReturn}{Returns}
+a reference to this tree. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRBTree_aa30c0edcd60730ebc286192af08a14e4}\label{classRBTree_aa30c0edcd60730ebc286192af08a14e4}} 
+\index{RBTree$<$ T $>$@{RBTree$<$ T $>$}!This@{This}}
+\index{This@{This}!RBTree$<$ T $>$@{RBTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{This()}{This()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+const \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::\mbox{\hyperlink{classRBTree_a5b559dbd6449a5ddf322b0879a1183bf}{Ref}} \& \mbox{\hyperlink{classRBTree}{RBTree}}$<$ T $>$\+::This}
+
+
+
+Get a reference to \char`\"{}this\char`\"{} tree. 
+
+\begin{DoxyReturn}{Returns}
+a const reference to this tree. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{rbtree_8hpp}{rbtree.\+hpp}}\item 
+\mbox{\hyperlink{rbtree__imp_8hpp}{rbtree\+\_\+imp.\+hpp}}\end{DoxyCompactItemize}

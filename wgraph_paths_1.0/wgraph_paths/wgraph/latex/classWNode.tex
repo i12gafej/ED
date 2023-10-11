@@ -1,0 +1,182 @@
+\hypertarget{classWNode}{}\doxysection{WNode$<$ T $>$ Class Template Reference}
+\label{classWNode}\index{WNode$<$ T $>$@{WNode$<$ T $>$}}
+
+
+Class to model the Node of a Graph ADT.  
+
+
+
+
+{\ttfamily \#include $<$wgraph.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWNode_a9a3d11e76bacea5b1e83b35658d70c06}\label{classWNode_a9a3d11e76bacea5b1e83b35658d70c06}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classWNode}{WNode}}$<$ T $>$ $>$ \mbox{\hyperlink{classWNode_a9a3d11e76bacea5b1e83b35658d70c06}{Ref}}
+\begin{DoxyCompactList}\small\item\em Models a reference to a Node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Observers}\par
+\begin{DoxyCompactItemize}
+\item 
+T \mbox{\hyperlink{classWNode_a89ec6a7361935726b4f60b98da88b9c5}{item}} () const
+\begin{DoxyCompactList}\small\item\em Get data saved. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classWNode_a6ba387114c5c767ee5800af90856d24f}{label}} () const
+\begin{DoxyCompactList}\small\item\em get the label of the node. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWNode_acd5ee31949ed8d0dae3f21624565c121}\label{classWNode_acd5ee31949ed8d0dae3f21624565c121}} 
+bool \mbox{\hyperlink{classWNode_acd5ee31949ed8d0dae3f21624565c121}{is\+\_\+visited}} () const
+\begin{DoxyCompactList}\small\item\em Has been the node visited? return true if the node was visited. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Modifiers}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classWNode_aefb2dae3de7af9ce6fb9684f1ce353a2}{set\+\_\+item}} (T const \&new\+\_\+item)
+\begin{DoxyCompactList}\small\item\em Set data saved in the node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWNode_a7fc54fb42af8abeb9a1fff0e4cc64ce5}{set\+\_\+visited}} (bool new\+\_\+state)
+\begin{DoxyCompactList}\small\item\em Set the flag visited. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWNode_a1323c607fe9392a26de7e82102c2a6ed}\label{classWNode_a1323c607fe9392a26de7e82102c2a6ed}} 
+T {\bfseries item\+\_\+}
+\item 
+\mbox{\Hypertarget{classWNode_ad5adb82668894da3bd9ee25a73ea50f9}\label{classWNode_ad5adb82668894da3bd9ee25a73ea50f9}} 
+size\+\_\+t {\bfseries label\+\_\+}
+\item 
+\mbox{\Hypertarget{classWNode_a1b3e82d5f5013c33e9b4231d7fc4783a}\label{classWNode_a1b3e82d5f5013c33e9b4231d7fc4783a}} 
+bool {\bfseries visited\+\_\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWNode_ae3c9140f8d980ab2c606f6419df2ee89}\label{classWNode_ae3c9140f8d980ab2c606f6419df2ee89}} 
+class {\bfseries WGraph$<$ T $>$}
+\end{DoxyCompactItemize}
+\doxysubsection*{Makers}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWNode_a213eb625aeab4ad86229c9fbe52ba7a0}{WNode}} (size\+\_\+t \mbox{\hyperlink{classWNode_a6ba387114c5c767ee5800af90856d24f}{label}}, T const \&\mbox{\hyperlink{classWNode_a89ec6a7361935726b4f60b98da88b9c5}{item}})
+\begin{DoxyCompactList}\small\item\em Makes a new node. @args label is the label of the new node. @args item is the item saved in the node. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classWNode}{WNode}}$<$ T $>$\+::\mbox{\hyperlink{classWNode_a9a3d11e76bacea5b1e83b35658d70c06}{Ref}} \mbox{\hyperlink{classWNode_a7848b91d231348c1207f0059d67b98a0}{create}} (size\+\_\+t \mbox{\hyperlink{classWNode_a6ba387114c5c767ee5800af90856d24f}{label}}, const T \&\mbox{\hyperlink{classWNode_a89ec6a7361935726b4f60b98da88b9c5}{item}})
+\begin{DoxyCompactList}\small\item\em Makes a new node. @args label is the label of the new node. @args item is the item saved in the node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class WNode$<$ T $>$}
+
+Class to model the Node of a Graph ADT. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWNode_a213eb625aeab4ad86229c9fbe52ba7a0}\label{classWNode_a213eb625aeab4ad86229c9fbe52ba7a0}} 
+\index{WNode$<$ T $>$@{WNode$<$ T $>$}!WNode@{WNode}}
+\index{WNode@{WNode}!WNode$<$ T $>$@{WNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{WNode()}{WNode()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classWNode}{WNode}}$<$ T $>$\+::\mbox{\hyperlink{classWNode}{WNode}} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{label,  }\item[{T const \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Makes a new node. @args label is the label of the new node. @args item is the item saved in the node. 
+
+\begin{DoxyPrecond}{Precondition}
+no othe node in the graph has the same label. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+not is\+Visited()
+\end{DoxyPostcond}
+Graph\+Node implementation 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWNode_a7848b91d231348c1207f0059d67b98a0}\label{classWNode_a7848b91d231348c1207f0059d67b98a0}} 
+\index{WNode$<$ T $>$@{WNode$<$ T $>$}!create@{create}}
+\index{create@{create}!WNode$<$ T $>$@{WNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+static \mbox{\hyperlink{classWNode}{WNode}}$<$T$>$\+::\mbox{\hyperlink{classWNode_a9a3d11e76bacea5b1e83b35658d70c06}{Ref}} \mbox{\hyperlink{classWNode}{WNode}}$<$ T $>$\+::create (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{label,  }\item[{const T \&}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Makes a new node. @args label is the label of the new node. @args item is the item saved in the node. 
+
+\begin{DoxyPrecond}{Precondition}
+no othe node in the graph has the same label. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+not is\+Visited() 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classWNode_a89ec6a7361935726b4f60b98da88b9c5}\label{classWNode_a89ec6a7361935726b4f60b98da88b9c5}} 
+\index{WNode$<$ T $>$@{WNode$<$ T $>$}!item@{item}}
+\index{item@{item}!WNode$<$ T $>$@{WNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{item()}{item()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \mbox{\hyperlink{classWNode}{WNode}}$<$ T $>$\+::item}
+
+
+
+Get data saved. 
+
+\begin{DoxyReturn}{Returns}
+a reference to the data saved in the node. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWNode_a6ba387114c5c767ee5800af90856d24f}\label{classWNode_a6ba387114c5c767ee5800af90856d24f}} 
+\index{WNode$<$ T $>$@{WNode$<$ T $>$}!label@{label}}
+\index{label@{label}!WNode$<$ T $>$@{WNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{label()}{label()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+size\+\_\+t \mbox{\hyperlink{classWNode}{WNode}}$<$ T $>$\+::label}
+
+
+
+get the label of the node. 
+
+\begin{DoxyReturn}{Returns}
+the node\textquotesingle{}s label. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+no other node in the graph has this label. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classWNode_aefb2dae3de7af9ce6fb9684f1ce353a2}\label{classWNode_aefb2dae3de7af9ce6fb9684f1ce353a2}} 
+\index{WNode$<$ T $>$@{WNode$<$ T $>$}!set\_item@{set\_item}}
+\index{set\_item@{set\_item}!WNode$<$ T $>$@{WNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_item()}{set\_item()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classWNode}{WNode}}$<$ T $>$\+::set\+\_\+item (\begin{DoxyParamCaption}\item[{T const \&}]{new\+\_\+item }\end{DoxyParamCaption})}
+
+
+
+Set data saved in the node. 
+
+\begin{DoxyItemize}
+\item \mbox{[}in\mbox{]} item is the data to save in. \begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{classWNode_a89ec6a7361935726b4f60b98da88b9c5}{item()}}==item 
+\end{DoxyPostcond}
+\end{DoxyItemize}
+\mbox{\Hypertarget{classWNode_a7fc54fb42af8abeb9a1fff0e4cc64ce5}\label{classWNode_a7fc54fb42af8abeb9a1fff0e4cc64ce5}} 
+\index{WNode$<$ T $>$@{WNode$<$ T $>$}!set\_visited@{set\_visited}}
+\index{set\_visited@{set\_visited}!WNode$<$ T $>$@{WNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_visited()}{set\_visited()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classWNode}{WNode}}$<$ T $>$\+::set\+\_\+visited (\begin{DoxyParamCaption}\item[{bool}]{new\+\_\+state }\end{DoxyParamCaption})}
+
+
+
+Set the flag visited. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+state} & is the state to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+new\+\_\+state $\vert$$\vert$ !is\+\_\+visited() 
+
+!new\+\_\+state $\vert$$\vert$ \mbox{\hyperlink{classWNode_acd5ee31949ed8d0dae3f21624565c121}{is\+\_\+visited()}} 
+\end{DoxyPostcond}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+wgraph.\+hpp\item 
+wgraph\+\_\+imp.\+hpp\end{DoxyCompactItemize}

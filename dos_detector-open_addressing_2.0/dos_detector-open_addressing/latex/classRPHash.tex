@@ -1,0 +1,209 @@
+\hypertarget{classRPHash}{}\doxysection{RPHash Class Reference}
+\label{classRPHash}\index{RPHash@{RPHash}}
+
+
+Models an Universal Family hash function using random probing to resolve collisions.  
+
+
+
+
+{\ttfamily \#include $<$hash.\+hpp$>$}
+
+
+
+Inheritance diagram for RPHash\+:
+% FIG 0
+
+
+Collaboration diagram for RPHash\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classRPHash_a72e12324fb2a62efe2d89fe7ec7a71d9}{operator()}} (std\+::uint64\+\_\+t k, size\+\_\+t iter=0) const override
+\begin{DoxyCompactList}\small\item\em hash a key with collision resolution. Hash the key to get a table index, giving alternatives for several probes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classOACollisionResolution_ae41ff03a5958c5c360b8342ff29a0713}{OACollision\+Resolution\+::\+Ref}} \mbox{\hyperlink{classRPHash_a65fb5653ced2ba8133c7d3a730ccc154}{pick\+\_\+at\+\_\+new}} (std\+::uint64\+\_\+t new\+\_\+m) const override
+\begin{DoxyCompactList}\small\item\em Get a new version of the algorithm with a new table size choosing at random a new hash function. \end{DoxyCompactList}\item 
+std\+::uint64\+\_\+t \mbox{\hyperlink{classRPHash_ad1418ed4a891ff228404258990790364}{m}} () const override
+\begin{DoxyCompactList}\small\item\em Return the cardinality of the hash function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} \mbox{\hyperlink{classRPHash_a6cfb788e7c18e2dbb030ab3ad9a42026}{hash}} () const
+\begin{DoxyCompactList}\small\item\em Get the hash function used. \end{DoxyCompactList}\item 
+std\+::uint64\+\_\+t \mbox{\hyperlink{classRPHash_a08da1bd687ca08fcd6e34d264fcd2d8a}{c}} () const
+\begin{DoxyCompactList}\small\item\em Get the c parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRPHash_a7c82aab1bc012e7a82fc7d1b96f75650}\label{classRPHash_a7c82aab1bc012e7a82fc7d1b96f75650}} 
+\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} {\bfseries hash\+\_\+f\+\_\+}
+\item 
+\mbox{\Hypertarget{classRPHash_a45a34be7f3b590d4ee4944653e8b4e6c}\label{classRPHash_a45a34be7f3b590d4ee4944653e8b4e6c}} 
+std\+::uint64\+\_\+t {\bfseries c\+\_\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Life cycle.}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRPHash_a3b47fc736a0ba43027dfcce672fa9acb}{RPHash}} (\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} hash\+\_\+f, std\+::uint64\+\_\+t \mbox{\hyperlink{classRPHash_a08da1bd687ca08fcd6e34d264fcd2d8a}{c}})
+\begin{DoxyCompactList}\small\item\em Create picked at random the hash from Universal Family. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classOACollisionResolution_ae41ff03a5958c5c360b8342ff29a0713}{OACollision\+Resolution\+::\+Ref}} \mbox{\hyperlink{classRPHash_ad59f792e5b77487faf900d9df1d08cf5}{create}} (\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} hash\+\_\+f, std\+::uint64\+\_\+t \mbox{\hyperlink{classRPHash_a08da1bd687ca08fcd6e34d264fcd2d8a}{c}})
+\begin{DoxyCompactList}\small\item\em Create picked at random the hash from Universal Family. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Models an Universal Family hash function using random probing to resolve collisions. 
+
+The c paremeter is set to (m/2)-\/1, so we assure c and m are prime relative. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRPHash_a3b47fc736a0ba43027dfcce672fa9acb}\label{classRPHash_a3b47fc736a0ba43027dfcce672fa9acb}} 
+\index{RPHash@{RPHash}!RPHash@{RPHash}}
+\index{RPHash@{RPHash}!RPHash@{RPHash}}
+\doxysubsubsection{\texorpdfstring{RPHash()}{RPHash()}}
+{\footnotesize\ttfamily RPHash\+::\+RPHash (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}}}]{hash\+\_\+f,  }\item[{std\+::uint64\+\_\+t}]{c }\end{DoxyParamCaption})}
+
+
+
+Create picked at random the hash from Universal Family. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hash\+\_\+f} & is the universal hash function used. \\
+\hline
+{\em c} & is the random probing parameter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+hash\+\_\+f-\/$>$\mbox{\hyperlink{classRPHash_ad1418ed4a891ff228404258990790364}{m()}} and c are prime relative. 
+\end{DoxyPrecond}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRPHash_a08da1bd687ca08fcd6e34d264fcd2d8a}\label{classRPHash_a08da1bd687ca08fcd6e34d264fcd2d8a}} 
+\index{RPHash@{RPHash}!c@{c}}
+\index{c@{c}!RPHash@{RPHash}}
+\doxysubsubsection{\texorpdfstring{c()}{c()}}
+{\footnotesize\ttfamily std\+::uint64\+\_\+t RPHash\+::c (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the c parameter. 
+
+\begin{DoxyReturn}{Returns}
+the c parameter. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+ret\+\_\+v and \mbox{\hyperlink{classRPHash_a6cfb788e7c18e2dbb030ab3ad9a42026}{hash()}}-\/$>$\mbox{\hyperlink{classRPHash_ad1418ed4a891ff228404258990790364}{m()}} are prime relative. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classRPHash_ad59f792e5b77487faf900d9df1d08cf5}\label{classRPHash_ad59f792e5b77487faf900d9df1d08cf5}} 
+\index{RPHash@{RPHash}!create@{create}}
+\index{create@{create}!RPHash@{RPHash}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classOACollisionResolution_ae41ff03a5958c5c360b8342ff29a0713}{OACollision\+Resolution\+::\+Ref}} RPHash\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}}}]{hash\+\_\+f,  }\item[{std\+::uint64\+\_\+t}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create picked at random the hash from Universal Family. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hash\+\_\+f} & is the universal hash function used. \\
+\hline
+{\em c} & is the random probing parameter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+hash\+\_\+f-\/$>$\mbox{\hyperlink{classRPHash_ad1418ed4a891ff228404258990790364}{m()}} and c are prime relative. 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classRPHash_a6cfb788e7c18e2dbb030ab3ad9a42026}\label{classRPHash_a6cfb788e7c18e2dbb030ab3ad9a42026}} 
+\index{RPHash@{RPHash}!hash@{hash}}
+\index{hash@{hash}!RPHash@{RPHash}}
+\doxysubsubsection{\texorpdfstring{hash()}{hash()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} RPHash\+::hash (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the hash function used. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} to the hash function. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRPHash_ad1418ed4a891ff228404258990790364}\label{classRPHash_ad1418ed4a891ff228404258990790364}} 
+\index{RPHash@{RPHash}!m@{m}}
+\index{m@{m}!RPHash@{RPHash}}
+\doxysubsubsection{\texorpdfstring{m()}{m()}}
+{\footnotesize\ttfamily std\+::uint64\+\_\+t RPHash\+::m (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Return the cardinality of the hash function. 
+
+\begin{DoxyReturn}{Returns}
+the cardinality of the hash function. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classOACollisionResolution_ad14c3995cccbe368f98c567fec5fac17}{OACollision\+Resolution}}.
+
+\mbox{\Hypertarget{classRPHash_a72e12324fb2a62efe2d89fe7ec7a71d9}\label{classRPHash_a72e12324fb2a62efe2d89fe7ec7a71d9}} 
+\index{RPHash@{RPHash}!operator()@{operator()}}
+\index{operator()@{operator()}!RPHash@{RPHash}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily size\+\_\+t RPHash\+::operator() (\begin{DoxyParamCaption}\item[{std\+::uint64\+\_\+t}]{k,  }\item[{size\+\_\+t}]{iter = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+hash a key with collision resolution. Hash the key to get a table index, giving alternatives for several probes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em k} & is the key to be hashed. \\
+\hline
+{\em iter} & is the number of probes generates upto now. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the table index. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+k$<$p() 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+iter==0 implies ret\+\_\+v is the universal hash function for integers. 
+
+iter$>$0 and ret\+\_\+v is the next value of the collision resolution algorithm. 
+\end{DoxyPostcond}
+
+
+Implements \mbox{\hyperlink{classOACollisionResolution_a16fe33a91672fe4f1cb695bbe4844d51}{OACollision\+Resolution}}.
+
+\mbox{\Hypertarget{classRPHash_a65fb5653ced2ba8133c7d3a730ccc154}\label{classRPHash_a65fb5653ced2ba8133c7d3a730ccc154}} 
+\index{RPHash@{RPHash}!pick\_at\_new@{pick\_at\_new}}
+\index{pick\_at\_new@{pick\_at\_new}!RPHash@{RPHash}}
+\doxysubsubsection{\texorpdfstring{pick\_at\_new()}{pick\_at\_new()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classOACollisionResolution_ae41ff03a5958c5c360b8342ff29a0713}{OACollision\+Resolution\+::\+Ref}} RPHash\+::pick\+\_\+at\+\_\+new (\begin{DoxyParamCaption}\item[{std\+::uint64\+\_\+t}]{new\+\_\+m }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get a new version of the algorithm with a new table size choosing at random a new hash function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+m} & is the new table size. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+new\+\_\+m is power of two greater than 1. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+a new version of the algorithm. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classOACollisionResolution_af82f0d098d11e35121679668bd02f092}{OACollision\+Resolution}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{hash_8hpp}{hash.\+hpp}}\item 
+\mbox{\hyperlink{hash_8cpp}{hash.\+cpp}}\end{DoxyCompactItemize}

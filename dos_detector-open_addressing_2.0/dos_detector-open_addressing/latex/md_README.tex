@@ -1,0 +1,115 @@
+$\ast$© F.\+J. Madrid Cuevas (\href{mailto:fjmadrid@uco.es}{\texttt{ fjmadrid@uco.\+es}})$\ast$ {\itshape Estructuras de Datos. Grado de Ingeniería Informática} {\itshape Universidad de Córdoba. España}\hypertarget{md_README_autotoc_md1}{}\doxysection{Objetivos}\label{md_README_autotoc_md1}
+
+\begin{DoxyItemize}
+\item Implementar una tabla hash con gestión de colisiones usando direccionamiento abierto.
+\item Aprender a usar los tipos de entero con tamaño de bit fijo definidos en {\ttfamily $<$cstdint$>$}.
+\item Aprender a usar la nueva forma de generación de números aleatorios con C++11 definidos en {\ttfamily $<$random$>$}.
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md2}{}\doxysection{Descripción}\label{md_README_autotoc_md2}
+Un ataque “\+Denial of Service” (DOS) consiste en que el ordenador atacante (o ordenadores si es coordinado) inundan a un servidor (p. ej. web, email, dns …) con peticiones de acceso con tal velocidad que este servidor no puede atender a nadie más (legítimo o no) y en caso extremo hasta puede caer.
+
+Normalmente los servidores informan al sistema operativo de los accesos anómalos utilizando alguna utilidad “\+Log” del sistema. Un detector de ataques DOS rastreará estos “\+Log” periódicamente buscando patrones de acceso anómalos y bloqueando (“ban”) las direcciones consideradas como maliciosas en el cortafuegos por lo que ya no accederán al servidor.
+
+En esta práctica vamos a simular un detector de ataques DOS. El diseño del detector se muestra en los algoritmos 1 y 2.
+
+El detector (algoritmo 2) analizará periódicamente (cada segundo) el Log del sistema (lo abstraemos como una secuencia de entradas “{\ttfamily $<$tiempo$>$ $<$dirección ip$>$}”). Usaremos dos variables para definir la ventana temporal. La variable {\ttfamily first} indica la primera entrada del Log sin procesar y la variable {\ttfamily last} indica la entrada más antigua dentro de la ventana temporal.
+
+En cada ciclo del algoritmo principal ({\ttfamily DOS\+\_\+detector}) el detector analizará y avanzará la ventana temporal 1 minuto usando el algoritmo {\ttfamily update\+\_\+counters}.
+
+El algoritmo {\ttfamily update\+\_\+counters} tiene dos pasos\+:
+
+
+\begin{DoxyItemize}
+\item El primero avanza el comienzo de la ventana temporal hasta el tiempo {\ttfamily System\+::now()} incrementando la variable {\ttfamily first} e incrementando el contador de accesos asociados a la \mbox{\hyperlink{structIP}{IP}} de cada nueva petición registrada en el Log. Además, se controla cuántas veces una misma dirección \mbox{\hyperlink{structIP}{IP}} ha realizado una petición al servidor en el último minuto. Si este número de peticiones supera un umbral especificado por el usuario ({\ttfamily max\+\_\+acc}), se considerará esta dirección \mbox{\hyperlink{structIP}{IP}} como maliciosa y será bloqueada ({\ttfamily \mbox{\hyperlink{system_8cpp_a5197d3ade7728875761eae04705d43d8}{System()}}.ban\+\_\+ip()}) en el cortafuegos.
+\item El segundo paso del algoritmo, avanza el límite posterior de la ventana temporal de un minuto ({\ttfamily System\+::now()-\/60}) incrementando la variable {\ttfamily last} y descuenta los accesos de las IPs que han quedado fuera de la ventana temporal, ya que sólo nos interesa los accesos en el último minuto.
+\end{DoxyItemize}
+
+El detector usará dos tablas hash\+: una para almacenar un contador de peticiones por \mbox{\hyperlink{structIP}{IP}} activa en la ventana temporal y otra para mantener las IPs que han sido bloqueadas junto con el tiempo en el que el bloqueo termina. El sistema se encargará (dentro de la función {\ttfamily System\+::sleep()}) de sacar de la tabla de IPs bloqueadas aquellas para las que el tiempo de bloqueo se haya cumplido.
+
+
+
+{\bfseries{Algoritmo 1}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Procedure DOS\_detector(}
+\DoxyCodeLine{  log:Log,//Array of pairs <Time, IP>}
+\DoxyCodeLine{  max\_acc:Integer)//Max. num. of acc.}
+\DoxyCodeLine{Var}
+\DoxyCodeLine{   first:Integer //First unprocessed line of log.}
+\DoxyCodeLine{   last:Integer //Last line of Log in current temporal window.}
+\DoxyCodeLine{   c:HashTable[IP,Integer] //Save a counter by active ip.}
+\DoxyCodeLine{Begin}
+\DoxyCodeLine{  first ← 0}
+\DoxyCodeLine{  last ← 0}
+\DoxyCodeLine{  While System::sleep(1) Do //sleep 1 second.}
+\DoxyCodeLine{      update\_counters(log, first, last, c, max\_acc)}
+\DoxyCodeLine{  End-\/While}
+\DoxyCodeLine{End.}
+
+\end{DoxyCode}
+ 
+
+
+
+{\bfseries{Algoritmo 2}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Procedure update\_counters(}
+\DoxyCodeLine{  log:Log,//Array of pairs <Time, IP>}
+\DoxyCodeLine{  Var first:Integer,//First unprocessed line of log.}
+\DoxyCodeLine{  Var last:Integer, //Last line of Log in current temporal window.}
+\DoxyCodeLine{  Var c:HashTable[IP, Integer],//Save a counter by active ip.}
+\DoxyCodeLine{  max\_acc:Integer //Max. num. of acc. allowed.}
+\DoxyCodeLine{)}
+\DoxyCodeLine{Begin}
+\DoxyCodeLine{  //update new accesses.}
+\DoxyCodeLine{  While log[first].time < system::now() Do}
+\DoxyCodeLine{      increment\_counter(log[first].ip, c)}
+\DoxyCodeLine{      If n\_acc(log[first].ip, c) >= max\_acc Then}
+\DoxyCodeLine{        System::ban\_ip(log[first].ip)}
+\DoxyCodeLine{      End-\/If}
+\DoxyCodeLine{      first ← first + 1}
+\DoxyCodeLine{  End-\/While}
+\DoxyCodeLine{  //remove old accesses.}
+\DoxyCodeLine{  While log[last].time < System::now()-\/60 Do}
+\DoxyCodeLine{      decrement\_counter(log[last].ip, c)}
+\DoxyCodeLine{      last ← last + 1}
+\DoxyCodeLine{  End-\/While}
+\DoxyCodeLine{End.}
+
+\end{DoxyCode}
+ \hypertarget{md_README_autotoc_md3}{}\doxysection{Detalles de implementación}\label{md_README_autotoc_md3}
+\hypertarget{md_README_autotoc_md4}{}\doxysubsection{Uso de enteros con un tamaño de bit fijo}\label{md_README_autotoc_md4}
+Para implementar la funciones {\ttfamily Ip2\+Int()} y la función hash se debe por un lado convertir una dirección IPv4 en un entero sin signo de al menos 32 bits y realizar las operaciones para hacer el “hashing” usando más de 32 bits para poder ser representadas.
+
+Como el tamaño en bits de los tipos int, unsigned, long y unsigned long dependen de la arquitectura donde se compila y queremos realizar un código general, vamos a utilizar los tipos de enteros con tamaño fijo definidos en $<$cstdint$>$ \mbox{[}1\mbox{]} como son std\+::uint8\+\_\+t, std\+::uint32\+\_\+t y std\+::uint64\+\_\+t para asegurar un tamaño de bits apropiado.
+
+Sin embargo, el estándar C++ no asegura que todas las arquitecturas puedan proporcionar estos tipos por lo tanto hay que comprobar esto al configurar el proyecto. En el fichero CMake\+Lists.\+txt se puede ver una forma de indicar que nuestro proyecto depende de que la arquitectura donde se compila proporciona el tipo std\+::uint64\+\_\+t.\hypertarget{md_README_autotoc_md5}{}\doxysubsection{Sobre la generación de números aleatorios}\label{md_README_autotoc_md5}
+El estándar C++11 añade un nuevo paquete para generación de números aleatorios accesible al incluir el fichero de cabecera {\ttfamily \#include $<$random$>$} \mbox{[}3\mbox{]}.
+
+Anteriormente se utilizaba la funciones {\ttfamily rand()} y {\ttfamily srand()}. El problema es que hay distintos algoritmos para generar números pseudo-\/aleatorios y la función {\ttfamily rand()} sólo implementa un de estos algoritmos. Además, \char`\"{}$\ast$estas funciones mantienen un estado interno que es global y no está protegido. Esto significa que las llamadas a rand() nunca son seguras en entornos multi hilo$\ast$\char`\"{} \mbox{[}4\mbox{]}.
+
+El estándar C++11 \mbox{[}3\mbox{]} proporciona un método para utilizar distintos algoritmos generadores de números pseudo-\/aleatorios, seguros en entornos multi-\/hilo. Además, el estándar también proporciona funciones para generar números aleatorios siguiendo las más conocidas distribuciones de probabilidad como\+: uniforme en rango flotante ({\ttfamily std\+::uniform\+\_\+real\+\_\+distribution$<$$>$}), uniforme en rango entero ({\ttfamily std\+::uniform\+\_\+int\+\_\+distribution$<$$>$}), normal, binomial, etc.\hypertarget{md_README_autotoc_md6}{}\doxysubsection{Sobre la simulación del sistema operativo}\label{md_README_autotoc_md6}
+El código base entregado usará un “singleton” \mbox{[}2\mbox{]} accesible con “\+System()” para abstraer algunas operaciones del sistema operativo como son\+: {\ttfamily time()}, {\ttfamily sleep()}, {\ttfamily ban\+\_\+ip()} y {\ttfamily banned\+\_\+ips()}.\hypertarget{md_README_autotoc_md7}{}\doxysection{Evaluación}\label{md_README_autotoc_md7}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Superar todos los tests   }&\cellcolor{\tableheadbgcolor}\textbf{ Puntos    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Superar todos los tests   }&\cellcolor{\tableheadbgcolor}\textbf{ Puntos    }\\\cline{1-2}
+\endhead
+{\ttfamily test\+\_\+ip\+\_\+utils tests\+\_\+ip\+\_\+utils}   &2    \\\cline{1-2}
+{\ttfamily test\+\_\+hash\+\_\+f tests\+\_\+hash\+\_\+function}   &1    \\\cline{1-2}
+{\ttfamily test\+\_\+hash\+\_\+f tests\+\_\+hash\+\_\+function\+\_\+lp}   &0,5    \\\cline{1-2}
+{\ttfamily test\+\_\+hash\+\_\+f tests\+\_\+hash\+\_\+function\+\_\+rp}   &0,5    \\\cline{1-2}
+{\ttfamily test\+\_\+hash\+\_\+f tests\+\_\+hash\+\_\+function\+\_\+qp}   &0,5    \\\cline{1-2}
+{\ttfamily test\+\_\+hash\+\_\+f tests\+\_\+hash\+\_\+function\+\_\+dh}   &0,5    \\\cline{1-2}
+{\ttfamily test\+\_\+hash\+\_\+table tests\+\_\+hash\+\_\+table}   &3    \\\cline{1-2}
+{\ttfamily test\+\_\+dos\+\_\+detector tests\+\_\+dos\+\_\+detector}   &2   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md_README_autotoc_md8}{}\doxysection{Referencias}\label{md_README_autotoc_md8}
+\mbox{[}1\mbox{]} {\ttfamily $<$cstdint$>$}\+: \href{https://en.cppreference.com/w/cpp/header/cstdint}{\texttt{ https\+://en.\+cppreference.\+com/w/cpp/header/cstdint}} \mbox{[}2\mbox{]} Patrón de diseño OO \char`\"{}\+Singleton\char`\"{}\+: \href{https://es.wikipedia.org/wiki/Singleton}{\texttt{ https\+://es.\+wikipedia.\+org/wiki/\+Singleton}} \mbox{[}3\mbox{]} {\ttfamily $<$random$>$}\+: \href{https://en.cppreference.com/w/cpp/numeric/random}{\texttt{ https\+://en.\+cppreference.\+com/w/cpp/numeric/random}} \mbox{[}4\mbox{]} Funciones que no son seguras en entornos multi hilo\+: \href{https://developer.arm.com/documentation/dui0475/m/the-c-and-c&mdash;library-functions-reference/c-library-functions-that-are-not-thread-safe}{\texttt{ https\+://developer.\+arm.\+com/documentation/dui0475/m/the-\/c-\/and-\/c---library-\/functions-\/reference/c-\/library-\/functions-\/that-\/are-\/not-\/thread-\/safe}} 

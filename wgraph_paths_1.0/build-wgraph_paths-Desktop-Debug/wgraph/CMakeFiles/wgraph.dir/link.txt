@@ -1,0 +1,2 @@
+/usr/bin/ar qc libwgraph.a CMakeFiles/wgraph.dir/matrix.cpp.o CMakeFiles/wgraph.dir/city.cpp.o
+/usr/bin/ranlib libwgraph.a

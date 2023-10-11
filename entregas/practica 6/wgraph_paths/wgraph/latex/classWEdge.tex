@@ -1,0 +1,199 @@
+\hypertarget{classWEdge}{}\doxysection{WEdge$<$ T, E $>$ Class Template Reference}
+\label{classWEdge}\index{WEdge$<$ T, E $>$@{WEdge$<$ T, E $>$}}
+
+
+Class to model the \mbox{\hyperlink{classWEdge}{WEdge}} of a \mbox{\hyperlink{classWGraph}{WGraph}} ADT. A weighted edge is a directed link u -\/$>$ v with a weight (float).  
+
+
+
+
+{\ttfamily \#include $<$wgraph.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWEdge_ad1995747513a45025ee2abad53413c6b}\label{classWEdge_ad1995747513a45025ee2abad53413c6b}} 
+typedef \mbox{\hyperlink{classWNode}{WNode}}$<$ T $>$\+::\mbox{\hyperlink{classWEdge_ad9e2ef9358fe036a581e6c5287c9d488}{Ref}} \mbox{\hyperlink{classWEdge_ad1995747513a45025ee2abad53413c6b}{Node\+Ref}}
+\begin{DoxyCompactList}\small\item\em a reference to a node. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWEdge_ad9e2ef9358fe036a581e6c5287c9d488}\label{classWEdge_ad9e2ef9358fe036a581e6c5287c9d488}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classWEdge}{WEdge}}$<$ T, E $>$ $>$ \mbox{\hyperlink{classWEdge_ad9e2ef9358fe036a581e6c5287c9d488}{Ref}}
+\begin{DoxyCompactList}\small\item\em Models a reference to an Edge. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Observers}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWEdge_aa36ee5b6413b31f730656df7fcdd8725}\label{classWEdge_aa36ee5b6413b31f730656df7fcdd8725}} 
+E \mbox{\hyperlink{classWEdge_aa36ee5b6413b31f730656df7fcdd8725}{weight}} () const
+\begin{DoxyCompactList}\small\item\em Get data item. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWEdge_a25a33c1611e02f72f6618414433314cd}{has}} (\mbox{\hyperlink{classWEdge_ad1995747513a45025ee2abad53413c6b}{Node\+Ref}} const \&u) const
+\begin{DoxyCompactList}\small\item\em Is node u an end of this edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classWEdge_ad1995747513a45025ee2abad53413c6b}{Node\+Ref}} \mbox{\hyperlink{classWEdge_abae52ec16fac68114b41e2e7db0adff9}{other}} (\mbox{\hyperlink{classWEdge_ad1995747513a45025ee2abad53413c6b}{Node\+Ref}} const \&u) const
+\begin{DoxyCompactList}\small\item\em The other end node that is not u. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classWEdge_ad1995747513a45025ee2abad53413c6b}{Node\+Ref}} \mbox{\hyperlink{classWEdge_a6cd3928d609461e49d579060cb807f96}{first}} () const
+\begin{DoxyCompactList}\small\item\em the start node when a directed edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classWEdge_ad1995747513a45025ee2abad53413c6b}{Node\+Ref}} \mbox{\hyperlink{classWEdge_a370b945b9fe68f858e3c3c6b95b8391a}{second}} () const
+\begin{DoxyCompactList}\small\item\em the end node when a directed edge. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Modifiers}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classWEdge_a2f607db0f8089776bc439fc2fe67a5f6}{set\+\_\+weight}} (E const \&v)
+\begin{DoxyCompactList}\small\item\em Set data saved in the node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWEdge_ad13c79801968ae4876a2cefb765b485c}\label{classWEdge_ad13c79801968ae4876a2cefb765b485c}} 
+\mbox{\hyperlink{classWEdge_ad1995747513a45025ee2abad53413c6b}{Node\+Ref}} {\bfseries u\+\_\+}
+\item 
+\mbox{\Hypertarget{classWEdge_a13746056f344d337326d8466f7a7fe44}\label{classWEdge_a13746056f344d337326d8466f7a7fe44}} 
+\mbox{\hyperlink{classWEdge_ad1995747513a45025ee2abad53413c6b}{Node\+Ref}} {\bfseries v\+\_\+}
+\item 
+\mbox{\Hypertarget{classWEdge_aa2a2e9df38a690617a34e8a765c0ecc0}\label{classWEdge_aa2a2e9df38a690617a34e8a765c0ecc0}} 
+\mbox{\hyperlink{classMatrix_a86081140d8c1f043687455f8f549028c}{FMatrix\+::\+Ref}} {\bfseries wmat\+\_\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWEdge_ae3c9140f8d980ab2c606f6419df2ee89}\label{classWEdge_ae3c9140f8d980ab2c606f6419df2ee89}} 
+class {\bfseries WGraph$<$ T $>$}
+\end{DoxyCompactItemize}
+\doxysubsection*{Makers}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWEdge_adbae9d7c0b2019f508bf33c8e33cbcdb}{WEdge}} (\mbox{\hyperlink{classWEdge_ad1995747513a45025ee2abad53413c6b}{Node\+Ref}} u, \mbox{\hyperlink{classWEdge_ad1995747513a45025ee2abad53413c6b}{Node\+Ref}} v, \mbox{\hyperlink{classMatrix_a86081140d8c1f043687455f8f549028c}{FMatrix\+::\+Ref}} wmat)
+\begin{DoxyCompactList}\small\item\em Makes a new node. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classWEdge_ad9e2ef9358fe036a581e6c5287c9d488}{Ref}} \mbox{\hyperlink{classWEdge_a9b821ff7608e967ad32a9edf60ee4998}{create}} (\mbox{\hyperlink{classWEdge_ad1995747513a45025ee2abad53413c6b}{Node\+Ref}} u, \mbox{\hyperlink{classWEdge_ad1995747513a45025ee2abad53413c6b}{Node\+Ref}} v, \mbox{\hyperlink{classMatrix_a86081140d8c1f043687455f8f549028c}{FMatrix\+::\+Ref}} wmat)
+\begin{DoxyCompactList}\small\item\em Makes a new node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T, class E$>$\newline
+class WEdge$<$ T, E $>$}
+
+Class to model the \mbox{\hyperlink{classWEdge}{WEdge}} of a \mbox{\hyperlink{classWGraph}{WGraph}} ADT. A weighted edge is a directed link u -\/$>$ v with a weight (float). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWEdge_adbae9d7c0b2019f508bf33c8e33cbcdb}\label{classWEdge_adbae9d7c0b2019f508bf33c8e33cbcdb}} 
+\index{WEdge$<$ T, E $>$@{WEdge$<$ T, E $>$}!WEdge@{WEdge}}
+\index{WEdge@{WEdge}!WEdge$<$ T, E $>$@{WEdge$<$ T, E $>$}}
+\doxysubsubsection{\texorpdfstring{WEdge()}{WEdge()}}
+{\footnotesize\ttfamily template$<$class T , class E $>$ \\
+\mbox{\hyperlink{classWEdge}{WEdge}}$<$ T, E $>$\+::\mbox{\hyperlink{classWEdge}{WEdge}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWEdge_ad1995747513a45025ee2abad53413c6b}{Node\+Ref}}}]{u,  }\item[{\mbox{\hyperlink{classWEdge_ad1995747513a45025ee2abad53413c6b}{Node\+Ref}}}]{v,  }\item[{\mbox{\hyperlink{classMatrix_a86081140d8c1f043687455f8f549028c}{FMatrix\+::\+Ref}}}]{wmat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Makes a new node. 
+
+\begin{DoxyItemize}
+\item \mbox{[}in\mbox{]} u the first node. \item \mbox{[}in\mbox{]} v the second node. \item \mbox{[}in\mbox{]} wmat is the graph\textquotesingle{}s weight matrix. \begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{classWEdge_a6cd3928d609461e49d579060cb807f96}{first()}}==u and \mbox{\hyperlink{classWEdge_a370b945b9fe68f858e3c3c6b95b8391a}{second()}}=v
+\end{DoxyPostcond}
+Graph\+Edge implementation \end{DoxyItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWEdge_a9b821ff7608e967ad32a9edf60ee4998}\label{classWEdge_a9b821ff7608e967ad32a9edf60ee4998}} 
+\index{WEdge$<$ T, E $>$@{WEdge$<$ T, E $>$}!create@{create}}
+\index{create@{create}!WEdge$<$ T, E $>$@{WEdge$<$ T, E $>$}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily template$<$class T , class E $>$ \\
+static \mbox{\hyperlink{classWEdge_ad9e2ef9358fe036a581e6c5287c9d488}{Ref}} \mbox{\hyperlink{classWEdge}{WEdge}}$<$ T, E $>$\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWEdge_ad1995747513a45025ee2abad53413c6b}{Node\+Ref}}}]{u,  }\item[{\mbox{\hyperlink{classWEdge_ad1995747513a45025ee2abad53413c6b}{Node\+Ref}}}]{v,  }\item[{\mbox{\hyperlink{classMatrix_a86081140d8c1f043687455f8f549028c}{FMatrix\+::\+Ref}}}]{wmat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Makes a new node. 
+
+\begin{DoxyItemize}
+\item \mbox{[}in\mbox{]} u the first node. \item \mbox{[}in\mbox{]} v the second node. \item \mbox{[}in\mbox{]} item the data to save. \begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{classWEdge_a6cd3928d609461e49d579060cb807f96}{first()}}==u and \mbox{\hyperlink{classWEdge_a370b945b9fe68f858e3c3c6b95b8391a}{second()}}=v 
+\end{DoxyPostcond}
+\end{DoxyItemize}
+\mbox{\Hypertarget{classWEdge_a6cd3928d609461e49d579060cb807f96}\label{classWEdge_a6cd3928d609461e49d579060cb807f96}} 
+\index{WEdge$<$ T, E $>$@{WEdge$<$ T, E $>$}!first@{first}}
+\index{first@{first}!WEdge$<$ T, E $>$@{WEdge$<$ T, E $>$}}
+\doxysubsubsection{\texorpdfstring{first()}{first()}}
+{\footnotesize\ttfamily template$<$class T , class E $>$ \\
+\mbox{\hyperlink{classWEdge}{WEdge}}$<$ T, E $>$\+::\mbox{\hyperlink{classWEdge_ad1995747513a45025ee2abad53413c6b}{Node\+Ref}} \mbox{\hyperlink{classWEdge}{WEdge}}$<$ T, E $>$\+::first}
+
+
+
+the start node when a directed edge. 
+
+\begin{DoxyReturn}{Returns}
+the start node. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWEdge_a25a33c1611e02f72f6618414433314cd}\label{classWEdge_a25a33c1611e02f72f6618414433314cd}} 
+\index{WEdge$<$ T, E $>$@{WEdge$<$ T, E $>$}!has@{has}}
+\index{has@{has}!WEdge$<$ T, E $>$@{WEdge$<$ T, E $>$}}
+\doxysubsubsection{\texorpdfstring{has()}{has()}}
+{\footnotesize\ttfamily template$<$class T , class E $>$ \\
+bool \mbox{\hyperlink{classWEdge}{WEdge}}$<$ T, E $>$\+::has (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWEdge_ad1995747513a45025ee2abad53413c6b}{Node\+Ref}} const \&}]{u }\end{DoxyParamCaption}) const}
+
+
+
+Is node u an end of this edge. 
+
+\begin{DoxyItemize}
+\item \mbox{[}in\mbox{]} u is a node to test. \begin{DoxyReturn}{Returns}
+true is u is one of the edge\textquotesingle{}s ends. 
+\end{DoxyReturn}
+\end{DoxyItemize}
+\mbox{\Hypertarget{classWEdge_abae52ec16fac68114b41e2e7db0adff9}\label{classWEdge_abae52ec16fac68114b41e2e7db0adff9}} 
+\index{WEdge$<$ T, E $>$@{WEdge$<$ T, E $>$}!other@{other}}
+\index{other@{other}!WEdge$<$ T, E $>$@{WEdge$<$ T, E $>$}}
+\doxysubsubsection{\texorpdfstring{other()}{other()}}
+{\footnotesize\ttfamily template$<$class T , class E $>$ \\
+\mbox{\hyperlink{classWEdge}{WEdge}}$<$ T, E $>$\+::\mbox{\hyperlink{classWEdge_ad1995747513a45025ee2abad53413c6b}{Node\+Ref}} \mbox{\hyperlink{classWEdge}{WEdge}}$<$ T, E $>$\+::other (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWEdge_ad1995747513a45025ee2abad53413c6b}{Node\+Ref}} const \&}]{u }\end{DoxyParamCaption}) const}
+
+
+
+The other end node that is not u. 
+
+\begin{DoxyItemize}
+\item \mbox{[}in\mbox{]} u is a end node. \begin{DoxyReturn}{Returns}
+the other end node that is not u. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+has(u) 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+has(ret\+Val) and other(ret\+Val)=u 
+\end{DoxyPostcond}
+\end{DoxyItemize}
+\mbox{\Hypertarget{classWEdge_a370b945b9fe68f858e3c3c6b95b8391a}\label{classWEdge_a370b945b9fe68f858e3c3c6b95b8391a}} 
+\index{WEdge$<$ T, E $>$@{WEdge$<$ T, E $>$}!second@{second}}
+\index{second@{second}!WEdge$<$ T, E $>$@{WEdge$<$ T, E $>$}}
+\doxysubsubsection{\texorpdfstring{second()}{second()}}
+{\footnotesize\ttfamily template$<$class T , class E $>$ \\
+\mbox{\hyperlink{classWEdge}{WEdge}}$<$ T, E $>$\+::\mbox{\hyperlink{classWEdge_ad1995747513a45025ee2abad53413c6b}{Node\+Ref}} \mbox{\hyperlink{classWEdge}{WEdge}}$<$ T, E $>$\+::second}
+
+
+
+the end node when a directed edge. 
+
+\begin{DoxyReturn}{Returns}
+the end node. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWEdge_a2f607db0f8089776bc439fc2fe67a5f6}\label{classWEdge_a2f607db0f8089776bc439fc2fe67a5f6}} 
+\index{WEdge$<$ T, E $>$@{WEdge$<$ T, E $>$}!set\_weight@{set\_weight}}
+\index{set\_weight@{set\_weight}!WEdge$<$ T, E $>$@{WEdge$<$ T, E $>$}}
+\doxysubsubsection{\texorpdfstring{set\_weight()}{set\_weight()}}
+{\footnotesize\ttfamily template$<$class T , class E $>$ \\
+void \mbox{\hyperlink{classWEdge}{WEdge}}$<$ T, E $>$\+::set\+\_\+weight (\begin{DoxyParamCaption}\item[{E const \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Set data saved in the node. 
+
+\begin{DoxyItemize}
+\item \mbox{[}in\mbox{]} v is the data to save in. \begin{DoxyPostcond}{Postcondition}
+item()==v 
+\end{DoxyPostcond}
+\end{DoxyItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+wgraph.\+hpp\item 
+wgraph\+\_\+imp.\+hpp\end{DoxyCompactItemize}

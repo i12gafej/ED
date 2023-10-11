@@ -1,0 +1,71 @@
+\hypertarget{system_8hpp}{}\doxysection{system.\+hpp File Reference}
+\label{system_8hpp}\index{system.hpp@{system.hpp}}
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}ip\+\_\+utils.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hash\+\_\+table.\+hpp\char`\"{}}\newline
+Include dependency graph for system.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structLogEntry}{Log\+Entry}}
+\begin{DoxyCompactList}\small\item\em A log\textquotesingle{}s entry. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classOS}{OS}}
+\begin{DoxyCompactList}\small\item\em This class abstracts several \mbox{\hyperlink{classOS}{OS}}\textquotesingle{}s operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{system_8hpp_ae8fe7fc2fe46fe58abdc9cfd99f179bb}\label{system_8hpp_ae8fe7fc2fe46fe58abdc9cfd99f179bb}} 
+typedef std\+::vector$<$ \mbox{\hyperlink{structLogEntry}{Log\+Entry}} $>$ \mbox{\hyperlink{system_8hpp_ae8fe7fc2fe46fe58abdc9cfd99f179bb}{Log}}
+\begin{DoxyCompactList}\small\item\em The system\textquotesingle{}s log. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::istream \& \mbox{\hyperlink{system_8hpp_a770a82aa088cc5f518583eea49f0fc33}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{system_8hpp_ae8fe7fc2fe46fe58abdc9cfd99f179bb}{Log}} \&log) noexcept(false)
+\begin{DoxyCompactList}\small\item\em Load the log from an stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{system_8hpp_a53951761f7686549fa79c4a1f63878ca}\label{system_8hpp_a53951761f7686549fa79c4a1f63878ca}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&out, std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{structIP}{IP}}, size\+\_\+t $>$$>$ const \&ips)
+\item 
+\mbox{\hyperlink{classOS}{OS}} \& \mbox{\hyperlink{system_8hpp_a5197d3ade7728875761eae04705d43d8}{System}} ()
+\begin{DoxyCompactList}\small\item\em The Operating System. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Copy\+Right F. J. Madrid-\/\+Cuevas \href{mailto:fjmadrid@uco.es}{\texttt{ fjmadrid@uco.\+es}}
+
+Sólo se permite el uso de este código en la docencia de las asignaturas sobre Estructuras de Datos de la Universidad de Córdoba.
+
+Está prohibido su uso para cualquier otro objetivo. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{system_8hpp_a770a82aa088cc5f518583eea49f0fc33}\label{system_8hpp_a770a82aa088cc5f518583eea49f0fc33}} 
+\index{system.hpp@{system.hpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!system.hpp@{system.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily std\+::istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{system_8hpp_ae8fe7fc2fe46fe58abdc9cfd99f179bb}{Log}} \&}]{log }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Load the log from an stream. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error(\char`\"{}\+Wrong} & input format for log entry."{}) \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{system_8hpp_a5197d3ade7728875761eae04705d43d8}\label{system_8hpp_a5197d3ade7728875761eae04705d43d8}} 
+\index{system.hpp@{system.hpp}!System@{System}}
+\index{System@{System}!system.hpp@{system.hpp}}
+\doxysubsubsection{\texorpdfstring{System()}{System()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classOS}{OS}}\& System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The Operating System. 
+
+\begin{DoxyReturn}{Returns}
+a reference that can be used as entry point to the \mbox{\hyperlink{classOS}{OS}}. 
+\end{DoxyReturn}

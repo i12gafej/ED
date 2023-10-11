@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "g++.exe - Build and debug active file",
+        "type": "cppdbg",
+        "request": "launch",
+        "name": "Launch Program",
+        "program": "/home/yabiel/Documents/ED/binary_tree/build/test_btree",
+        "args": ["/home/yabiel/Documents/ED/binary_tree/tests_inorder/40"],
+        "cwd": "${workspaceFolder}"
+      }
+    ]
+  }

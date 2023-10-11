@@ -1,0 +1,9 @@
+/home/yabiel/Documents/ED/wgraph_paths_1.0/build-wgraph_paths-Desktop-Debug/CMakeFiles/test_dijkstra.dir
+/home/yabiel/Documents/ED/wgraph_paths_1.0/build-wgraph_paths-Desktop-Debug/CMakeFiles/test_floyd.dir
+/home/yabiel/Documents/ED/wgraph_paths_1.0/build-wgraph_paths-Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/yabiel/Documents/ED/wgraph_paths_1.0/build-wgraph_paths-Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/yabiel/Documents/ED/wgraph_paths_1.0/build-wgraph_paths-Desktop-Debug/wgraph/CMakeFiles/wgraph.dir
+/home/yabiel/Documents/ED/wgraph_paths_1.0/build-wgraph_paths-Desktop-Debug/wgraph/CMakeFiles/test_wgraph.dir
+/home/yabiel/Documents/ED/wgraph_paths_1.0/build-wgraph_paths-Desktop-Debug/wgraph/CMakeFiles/test_create_graph.dir
+/home/yabiel/Documents/ED/wgraph_paths_1.0/build-wgraph_paths-Desktop-Debug/wgraph/CMakeFiles/edit_cache.dir
+/home/yabiel/Documents/ED/wgraph_paths_1.0/build-wgraph_paths-Desktop-Debug/wgraph/CMakeFiles/rebuild_cache.dir

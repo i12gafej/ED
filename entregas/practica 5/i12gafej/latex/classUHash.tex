@@ -1,0 +1,234 @@
+\hypertarget{classUHash}{}\doxysection{UHash Class Reference}
+\label{classUHash}\index{UHash@{UHash}}
+
+
+The Universal Hash function base class.  
+
+
+
+
+{\ttfamily \#include $<$hash.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classUHash_a0d6137949fb41166a4f20c8505ea0831}\label{classUHash_a0d6137949fb41166a4f20c8505ea0831}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUHash}{UHash}} $>$ \mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{Ref}}
+\begin{DoxyCompactList}\small\item\em A reference to a hash function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{Ref}} \mbox{\hyperlink{classUHash_ab1b63cdf4b433f4e11d21060cb5a31a2}{pick\+\_\+at\+\_\+new}} (std\+::uint64\+\_\+t const \&\mbox{\hyperlink{classUHash_ac854d57f40d827922294690e956ac33d}{m}}) const
+\begin{DoxyCompactList}\small\item\em Create a new hash function pick up at random from de Universal Family. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classUHash_af52e8673e5ebd92bc3886abf74b0ad23}{operator()}} (std\+::uint64\+\_\+t k) const
+\begin{DoxyCompactList}\small\item\em hash a key. Hash the key to get a table index. \end{DoxyCompactList}\item 
+virtual size\+\_\+t \mbox{\hyperlink{classUHash_ae1db664b1aa1c23665f7594ed7f48036}{operator()}} (std\+::uint64\+\_\+t k, size\+\_\+t iter) const
+\begin{DoxyCompactList}\small\item\em hash a key with collision resolution. Hash the key to get a table index, giving alternatives for several probes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classUHash_ac854d57f40d827922294690e956ac33d}\label{classUHash_ac854d57f40d827922294690e956ac33d}} 
+std\+::uint64\+\_\+t \mbox{\hyperlink{classUHash_ac854d57f40d827922294690e956ac33d}{m}} () const
+\begin{DoxyCompactList}\small\item\em the m parameter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classUHash_ad0213feaadeb3a650e52ea94a4f7b399}\label{classUHash_ad0213feaadeb3a650e52ea94a4f7b399}} 
+std\+::uint64\+\_\+t \mbox{\hyperlink{classUHash_ad0213feaadeb3a650e52ea94a4f7b399}{p}} () const
+\begin{DoxyCompactList}\small\item\em the m parameter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classUHash_a04c1a49fdd367e3421c5f9bcd3f29a8d}\label{classUHash_a04c1a49fdd367e3421c5f9bcd3f29a8d}} 
+std\+::uint64\+\_\+t \mbox{\hyperlink{classUHash_a04c1a49fdd367e3421c5f9bcd3f29a8d}{a}} () const
+\begin{DoxyCompactList}\small\item\em the m parameter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classUHash_a16e5003e961dab31a68b45f913e2d77a}\label{classUHash_a16e5003e961dab31a68b45f913e2d77a}} 
+std\+::uint64\+\_\+t \mbox{\hyperlink{classUHash_a16e5003e961dab31a68b45f913e2d77a}{b}} () const
+\begin{DoxyCompactList}\small\item\em the m parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classUHash_aff88e137daa6dd863478e503601b9277}\label{classUHash_aff88e137daa6dd863478e503601b9277}} 
+std\+::uint64\+\_\+t {\bfseries m\+\_\+}
+\item 
+\mbox{\Hypertarget{classUHash_ac353606e159f1f508b3272031446eaaa}\label{classUHash_ac353606e159f1f508b3272031446eaaa}} 
+std\+::uint64\+\_\+t {\bfseries p\+\_\+}
+\item 
+\mbox{\Hypertarget{classUHash_a41ff639186eaeeee5be56f324a5e973b}\label{classUHash_a41ff639186eaeeee5be56f324a5e973b}} 
+std\+::uint64\+\_\+t {\bfseries a\+\_\+}
+\item 
+\mbox{\Hypertarget{classUHash_a76aae894806aa59f3e8406c0c7a93201}\label{classUHash_a76aae894806aa59f3e8406c0c7a93201}} 
+std\+::uint64\+\_\+t {\bfseries b\+\_\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Life cicle.}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUHash_aaa45d5fbb64b8cf7e50b0322dbad98d0}{UHash}} (size\+\_\+t \mbox{\hyperlink{classUHash_ac854d57f40d827922294690e956ac33d}{m}}, std\+::uint64\+\_\+t P=4294967311l)
+\begin{DoxyCompactList}\small\item\em Create a hash function picked at random from Universal Family. ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUHash_ac953329ec8643b15ce194f6b26b1ec1e}{UHash}} (size\+\_\+t \mbox{\hyperlink{classUHash_ac854d57f40d827922294690e956ac33d}{m}}, std\+::uint64\+\_\+t \mbox{\hyperlink{classUHash_ad0213feaadeb3a650e52ea94a4f7b399}{p}}, std\+::uint64\+\_\+t \mbox{\hyperlink{classUHash_a04c1a49fdd367e3421c5f9bcd3f29a8d}{a}}, std\+::uint64\+\_\+t \mbox{\hyperlink{classUHash_a16e5003e961dab31a68b45f913e2d77a}{b}})
+\begin{DoxyCompactList}\small\item\em Create a universal hash function given all the parameters. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{Ref}} \mbox{\hyperlink{classUHash_a416a0fd439d64aafaf8e693a2d141e3d}{create}} (size\+\_\+t \mbox{\hyperlink{classUHash_ac854d57f40d827922294690e956ac33d}{m}}, std\+::uint64\+\_\+t P=4294967311l)
+\begin{DoxyCompactList}\small\item\em Create a hash function picked at random from Universal Family. The p parameter used is 4294967311. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{Ref}} \mbox{\hyperlink{classUHash_aeed3c1ee65511a690ce97ee91cad6b50}{create}} (std\+::uint64\+\_\+t \mbox{\hyperlink{classUHash_ac854d57f40d827922294690e956ac33d}{m}}, std\+::uint64\+\_\+t \mbox{\hyperlink{classUHash_ad0213feaadeb3a650e52ea94a4f7b399}{p}}, std\+::uint64\+\_\+t \mbox{\hyperlink{classUHash_a04c1a49fdd367e3421c5f9bcd3f29a8d}{a}}, std\+::uint64\+\_\+t \mbox{\hyperlink{classUHash_a16e5003e961dab31a68b45f913e2d77a}{b}})
+\begin{DoxyCompactList}\small\item\em Create a hash function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The Universal Hash function base class. 
+
+A universal hash function is one pick at at random from the universal family H\+\_\+p \+: \{h(\+K) = ((a$\ast$\+K+b)p)m) \} where p is a prime number greater than the cardinality of the set of keys, 0$<$a$<$p and 0$<$=b$<$p. The parameter m is the table size and it is normaly a two power. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUHash_aaa45d5fbb64b8cf7e50b0322dbad98d0}\label{classUHash_aaa45d5fbb64b8cf7e50b0322dbad98d0}} 
+\index{UHash@{UHash}!UHash@{UHash}}
+\index{UHash@{UHash}!UHash@{UHash}}
+\doxysubsubsection{\texorpdfstring{UHash()}{UHash()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily UHash\+::\+UHash (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{m,  }\item[{std\+::uint64\+\_\+t}]{P = {\ttfamily 4294967311l} }\end{DoxyParamCaption})}
+
+
+
+Create a hash function picked at random from Universal Family. ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & is the table size. \\
+\hline
+{\em P} & is the P parameter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+m is power of two greater than 1. 
+
+P is a prime number greater than the cardinality of the keys set. 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classUHash_ac953329ec8643b15ce194f6b26b1ec1e}\label{classUHash_ac953329ec8643b15ce194f6b26b1ec1e}} 
+\index{UHash@{UHash}!UHash@{UHash}}
+\index{UHash@{UHash}!UHash@{UHash}}
+\doxysubsubsection{\texorpdfstring{UHash()}{UHash()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily UHash\+::\+UHash (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{m,  }\item[{std\+::uint64\+\_\+t}]{p,  }\item[{std\+::uint64\+\_\+t}]{a,  }\item[{std\+::uint64\+\_\+t}]{b }\end{DoxyParamCaption})}
+
+
+
+Create a universal hash function given all the parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & is the table size. \\
+\hline
+{\em p} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUHash_a416a0fd439d64aafaf8e693a2d141e3d}\label{classUHash_a416a0fd439d64aafaf8e693a2d141e3d}} 
+\index{UHash@{UHash}!create@{create}}
+\index{create@{create}!UHash@{UHash}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} UHash\+::create (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{m,  }\item[{std\+::uint64\+\_\+t}]{P = {\ttfamily 4294967311l} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a hash function picked at random from Universal Family. The p parameter used is 4294967311. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & is the table size. \\
+\hline
+{\em P} & is the P parameter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+m is power of two greater than 1. 
+
+P is a prime number greater than the cardinality of the keys set. 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classUHash_aeed3c1ee65511a690ce97ee91cad6b50}\label{classUHash_aeed3c1ee65511a690ce97ee91cad6b50}} 
+\index{UHash@{UHash}!create@{create}}
+\index{create@{create}!UHash@{UHash}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{Ref}} UHash\+::create (\begin{DoxyParamCaption}\item[{std\+::uint64\+\_\+t}]{m,  }\item[{std\+::uint64\+\_\+t}]{p,  }\item[{std\+::uint64\+\_\+t}]{a,  }\item[{std\+::uint64\+\_\+t}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a hash function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & is the table size. \\
+\hline
+{\em p} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUHash_af52e8673e5ebd92bc3886abf74b0ad23}\label{classUHash_af52e8673e5ebd92bc3886abf74b0ad23}} 
+\index{UHash@{UHash}!operator()@{operator()}}
+\index{operator()@{operator()}!UHash@{UHash}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily size\+\_\+t UHash\+::operator() (\begin{DoxyParamCaption}\item[{std\+::uint64\+\_\+t}]{k }\end{DoxyParamCaption}) const}
+
+
+
+hash a key. Hash the key to get a table index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em k} & is the key to be hashed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the table index. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+k$<$\mbox{\hyperlink{classUHash_ad0213feaadeb3a650e52ea94a4f7b399}{p()}} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+0$<$=ret\+\_\+v$<$\mbox{\hyperlink{classUHash_ac854d57f40d827922294690e956ac33d}{m()}} 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classUHash_ae1db664b1aa1c23665f7594ed7f48036}\label{classUHash_ae1db664b1aa1c23665f7594ed7f48036}} 
+\index{UHash@{UHash}!operator()@{operator()}}
+\index{operator()@{operator()}!UHash@{UHash}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily size\+\_\+t UHash\+::operator() (\begin{DoxyParamCaption}\item[{std\+::uint64\+\_\+t}]{k,  }\item[{size\+\_\+t}]{iter }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+hash a key with collision resolution. Hash the key to get a table index, giving alternatives for several probes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em k} & is the key to be hashed. \\
+\hline
+{\em iter} & is the number of probes generates upto now. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the table index. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+k$<$\mbox{\hyperlink{classUHash_ad0213feaadeb3a650e52ea94a4f7b399}{p()}} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+iter==0 implies ret\+\_\+v is the universal hash function for integers. 
+
+iter$>$0 and ret\+\_\+v is the next value of the collision resolution algorithm. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classUHash_ab1b63cdf4b433f4e11d21060cb5a31a2}\label{classUHash_ab1b63cdf4b433f4e11d21060cb5a31a2}} 
+\index{UHash@{UHash}!pick\_at\_new@{pick\_at\_new}}
+\index{pick\_at\_new@{pick\_at\_new}!UHash@{UHash}}
+\doxysubsubsection{\texorpdfstring{pick\_at\_new()}{pick\_at\_new()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUHash_a0d6137949fb41166a4f20c8505ea0831}{UHash\+::\+Ref}} UHash\+::pick\+\_\+at\+\_\+new (\begin{DoxyParamCaption}\item[{std\+::uint64\+\_\+t const \&}]{m }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Create a new hash function pick up at random from de Universal Family. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & is the new table size. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference a to the new hash function. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+m is power of two greater than 1. 
+\end{DoxyPrecond}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{hash_8hpp}{hash.\+hpp}}\item 
+\mbox{\hyperlink{hash_8cpp}{hash.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/yabiel/Documents/ED/rbtrees_1.0/rbtrees/build",
+  "command": "/usr/bin/g++   -Wall -O0 -ggdb3 -std=gnu++11 -o CMakeFiles/test_bstree.dir/test_bstree.cpp.o -c /home/yabiel/Documents/ED/rbtrees_1.0/rbtrees/test_bstree.cpp",
+  "file": "/home/yabiel/Documents/ED/rbtrees_1.0/rbtrees/test_bstree.cpp"
+},
+{
+  "directory": "/home/yabiel/Documents/ED/rbtrees_1.0/rbtrees/build",
+  "command": "/usr/bin/g++   -Wall -O0 -ggdb3 -std=gnu++11 -o CMakeFiles/test_rbtree.dir/test_rbtree.cpp.o -c /home/yabiel/Documents/ED/rbtrees_1.0/rbtrees/test_rbtree.cpp",
+  "file": "/home/yabiel/Documents/ED/rbtrees_1.0/rbtrees/test_rbtree.cpp"
+}
+]

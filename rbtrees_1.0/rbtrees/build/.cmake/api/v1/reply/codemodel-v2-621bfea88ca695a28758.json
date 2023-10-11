@@ -1,0 +1,69 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "rbtrees",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "test_bstree::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_bstree-Debug-d7c5a93bd07785b51b69.json",
+					"name" : "test_bstree",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_rbtree::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_rbtree-Debug-3b38daf862310f21d2ab.json",
+					"name" : "test_rbtree",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/yabiel/Documents/ED/rbtrees_1.0/rbtrees/build",
+		"source" : "/home/yabiel/Documents/ED/rbtrees_1.0/rbtrees"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

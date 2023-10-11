@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "g++.exe - Build and debug active file",
+        "type": "cppdbg",
+        "request": "launch",
+        "name": "Launch Program",
+        "program": "/home/yabiel/Documents/ED/wgraph_paths_1.0/wgraph_path/build/test_dijkstra",
+        "args": ["/home/yabiel/Documents/ED/wgraph_paths_1.0/wgraph_path/tests_dijkstra/00"],
+        "cwd": "${workspaceFolder}"
+      }
+    ]
+  }
